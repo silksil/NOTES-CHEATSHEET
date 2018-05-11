@@ -1,5 +1,6 @@
 PROMISES
 
+``` javascript
 PROMISE.ALL
 Let calculation = 7;
 let someCalculation1 = function() {
@@ -35,3 +36,5 @@ let someCalculation2 = function() {
 Promise.all([ someCalculation1(), someCalculation2() ])
 .then(([calculation1, calculation2]) => { console.log(calculation1 +' and '+calculation2) })
 .catch(reason => { console.log(reason); })
+
+```
