@@ -1,7 +1,7 @@
 PROMISES
 
+### Promise.all
 ``` javascript
-PROMISE.ALL
 Let calculation = 7;
 let someCalculation1 = function() {
   return new Promise(
