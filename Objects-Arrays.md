@@ -1,9 +1,9 @@
 
-### Create and Clone JSON Object
+### Create and clone JSON object
 `newjsonobj = Object.assign({}, jsonobj, {})`
 
 
-### 
+### Loop trough nested objects
 ```function loopNestedObject(obj) {
   for (let books in obj ) {
     console.log(books)
