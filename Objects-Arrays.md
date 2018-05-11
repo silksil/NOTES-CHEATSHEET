@@ -1,5 +1,5 @@
 
-### Create and clone JSON object
+### Create and clone object
 `newjsonobj = Object.assign({}, jsonobj, {})`
 
 
