@@ -29,15 +29,15 @@ const books = {
 loopNestedObject(books)
 
 /*
-returns:
-// book1
-// Forty laws of love
-// Arabic
-// Elif Şafak
-// book2
-// Alchemist
-// Arabic
-// Paulo Coelhho
+  returns:
+  book1
+  Forty laws of love
+  Arabic
+  Elif Şafak
+  book2
+  Alchemist
+  Arabic
+  Paulo Coelhho
 */
 ```
 
