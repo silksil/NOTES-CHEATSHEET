@@ -4,7 +4,8 @@
 
 
 ### Loop trough nested objects
-```function loopNestedObject(obj) {
+```javascript
+function loopNestedObject(obj) {
   for (let books in obj ) {
     console.log(books)
     for (let info in obj[books]) {
