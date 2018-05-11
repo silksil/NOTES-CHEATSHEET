@@ -42,7 +42,7 @@ loopNestedObject(books)
 */
 ```
 
-### Acces nested objects
+### Access nested objects
 ```javascript
 //scenario1
 const user = {
@@ -69,7 +69,7 @@ const user = {
 
 const name = user.personalInfo.name; // not possible - cannot read property 'name' of undefined
 const name = user && user.personalInfo ? user.personalInfo.name : null; //option1 - if data nested 5 or 6 levels deep, then your code will look really messy like this
-const name = ((user || {}).personalInfo || {}).name; // You basically check if user exists, if not, you create an empty object on the fly
+const name = ((user || {}).personalInfo || {}).name; // option2 - You basically check if user exists, if not, you create an empty object on the fly
 
 //source: https://hackernoon.com/accessing-nested-objects-in-javascript-f02f1bd6387f
 
