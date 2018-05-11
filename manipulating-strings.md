@@ -1,5 +1,3 @@
-Manipulating strings
-
 ### Delete a portion of a string starting from a certain character
 ```javascript
 let x = 'silkie.asd'
