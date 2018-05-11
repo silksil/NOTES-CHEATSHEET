@@ -6,10 +6,10 @@
 ### Loop trough nested objects
 ```javascript
 function loopNestedObject(obj) {
-  for (let books in obj ) {
-    console.log(books)
-    for (let info in obj[books]) {
-      console.log(obj[books][info])
+  for (let key in obj ) {
+    console.log(key)
+    for (let key2 in obj[key]) {
+      console.log(obj[key][key2])
     }
   }
 }
