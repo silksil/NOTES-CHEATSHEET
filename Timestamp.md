@@ -1,4 +1,5 @@
 Current Data Formatting
+```javascript
 
 var currentdate = new Date();
 var datetime =  currentdate.getFullYear() + "-"
@@ -7,3 +8,4 @@ var datetime =  currentdate.getFullYear() + "-"
                 + currentdate.getHours() + ":"
                 + currentdate.getMinutes() + ":"
                 + currentdate.getSeconds();
+```
