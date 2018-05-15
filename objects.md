@@ -30,7 +30,7 @@ const books = {
 loopNestedObject(books)
 
 /*
-returns:
+prints:
   book1
   Forty laws of love
   Arabic
@@ -48,7 +48,7 @@ returns:
 function loopNestedObjec(parentObject) {
   for (const childObject in parentObject) {
     for (let i = 0; i < Object.keys(parentObject[childObject]).length; i++) {
-      return Object.keys(parentObject[childObject])[i] + ' :\t' + Object.values(parentObject[childObject])[i]
+      console.log(Object.keys(parentObject[childObject])[i] + ' :\t' + Object.values(parentObject[childObject])[i])
     }
   }
 }
@@ -68,7 +68,7 @@ const books = {
 loopNestedObjec(books)
   
   /*
-returns:
+prints:
   bookTitle :     Forty laws of love
   language :      Arabic
   author :        Elif Şafak
