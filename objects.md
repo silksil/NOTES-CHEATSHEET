@@ -48,7 +48,7 @@ returns:
 function loopNestedObjec(parentObject) {
   for (const childObject in parentObject) {
     for (let i = 0; i < Object.keys(parentObject[childObject]).length; i++) {
-      console.log(Object.keys(parentObject[childObject])[i] + ' :\t' + Object.values(parentObject[childObject])[i])
+      return Object.keys(parentObject[childObject])[i] + ' :\t' + Object.values(parentObject[childObject])[i]
     }
   }
 }
