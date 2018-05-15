@@ -3,7 +3,7 @@
 `newjsonobj = Object.assign({}, jsonobj, {})`
 
 
-### Loop trough nested objects
+### Loop trough nested objects (1)
 ```javascript
 function loopNestedObject(obj) {
   for (let key in obj ) {
@@ -30,7 +30,7 @@ const books = {
 loopNestedObject(books)
 
 /*
-  returns:
+returns:
   book1
   Forty laws of love
   Arabic
@@ -41,6 +41,43 @@ loopNestedObject(books)
   Paulo Coelhho
 */
 ```
+
+
+### Loop trough nested objects (2) with Object.keys and Object.values
+```javascript
+function loopNestedObjec(parentObject) {
+  for (const childObject in parentObject) {
+    for (let i = 0; i < Object.keys(parentObject[childObject]).length; i++) {
+      console.log(Object.keys(parentObject[childObject])[i] + ' :\t' + Object.values(parentObject[childObject])[i])
+    }
+  }
+}
+const books = {
+   book1: {
+     bookTitle: 'Forty laws of love',
+     language: 'Arabic',
+     author: 'Elif Şafak'
+   },
+   book2: {
+     bookTitle: 'Alchemist',
+     language: 'Arabic',
+     author: 'Paulo Coelhho'
+   }
+}
+
+loopNestedObjec(books)
+  
+  /*
+returns:
+  bookTitle :     Forty laws of love
+  language :      Arabic
+  author :        Elif Şafak
+  bookTitle :     Alchemist
+  language :      Arabic
+  author :        Paulo Coelhho
+*/
+  ```
+
 
 ### Access nested objects
 ```javascript
