@@ -1,5 +1,5 @@
 ### Filter
-`Filter` expects a callback function to return a true or false > takes away items thare are false.
+`Filter()` expects a callback function to return a true or false > takes away items thare are false.
 
 ```javascript
 let books = [
@@ -20,7 +20,7 @@ let englishBooks = books.filter((book) => {
 ```
 
 ### Map
-`Map` includes all items, but transform every individual item
+`Map()` includes all items, but transform every individual item
 ```javascript
 let books = [
   {name: 'The Alchemist', author: 'Paulo Caulho', language: 'Portuguese'},
