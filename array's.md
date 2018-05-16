@@ -38,6 +38,7 @@ let nameBooks = books.map((book) => book.name + ' is written by ' + book.author)
 
 ```
 ### Splice
+`splice()` changes the contents of an array by removing existing elements and/or adding new elements.
 ```javascript
 let months = ['Jan', 'March', 'April', 'June'];
 months.splice(1, 1);
