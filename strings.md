@@ -9,7 +9,9 @@ The trim() method removes whitespace from both sides of a string.
 
 ### toFixed
 Converts number into string and cut off everything beyond a certain amount of decimal places. 
-```11.2345.toFixed(2);```
+```javascript
+11.2345.toFixed(2);
+```
 
 
 
