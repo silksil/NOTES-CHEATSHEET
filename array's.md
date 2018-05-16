@@ -37,4 +37,18 @@ let nameBooks = books.map((book) => book.name + ' is written by ' + book.author)
 **/
 
 ```
+### Splice
+```javascript
+let months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 1);
+// deletes index 1
+console.log(months);
+// output: Array ["March", "April", "June"]
+
+months.splice(4, 1, 'May');
+// replaces 1 element at 4th index
+console.log(months);
+// output: Array ['Jan', 'Feb', 'March', 'April', 'May']
+```
+
 
