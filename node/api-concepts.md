@@ -17,6 +17,6 @@ A REST API can have arguments in several places:
 - In the query string - e.g. /api/resource?p1=v1&p2=v2
 - As part of the URL-path - e.g. /api/resource/v1/v2
 
-answers: 
+Best practice:
 - https://stackoverflow.com/questions/4024271/rest-api-best-practices-where-to-put-parameters
 - https://stackoverflow.com/questions/25385559/rest-api-best-practices-args-in-query-string-vs-in-request-body?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
