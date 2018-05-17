@@ -1,6 +1,6 @@
 ### URL
 ```javascript
-localhost:8080/api/test?name=" + name + "&id=" + id + "&key=" + key
+url = localhost:8080/api/test?name=" + name + "&id=" + id + "&key=" + key
 ```
 
 ### Route
