@@ -20,6 +20,8 @@ let crypted = cipher.update(encValues,'utf8','hex')
 let encryptionKey = encrypt(encValues);
 ```
 
+#### Decrypt
+```javascript
 let decrypt = function(decValues){
 let decipher = crypto.createDecipher(algorithm, password)
 let deccrypted = decipher.update(decValues,'hex','utf8')
@@ -28,8 +30,7 @@ let deccrypted = decipher.update(decValues,'hex','utf8')
   }
   
 let decryptedKey = decrypt(decValues);
-
-```javascript
+```
 
 
 
