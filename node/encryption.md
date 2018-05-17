@@ -10,7 +10,7 @@ const password = config.get('encrypt-string');
 
 #### Encrypt
 ```javascript
-module.exports.encrypt = function(encValues){
+let encrypt = function(encValues){
 let cipher = crypto.createCipher(algorithm, password)
 let crypted = cipher.update(encValues,'utf8','hex')
     crypted += cipher.final('hex');
