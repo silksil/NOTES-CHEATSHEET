@@ -21,3 +21,11 @@ To wrote conditionial blocks.
   Found {{items.length}} results for search term {{ search}}
 </div>
 ```
+
+## Event handling: v-on
+We can use the v-on directive to listen to DOM events and run some JavaScript when they’re triggered.
+
+### v-on:click
+```html
+<button v-on:click="addItem(index)" class="add-to-cart btn"> Add to cart </button>
+```
