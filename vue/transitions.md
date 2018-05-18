@@ -3,10 +3,22 @@ Vue provides a variety of ways to apply transition effects when items are insert
 
 ## Fade
 ```html
-<transition name="fade">
-    <div>
-    </div>
-<transition> 
+<div id="demo">
+  <button v-on:click="show = !show">
+    Toggle
+  </button>
+  <transition name="fade">
+    <p v-if="show">hello</p>
+  </transition>
+</div>
+```
+```javascript
+new Vue({
+  el: '#demo',
+  data: {
+    show: true
+  }
+})
 ```
 
 ```css
