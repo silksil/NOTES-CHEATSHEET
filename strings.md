@@ -15,7 +15,9 @@ Converts number into string and cut off everything beyond a certain amount of de
 
 ### concat()
 The concat() method is used to join two or more strings.
-```javascript .get('/search/'.concat('product'))  === .get(/search/product) ```
+```javascript 
+.get('/search/'.concat('product'))  === .get(/search/product) 
+```
 
 
 
