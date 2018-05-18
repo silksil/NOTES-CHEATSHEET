@@ -14,5 +14,7 @@ Source: https://stackoverflow.com/questions/28648090/properties-vs-keys-vs-value
 
 ### Higher-order functions
 
+### Pure functions
+
 
 
