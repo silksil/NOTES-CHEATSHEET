@@ -1,3 +1,4 @@
+```javascript
 axios.post('https://url', data, config)
   .then(res => {
     console.log(res)
@@ -5,3 +6,4 @@ axios.post('https://url', data, config)
   .catch(err => {
     console.log(err);
   });
+ ```
