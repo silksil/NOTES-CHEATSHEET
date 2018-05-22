@@ -11,7 +11,7 @@ export default new Router({
     {
       path: '/componentRoute',
       name: 'componentName',
-      component: componentName,
+      component: componentName
     },
   ],
 });
