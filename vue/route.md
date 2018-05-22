@@ -1,5 +1,5 @@
 
-``` vue
+``` javascript
 import Vue from 'vue';
 import Router from 'vue-router';
 import componentName from '@/components/componentName.vue';
