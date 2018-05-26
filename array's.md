@@ -53,7 +53,7 @@ console.log(months);
 ```
 
 ### Reduce
-The `reduce()`method reduces the array to a single value, it provides a function for each value of the array (from left-to-right) and the return value of the function is stored in an accumulator (result/total). Examples: https://medium.freecodecamp.org/reduce-f47a7da511a9
+`reduce()`reduces the array to a single value, it provides a function for each value of the array (from left-to-right) and the return value of the function is stored in an accumulator (result/total). Examples: https://medium.freecodecamp.org/reduce-f47a7da511a9
 ``` javascript
 const euros = [29.76, 41.85, 46.5];
 
