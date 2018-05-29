@@ -14,7 +14,19 @@ function getInfoDb(req, res) {
   }
 }
 ```
-
+  
+### Request through a view
+  ```javascript
+baseUrl = { 
+  method: 'GET',
+  headers:
+   { Authorization: 'Basic dXNlcm5hbWU6cGFzc3dvcmQ=',
+     'Content-Type': 'application/json' },
+  url: '"https://$ACCOUNT.cloudant.com/$DATABASE/_design/$DDOC/_view/by_ingredient?include_docs=true'
+ }
+```
+  
+  
 
 ### Retrieve list of documents through a view
 ```javascript
@@ -23,7 +35,7 @@ baseUrl = {
   headers:
    { Authorization: 'Basic dXNlcm5hbWU6cGFzc3dvcmQ=',
      'Content-Type': 'application/json' },
-  url: '"https://$ACCOUNT.cloudant.com/$DATABASE/_design/$DDOC/_view/by_ingredient?',
+  url: '"https://$ACCOUNT.cloudant.com/$DATABASE/_design/$DDOC/_view/by_ingredient?include_docs=true',
   body: '{"keys":["ingredient1","ingredient2","ingredient"]}' 
  }
 ```
