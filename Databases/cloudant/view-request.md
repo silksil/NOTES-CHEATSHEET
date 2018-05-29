@@ -20,7 +20,7 @@ function getInfoDb(req, res) {
 baseUrl = { 
     method: 'GET',
     headers: { Authorization: 'Basic dXNlcm5hbWU6cGFzc3dvcmQ=', 'Content-Type': 'application/json' },
-   url: '"https://$ACCOUNT.cloudant.com/$DATABASE/_design/$DDOC/_view/by_ingredient?include_docs=true'
+    url: '"https://$ACCOUNT.cloudant.com/$DATABASE/_design/$DDOC/_view/by_ingredient?include_docs=true'
 };
 ```
   
