@@ -12,7 +12,7 @@ function getInfoDb(req, res) {
     } else {  
     }
   }
-}
+};
 ```
   
 ### Request through a view
@@ -23,7 +23,7 @@ baseUrl = {
    { Authorization: 'Basic dXNlcm5hbWU6cGFzc3dvcmQ=',
     'Content-Type': 'application/json' },
   url: '"https://$ACCOUNT.cloudant.com/$DATABASE/_design/$DDOC/_view/by_ingredient?include_docs=true'
- }
+ };
 ```
   
   
@@ -37,5 +37,5 @@ baseUrl = {
      'Content-Type': 'application/json' },
   url: '"https://$ACCOUNT.cloudant.com/$DATABASE/_design/$DDOC/_view/by_ingredient?include_docs=true',
   body: '{"keys":["ingredient1","ingredient2","ingredient"]}' 
- }
+ };
 ```
