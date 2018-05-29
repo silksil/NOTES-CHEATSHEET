@@ -23,7 +23,6 @@ baseUrl = {
   headers:
    { Authorization: 'Basic dXNlcm5hbWU6cGFzc3dvcmQ=',
      'Content-Type': 'application/json' },
-  strictSSL: false,
   url: '"https://$ACCOUNT.cloudant.com/$DATABASE/_design/$DDOC/_view/by_ingredient?',
   body: '{"keys":["ingredient1","ingredient2","ingredient"]}' 
  }
