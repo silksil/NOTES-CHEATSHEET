@@ -1,10 +1,10 @@
-###module 
+### 
 ```javascript
-const var request = require('request');
+const request = require('request');
 ```
 
 ### Basic lay-out function
-```javasript
+```javascript
 function getInfoDb(req, res) {
   request(baseURL, function(error, response, body) {
     if (!error) {
