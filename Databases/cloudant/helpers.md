@@ -21,7 +21,6 @@ function isJsonString(jsonObject) {
 /**
   * @param {object} responseData - An empty object which will be inserted with (informational) error messages
   */
-let docList = [];
 let responseData = {};
 ```
 
