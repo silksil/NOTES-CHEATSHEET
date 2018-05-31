@@ -25,13 +25,20 @@ let responseData = {};
 ```
 
 ```javascript
-insertRecord = function(request, response) {
-  const insertedRecord = request.body
-  if (IsJsonString(insertedRecord)) {
+function displayDataError(response) {
+  response.send(JSON.stringify(responseData));
+  response.end();
+}
+```
+
+```javascript
+insertDoc = function(request, response) {
+  const insertedDoc = request.body
+  if (IsJsonString(insertedDoc)) {
   } else {
   responseData.error = true;
   responseData.reason = "Wrong input type!";
   responseData.description = "The input provided is not of the type JSON.".concat(JSON.stringify(request.body));
-  displayErrorData(response);
+  displayDataError(response);
 }
 ```
