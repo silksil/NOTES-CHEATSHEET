@@ -2,10 +2,10 @@
 
 ```javascript
 /**
-  * @function isJsonString Receive JSON object, convert it into a string an try to parse it into a json object again
+  * @function isJsonString - receives an JSON object, convert it into a string an try to parse it again into a json object
   * @param {object} JSON - Test if object is a JSON object
   */
-function issJsonString(jsonObject) {
+function isJsonString(jsonObject) {
     try {
         let objectToTest = JSON.stringify(jsonObject);
         JSON.parse(objectToTest);
@@ -14,6 +14,14 @@ function issJsonString(jsonObject) {
     }
     return true;
 }
+```
+
+```javascript
+/**
+  * @param {object} responseData - Empty object to be populated with (informational) error messages
+  */
+let docList = [];
+let responseData = {};
 ```
 
 ```javascript
