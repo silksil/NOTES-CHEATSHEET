@@ -1,4 +1,4 @@
-### Check if the data send to the DB is a jsonObject
+### Check if the data send to the DB is JSON
 
 ```javascript
 /**
