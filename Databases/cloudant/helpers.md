@@ -1,3 +1,5 @@
+### Check if the data send to the DB is a jsonObject
+
 ```javascript
 /**
   * @function isJsonString Receive JSON object, convert it into a string an try to parse it into a json object again
