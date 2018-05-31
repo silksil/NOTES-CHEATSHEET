@@ -3,8 +3,9 @@
 ```javascript
 /**
   * @function isJsonString - receives an JSON object, convert it into a string an try to parse it again into a json object
-  * @param {object} JSON - Test if object is a JSON object
+  * @param {object} jsonObject - JSON object being send
   */
+  
 function isJsonString(jsonObject) {
     try {
         let objectToTest = JSON.stringify(jsonObject);
@@ -18,7 +19,7 @@ function isJsonString(jsonObject) {
 
 ```javascript
 /**
-  * @param {object} responseData - Empty object to be populated with (informational) error messages
+  * @param {object} responseData - An empty object which will be inserted with (informational) error messages
   */
 let docList = [];
 let responseData = {};
