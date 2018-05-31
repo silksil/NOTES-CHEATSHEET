@@ -25,7 +25,5 @@ insertRecord = function(request, response) {
   responseData.reason = "Wrong input type!";
   responseData.description = "The input provided is not of the type JSON.".concat(JSON.stringify(request.body));
   displayErrorData(response);
-  
 }
-
 ```
