@@ -4,8 +4,9 @@
 ```javascript
 const crypto = require('crypto');
 const algorithm = 'aes-256-cbc';
-let config = require('config');
-const password = config.get('encrypt-string');
+const config = require('config');
+const password = config.encryptPassword;
+
 ```
 
 #### Encrypt
