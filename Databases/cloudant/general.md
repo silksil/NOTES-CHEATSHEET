@@ -1,4 +1,4 @@
-### Intro
+## Intro
 - The database contains a collection of json formatted documents. 
 - When you create a document it automatically creatas a unique _id identifier, and must be unqiue in each database.
 - Cloudant allows you to use a flexible schema: same or unqiue
