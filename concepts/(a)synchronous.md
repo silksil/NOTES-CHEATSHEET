@@ -4,15 +4,20 @@ Asynchronous = multiple at once
 
 The difference between synchronous code and asynchronous code is that synchronous code executes from the top of a code block to the bottom in the order it was written. 
 
- Unlike synchronous, asynchronous is a behavior. Say if we have two lines of code Line-1 followed by Line-2. Line-1 is a time consuming instruction. So Line-1 starts executing its instruction in the background (like a daemon process), allowing Line-2 to start executing without having to wait for Line-1 to finish.
-
-In a synchronous environment, where the request function returns only after it has done its work, the easiest way to perform this task is to make the requests one after the other. This has the drawback that the second request will be started only when the first has finished. The total time taken will be at least the sum of the two response times.
+Asynchronous — moves with the inertia of the first throw by the quarterback. The code is processed, but along the way you may want to cause it to wait or check for the completion of a task. Such as:
+- First connecting to a DB
+- Writing to the DB
+- Reading from the DB
+- Returning the result back to your program
 
 
 ### Javascript is synchronous that can act in an asynchronous way
 JavaScript is single threaded, that means only one statement is executed at a time. Say we have 2 lines of codes Line-1 followed by Line-2. Synchronous means Line-2 can not start running until the Line-1 has finished executing.
  
 When you hear folks say that JavaScript is an asynchronous language, what they mean is that you can manipulate JavaScript to behave in an asynchronous way; through callbacks, promises and async/sync functionality. 
+
+### Node.js is asynschronous
+Source: https://codeburst.io/how-node-js-single-thread-mechanism-work-understanding-event-loop-in-nodejs-230f7440b0ea
 
 ### Callbacks 
 Asynchronous callbacks allow you to invoke a callback function which sends a database request (and any other nested callbacks) off to your app, where it waits for the response from the database, freeing up the rest of your code to continue running.
