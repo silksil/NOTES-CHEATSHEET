@@ -60,11 +60,14 @@ The _rev token consists of two parts separated by a hyphen character -:
 - a number that increments with each version of the document
 - a 32-character string that is a cryptographic hash of the document’s body.
 
-The _rev token keeps track of the revisions that a document goes through in its life:
+The _rev token keeps track of the revisions that a document goes through in its life. 
 
     First revision 1–25f9b97d75a648d1fcd23f0a73d2776e
     Second revision 2–524e981baaeec9bbecf92c4c01242308
     Third revision 3-e95ca5ca4dc5407fd09b8e0e0acf25fd
+    
+
+[-]_rev id should be used if we want to update or delete a document. > if you update it can generate a new rev_id. Multiple locations may use same id but different rev. 
     
 Source: https://medium.com/ibm-watson-data-lab/cloudant-fundamentals-the-rev-token-fb0fc19a3145
 
