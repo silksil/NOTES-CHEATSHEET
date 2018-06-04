@@ -14,11 +14,11 @@ Source: https://www.kirupa.com/html5/making_http_requests_js.htm
 ### Query vs. Body vs. URL
 A REST API can have arguments in several places:
 - In the request body - There are a bunch of different ways to format the data you POST to the server:
-    application/x-www-form-urlencoded
-    multipart/form-data
-    application/json
-    application/xml
-    maybe some other
+    1. application/x-www-form-urlencoded
+    2. multipart/form-data
+    3. application/json
+    4. application/xml
+    6. maybe some other
 - In the query string - e.g. /api/resource?p1=v1&p2=v2
 - As part of the URL-path - e.g. /api/resource/v1/v2
 
