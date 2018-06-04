@@ -105,6 +105,53 @@ Response:
 ```
 
 ### Updating documents bulk
+Let’s update our bulk.json file to prepare it for a bulk update. We need to:
+- add the _id/_rev of each document
+- add the data we want to add, in this case the IMDB URL of each actor
+
+```
+{
+  "docs": [
+    {
+      "_id": "6545abac34ff08ea39aaafb5ca1765c4",
+      "_rev": "1-974e44505640c47cd31db6d4949aaff5",
+      "name": "Ferris Bueller",
+      "actor": "Matthew Broderick",
+      "dob": "1962-03-21",
+      "imdb": "http://www.imdb.com/name/nm0000111/?ref_=tt_cl_t1"
+    },
+    {
+      "_id": "6545abac34ff08ea39aaafb5ca176920",
+      "_rev": "1-9bcc8585a4cb3144fcffe8201f3c56d4",
+      "name": "Sloane Peterson",
+      "actor": "Mia Sara",
+      "dob": "1967-06-19",
+      "imdb": "http://www.imdb.com/name/nm0000214/?ref_=tt_cl_t3"
+    },
+    {
+      "_id": "6545abac34ff08ea39aaafb5ca177037",
+      "_rev": "1-8e73b2f79fcf8ef1cafa37d196808ecd",
+      "name": "Cameron Frye",
+      "actor": "Alan Ruck",
+      "dob": "1956-07-01",
+      "imdb": "http://www.imdb.com/name/nm0001688/?ref_=tt_cl_t2"
+    }
+  ]
+}
+```
+
+Updating these three documents is simply a matter of posting this JSON to POST /db/_bulk_docs.
+```
+$ curl -X POST \
+        -H 'Content-type: application/json' \
+        -d@bulk.json " \
+        $URL/newdb/_bulk_docs"
+
+```
+Response:
+```
+[{"ok":true,"id":"6545abac34ff08ea39aaafb5ca1765c4","rev":"2-3fe304e13f53719d577846b93a7fa865"},{"ok":true,"id":"6545abac34ff08ea39aaafb5ca176920","rev":"2-fa0d94cb2361136c666267746ae4b682"},{"ok":true,"id":"6545abac34ff08ea39aaafb5ca177037","rev":"2-bccbb9d28769bb4bf79116cf59c01c45"}]
+```
 
 ### Deleting documents bulk
 
