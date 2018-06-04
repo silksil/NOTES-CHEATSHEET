@@ -154,6 +154,40 @@ Response:
 ```
 
 ### Deleting documents bulk
+The process for bulk deletions is similar to bulk updates, except that we don’t need to supply a document body, only a _deleted: true flag for each _id/_rev pair:
+```
+{
+  "docs": [
+    {
+      "_id": "6545abac34ff08ea39aaafb5ca1765c4",
+      "_rev": "2-3fe304e13f53719d577846b93a7fa865",
+      "_deleted": true
+    },
+    {
+      "_id": "6545abac34ff08ea39aaafb5ca176920",
+      "_rev": "2-fa0d94cb2361136c666267746ae4b682",
+      "_deleted": true
+    },
+    {
+      "_id": "6545abac34ff08ea39aaafb5ca177037",
+      "_rev": "2-bccbb9d28769bb4bf79116cf59c01c45",
+      "_deleted": true
+    }
+  ]
+}
+```
+Post to _bulk_docs:
+```
+$ curl -X POST \
+       -H 'Content-type: application/json' \
+       -d@bulk.json \
+"$URL/newdb/_bulk_docs"
+```
+Response:
+```
+[{"ok":true,"id":"6545abac34ff08ea39aaafb5ca1765c4","rev":"3-6f40626814e930dbcb0d17ad4a82e9eb"},{"ok":true,"id":"6545abac34ff08ea39aaafb5ca176920","rev":"3-b0d3619a0af1d356b67dd15e7309e1a6"},{"ok":true,"id":"6545abac34ff08ea39aaafb5ca177037","rev":"3-1f4738f25cf3da86f1646f69740d88fb"}]
+```
+
 
 
 
