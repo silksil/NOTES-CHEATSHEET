@@ -5,6 +5,7 @@
 - It can contain: numbers, string, nested objects or boolean data. 
 - Fields starting with the underscore character _ are reserved for Cloudant-specific purposes. 
 - You access Cloudant via HTTP/S. Typically you perform a GET request, but it could also be a PUT, POST, DELETE and COPY request.
+- Views are the primary tool used for querying and reporting on CouchDB databases. They are defined in JavaScript (although there are other query servers available). Views can be created in the CouchDB/Cloudant database.
 
 ## The Document
 ### Multiple object types in the same database
