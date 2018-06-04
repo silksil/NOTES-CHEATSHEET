@@ -72,7 +72,7 @@ bulk.json = {
 $ curl -X POST \
        -H 'Content-type: application/json' \
        -d@bulk.json \
-"$URL/newdb/_bulk_docs"
+       "$URL/newdb/_bulk_docs"
 ```
 Response: 
 ``` 
@@ -181,7 +181,7 @@ Post to _bulk_docs:
 $ curl -X POST \
        -H 'Content-type: application/json' \
        -d@bulk.json \
-"$URL/newdb/_bulk_docs"
+        "$URL/newdb/_bulk_docs"
 ```
 Response:
 ```
