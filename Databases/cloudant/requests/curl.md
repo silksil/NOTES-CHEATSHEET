@@ -9,7 +9,7 @@ $ curl -X POST \
     -d '{"x":1}' \
     "$URL/newdb"
 ```
-Returns:
+Response:
 ```
 {"ok":true,"id":"2ded8ec775b6728227143ac575613060","rev":"1-0785e9eb543380151003dc452c3a001a"}
 ```
@@ -19,7 +19,7 @@ We can read the document back again with a GET request:
 ```
 $ curl "$URL/newdb/2ded8ec775b6728227143ac575613060"
 ```
-Returns:
+Response:
 ```
 {"_id":"2ded8ec775b6728227143ac575613060","_rev":"1-0785e9eb543380151003dc452c3a001a","x":1}
 ```
@@ -32,7 +32,7 @@ $ curl -X POST \
        -d '{"_id":"2ded8ec775b6728227143ac575613060","_rev":"1-0785e9eb543380151003dc452c3a001a","x":2}' \
       "$URL/newdb"
 ```
-Returns:
+Response:
 ```
 {"ok":true,"id":"2ded8ec775b6728227143ac575613060","rev":"2-8c49edca19d786e747fb5bea32c4cb91"}
 ```
@@ -45,7 +45,7 @@ The act of deleting a document causes a final revision to the document to be add
 $ curl -X DELETE \
        "$URL/newdb/2ded8ec775b6728227143ac575613060?rev=2-8c49edca19d786e747fb5bea32c4cb91"
 ```
-Respondse: 
+Response: 
 ```
 {"ok":true,"id":"2ded8ec775b6728227143ac575613060","rev":"3-fb567087695adb203ba116e130794a84"}
 ```
