@@ -23,6 +23,16 @@ $ curl -X POST \
 ```
 
 
+### Deleting a document
+he act of deleting a document causes a final revision to the document to be added with a `_deleted: true` flag added. Cloudant needs to know the ID of the document and the revision token that is to be deleted.
+
+```
+$ curl -X DELETE \
+       "$URL/newdb/2ded8ec775b6728227143ac575613060?rev=2-8c49edca19d786e747fb5bea32c4cb91"
+```
+
+
+
 
 
 Source: https://medium.com/ibm-watson-data-lab/cloudant-fundamentals-using-the-api-with-curl-4c4a4f278104
