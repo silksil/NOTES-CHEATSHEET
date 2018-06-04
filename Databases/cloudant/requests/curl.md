@@ -1,7 +1,7 @@
-## General
+# General
 The -X parameter defines the HTTP method. If omitted it is assumed to be GET, but PUT, POST and DELETE (and others) are allowed.
 
-## One Document
+# One Document
 ### Creating a document
 We have to specify the data is JSON by specifying a “Content-type” header:
 ```
@@ -53,7 +53,7 @@ Response:
 
 Source: https://medium.com/ibm-watson-data-lab/cloudant-fundamentals-using-the-api-with-curl-4c4a4f278104
 
-## Bulk
+# Bulk
 There are only two API calls you need to know about:
 - GET or POST /db/_all_docs - for reads
 - POST /db/_bulk_docs - for creates, updates and deletions
