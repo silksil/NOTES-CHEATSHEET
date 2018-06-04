@@ -37,7 +37,7 @@ Source: https://medium.com/ibm-watson-data-lab/cloudant-fundamentals-the-documen
 ### Write-only document patterns
 Cloudant allows documents to be updated, but not on a field-by-field basis. Your app would have to fetch the whole document and write the whole, modified document back to the database.
 
-## The _Id
+## The _id
 Every Cloudant document has an _id - if you don't supply one when you write a new document then Cloudant will generate one for you. Letting Cloudant make an _id for you is the easiest solution, but there are some cases where you might want to keep control of the _id field for yourself.  Cloudant can retrieve a document given its _idvery quickly by consulting the index - without having to page through all the documents in the collection to find the right one.
 
 If we know something unique about our user, such as their email address, we could modify the document to look like this:
