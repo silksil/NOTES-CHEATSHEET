@@ -1,5 +1,6 @@
 ### Adding data
-```javascript
+
+```
 $ curl -X POST \
     -H "Content-type: application/json" \
     -d '{"x":1}' \
