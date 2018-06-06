@@ -24,9 +24,11 @@ https.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', (res) => {
 const request = require('request');
  
 request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', { json: true }, (err, res, body) => {
-  if (err) { return console.log(err); }
+  if (err) { 
+  console.log(err) 
+  } else {
   console.log(body.url);
-  console.log(body.explanation);
+  }
 });
 ```
 
@@ -38,8 +40,8 @@ axios.all([
   axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2017-08-03'),
   axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2017-08-02')
 ]).then(axios.spread((response1, response2) => {
-  console.log(response1.data.url);
-  console.log(response2.data.url);
+  console.log(response1.data);
+  console.log(response2.data);
 })).catch(error => {
   console.log(error);
 });
