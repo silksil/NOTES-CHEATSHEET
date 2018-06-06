@@ -71,5 +71,21 @@ The _rev should be used if we want to update or delete a document. The _rev toke
 Source: https://medium.com/ibm-watson-data-lab/cloudant-fundamentals-the-rev-token-fb0fc19a3145
 
 
+## Views
+A view can selectively filter documents. It can speed up searching for content. It can be used to 'pre-process' the results before they are returned to the client. Views are useful for many purposes:
+- Filtering the documents in your database to find those relevant to a particular process.
+- Extracting data from your documents and presenting it in a specific order.
+- Building efficient indexes to find documents by any value or structure that resides in them.
+- Use these indexes to represent relationships among documents.
+- Finally, with views you can make all sorts of calculations on the data in your documents. For example, if documents represent your company’s financial transactions, a view can answer the question of what the spending was in the last week, month, or year.
+
+You provide DB with view functions as strings stored inside the views field of a design document. You don’t run it yourself. Instead, when you query your view, the DB takes the source code and runs it for you on every document in the database your view was defined in. You query your view to retrieve the view result. 
+
+If you read carefully over the last few paragraphs, one part stands out: “When you query your view, Cloudant takes the source code and runs it for you on every document in the database.” If you have a lot of documents, that takes quite a bit of time and you might wonder if it is not horribly inefficient to do this. Yes, it would be, but CouchDB is designed to avoid any extra costs: it only runs through all documents once, when you first query your view. If a document is changed, the map function is only run once, to recompute the keys and values for that single document. 
+
+Source: http://guide.couchdb.org/draft/views.html
+
+
+
 
 
