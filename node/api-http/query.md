@@ -10,7 +10,7 @@ app.get('/api/test', controller.handleQuery)
 
 ### Controller
 ``` javascript
-module.exports.handleClientSubscriptions = function(req, res) {
+module.exports.handleQuery = function(req, res) {
   let name = req.query.name;
   let id = req.query.id;
   let key = req.query.key;
