@@ -10,8 +10,10 @@ app.get('/api/test', controller.handleQuery)
 
 ### Controller
 ``` javascript
-let name = request.query.name;
-let id = request.query.id;
-let key = request.query.key;
+module.exports.handleClientSubscriptions = function(req, res) {
+  let name = req.query.name;
+  let id = req.query.id;
+  let key = req.query.key;
+}
 ```
 
