@@ -27,7 +27,7 @@ request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', { json: true }, 
   if (err) { 
   console.log(err) 
   } else {
-  console.log(body.url);
+  console.log(body.data);
   }
 });
 ```
@@ -42,7 +42,7 @@ axios.all([
 ]).then(axios.spread((response1, response2) => {
   console.log(response1.data);
   console.log(response2.data);
-})).catch(error => {
-  console.log(error);
+})).catch(err => {
+  console.log(err);
 });
  ```
