@@ -5,7 +5,7 @@ url = "localhost:8080/api/test?name=" + name + "&id=" + id + "&key=" + key;
 
 ### Route
 ```javascript
-app.get('/api/test', jsonParser, controller.handleQuery)
+app.get('/api/test', controller.handleQuery)
 ```
 
 ### Controller
