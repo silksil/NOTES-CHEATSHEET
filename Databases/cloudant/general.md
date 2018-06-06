@@ -83,9 +83,7 @@ You provide DB with view functions as strings stored inside the views field of a
 
 If you read carefully over the last few paragraphs, one part stands out: “When you query your view, Cloudant takes the source code and runs it for you on every document in the database.” If you have a lot of documents, that takes quite a bit of time and you might wonder if it is not horribly inefficient to do this. Yes, it would be, but CouchDB is designed to avoid any extra costs: it only runs through all documents once, when you first query your view. If a document is changed, the map function is only run once, to recompute the keys and values for that single document. 
 
+Using views, we can replace all of the queries we were performing on these tables, and the calculations would be performed once, and then stored. Accessing that data would be as simple as issuing a single HTTP request, which would efficiently pull the data from the view’s B-Tree. In other words, it would be fast, and very efficient.
+
 Source: http://guide.couchdb.org/draft/views.html
-
-
-
-
-
+Source: http://johnpwood.net/2009/07/10/couchdb-views-the-advantages/
