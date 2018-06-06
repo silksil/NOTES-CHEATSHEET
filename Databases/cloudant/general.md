@@ -85,5 +85,4 @@ If you read carefully over the last few paragraphs, one part stands out: “When
 
 Using views, we can replace all of the queries we were performing on these tables, and the calculations would be performed once, and then stored. Accessing that data would be as simple as issuing a single HTTP request, which would efficiently pull the data from the view’s B-Tree. In other words, it would be fast, and very efficient.
 
-Source: http://guide.couchdb.org/draft/views.html
-Source: http://johnpwood.net/2009/07/10/couchdb-views-the-advantages/
+Sources: 1.http://guide.couchdb.org/draft/views.html 2. Source: http://johnpwood.net/2009/07/10/couchdb-views-the-advantages/
