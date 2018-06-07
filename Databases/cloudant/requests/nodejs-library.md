@@ -5,8 +5,8 @@
 ```
 ```javascript
 function insertDoc(request, response) {
-    db.insert(request.body, function(err) {
-        if(!err){
+    db.insert(request.body, function(error) {
+        if(!error){
         } else {
         }
     });
