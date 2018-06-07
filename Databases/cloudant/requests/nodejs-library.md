@@ -4,7 +4,7 @@
 ``` request = {"x":1}
 ```
 ```javascript
-exports.insertDoc = function(request, response) {
+function insertDoc(request, response) {
     db.insert(request.body, function(err) {
         if(!err){
         } else {
