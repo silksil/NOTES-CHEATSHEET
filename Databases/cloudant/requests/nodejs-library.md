@@ -3,7 +3,7 @@
 ### Creating a document
 ``` request = {"x":1}
 ```
-```
+```javascript
 exports.insertDoc = function(request, response) {
     db.insert(request.boy, function(err) {
         if(!err){
