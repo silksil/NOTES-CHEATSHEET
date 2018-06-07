@@ -5,7 +5,7 @@
 ```
 ```javascript
 exports.insertDoc = function(request, response) {
-    db.insert(request.boy, function(err) {
+    db.insert(request.body, function(err) {
         if(!err){
         } else {
         }
