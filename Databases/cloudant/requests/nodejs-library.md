@@ -9,7 +9,7 @@ function insertDoc(request, response) {
         if(!error){
         } else {
         }
-    });
+    })
 }
 ```
 Response:
