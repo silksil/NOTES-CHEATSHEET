@@ -19,7 +19,7 @@ Response:
     
 ### Reading a document
 ```javascript
-function getDocument(request, response) { 
+function getDoc(request, response) { 
   let scope = {'selector': {'_id': request.body.id}};
   db.find(scope , function (error, data) {
     if(error) {
