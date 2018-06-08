@@ -19,20 +19,13 @@ Response:
     
 ### Reading a document
 ```javascript
-function getDocument(request, response) {
-  db.find({
-    'selector': {
-      '_id': {request.body.id}
-    },
-    'fields': ['_id', 'name',] //optional to specify which data you want to get back
-  }, function (error, data) {
+function getDocument(request, response) { 
+  let scope = {'selector': {'_id': request.body.id}};
+  db.find(scope , function (error, data) {
     if(!err) {
-    res.status(200).send(JSON.stringify(data));
-  })
+    } else {  
+  }
 })
-
-}
-
 ```
 Response:
 ```
