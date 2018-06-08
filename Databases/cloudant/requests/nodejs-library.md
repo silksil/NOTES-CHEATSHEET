@@ -24,8 +24,9 @@ function getDocument(request, response) {
   db.find(scope , function (error, data) {
     if(error) {
     } else {  
-  }
-})
+    }
+  })
+}
 ```
 Response:
 ```
