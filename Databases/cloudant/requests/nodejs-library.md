@@ -5,11 +5,11 @@
 ```
 ```javascript
 function insertDoc(request, response) {
-    db.insert(request.body, function(error, result) {
-        if(error){
-        } else {
-        }
-    })
+  db.insert(request.body, function(error, result) {
+      if (error){
+      } else {
+      }
+  })
 }
 ```
 Response:
@@ -22,7 +22,7 @@ Response:
 function getDocument(request, response) { 
   let scope = {'selector': {'_id': request.body.id}};
   db.find(scope , function (error, data) {
-    if(!err) {
+    if(error) {
     } else {  
   }
 })
