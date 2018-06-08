@@ -30,6 +30,7 @@ function getDoc(request, response) {
 ```
 Response:
 ```
+{"_id":"2ded8ec775b6728227143ac575613060","_rev":"1-0785e9eb543380151003dc452c3a001a","x":1}
 ```
 
 ### Updating a document
