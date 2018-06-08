@@ -1,12 +1,12 @@
 
 # One Document
 ### Creating a document
-``` request = {"x":1}
+``` request = {"name": "Sil"}
 ```
 ```javascript
 function insertDoc(request, response) {
-    db.insert(request.body, function(error) {
-        if(!error){
+    db.insert(request.body, function(error, result) {
+        if(error){
         } else {
         }
     })
@@ -18,8 +18,21 @@ Response:
 ```
     
 ### Reading a document
-```
-function here
+```javascript
+function getDocument(request, response) {
+  db.find({
+    'selector': {
+      '_id': {request.body.id}
+    },
+    'fields': ['_id', 'name',] //optional to specify which data you want to get back
+  }, function (error, data) {
+    if(!err) {
+    res.status(200).send(JSON.stringify(data));
+  })
+})
+
+}
+
 ```
 Response:
 ```
