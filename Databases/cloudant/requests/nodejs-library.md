@@ -6,7 +6,7 @@
 ```javascript
 function insertDoc(request, response) {
   db.insert(request.body, function(error, result) {
-      if (error){
+      if(error) {
       } else {
       }
   })
