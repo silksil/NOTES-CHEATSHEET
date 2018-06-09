@@ -34,6 +34,30 @@ const name = ((user || {}).personalInfo || {}).name; // option2 - You basically 
 //source: https://hackernoon.com/accessing-nested-objects-in-javascript-f02f1bd6387f
 
 ```
+### Take out the values
+```javascript
+let personValues = [];
+let person = {name: 'Sil', age: 10, favouriteBook: 'Siddhartha'}
+
+for (let key in person) {
+  personValues.push(person[key]);
+}
+
+console.log(personValues); //expected output: [ 'Sil', 10, 'Siddhartha' ]
+```
+
+### Take out the keys
+```javascript
+let personKeys = [];
+let person = {name: 'Sil', age: 10, favouriteBook: 'Siddhartha'}
+
+for (let key in person) {
+  personKeys.push(key);
+}
+
+console.log(personKeys); //expected output: [ 'name', 'age', 'favouriteBook' ]
+```
+
 
 
 
