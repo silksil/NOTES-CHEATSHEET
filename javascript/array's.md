@@ -91,7 +91,7 @@ expected output:
 /*
 ```
 
-### Use Set() to get unique values
+### Use Set() to get unique values out of array
 ```javascript
 const values = ['a', 'a', 'b', 'b', 'c', 'd'];
 
