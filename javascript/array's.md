@@ -44,7 +44,7 @@ let nameBooks = books.map((book) => book.name + ' is written by ' + book.author)
 const list = [ 'h', 'i'];
 
 const printItems = (arr) =>
-  list.map((currElement, index) => {
+  arr.map((currElement, index) => {
    return index + ". " + currElement;
   })
 
