@@ -19,7 +19,7 @@ let englishBooks = books.filter((book) => {
 **/
 ```
 
-### Map1
+### Map
 `Map()` includes all items, but transform every individual item
 
 #### Example 1
