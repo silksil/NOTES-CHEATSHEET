@@ -106,4 +106,3 @@ function addAll(arr) {
 console.log(addAll([[1, 2], [3, 4], [5, 6, 7]])); //expected output: 28
 ```
 
-
