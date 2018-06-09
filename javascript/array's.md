@@ -19,7 +19,7 @@ let englishBooks = books.filter((book) => {
 **/
 ```
 
-### Map
+### Map1
 `Map()` includes all items, but transform every individual item
 ```javascript
 let books = [
@@ -37,6 +37,20 @@ let nameBooks = books.map((book) => book.name + ' is written by ' + book.author)
 **/
 
 ```
+
+
+### Map2
+```
+const list = [ 'h', 'i'];
+
+const printItems = (arr) =>
+  list.map((currElement, index) => {
+   return index + ". " + currElement;
+  }).join('\n');
+
+console.log(printItems(list))
+```
+
 ### Splice
 `splice()` changes the contents of an array by removing existing elements and/or adding new elements.
 ```javascript
