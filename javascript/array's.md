@@ -91,6 +91,17 @@ expected output:
 /*
 ```
 
+### Use Set() to get unique values
+```javascript
+const values = ['a', 'a', 'b', 'b', 'c', 'd'];
+
+function storeUniqueValues(arr) {
+    return Array.from(new Set(arr));
+}
+
+console.log(storeUniqueValues(values));
+```
+
 ### Loop through nested arrays
 ```javascript
 function addAll(arr) {
