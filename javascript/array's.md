@@ -40,15 +40,15 @@ let nameBooks = books.map((book) => book.name + ' is written by ' + book.author)
 
 
 ### Map2
-```
+```javascript
 const list = [ 'h', 'i'];
 
 const printItems = (arr) =>
   list.map((currElement, index) => {
    return index + ". " + currElement;
-  }).join('\n');
+  })
 
-console.log(printItems(list))
+console.log(printItems(list)) //expected output: [ '0. h', '1. i' ]
 ```
 
 ### Splice
