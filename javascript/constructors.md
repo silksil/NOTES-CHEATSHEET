@@ -12,7 +12,7 @@ console.log(myCar);
 ```
 
 ### Test whether a instance is a part of a certain class
-```
+```javascript
 function Car(make, model, year) {
   this.make = make;
   this.model = model;
