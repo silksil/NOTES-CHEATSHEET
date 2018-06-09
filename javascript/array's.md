@@ -76,7 +76,7 @@ const sum = euros.reduce((total, amount) => total + amount);
 sum // 118.11
 ```
 ### Join()
-Join the elements of an array into a string:
+`join()` the elements of an array into a string:
 ```javascript
 const printItems = (arr) =>
   arr.map((currElement, index) => {
