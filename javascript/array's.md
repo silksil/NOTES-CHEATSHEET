@@ -62,7 +62,7 @@ const sum = euros.reduce((total, amount) => total + amount);
 sum // 118.11
 ```
 
-## Loop through nested arrays
+### Loop through nested arrays
 ```javascript
 function addAll(arr) {
     let count = 0;
