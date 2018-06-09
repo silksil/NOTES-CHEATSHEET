@@ -19,6 +19,21 @@ The concat() method is used to join two or more strings.
 .get('/search/'.concat('product'))  === .get(/search/product) 
 ```
 
+### join()
+```javascript
+const printItems = (arr) =>
+  arr.map((currElement, index) => {
+   return index + ". " + currElement;
+ }).join('\n')
+
+console.log(printItems(list))
+//expected output
+/*
+0. h
+1. i
+/*
+```
+
 
 
 
