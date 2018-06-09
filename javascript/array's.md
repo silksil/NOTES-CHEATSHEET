@@ -21,6 +21,8 @@ let englishBooks = books.filter((book) => {
 
 ### Map1
 `Map()` includes all items, but transform every individual item
+
+#### example 1
 ```javascript
 let books = [
   {name: 'The Alchemist', author: 'Paulo Caulho', language: 'Portuguese'},
@@ -37,9 +39,7 @@ let nameBooks = books.map((book) => book.name + ' is written by ' + book.author)
 **/
 
 ```
-
-
-### Map2
+#### example 1
 ```javascript
 const list = [ 'h', 'i'];
 
