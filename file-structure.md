@@ -14,7 +14,6 @@
 |-- shared
 │   |-- encryptString.js
 │   |-- formatDate.js
-│   |-- handleError.js
 |-- middleware
 │   |-- authentication.js
 |-- services
