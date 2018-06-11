@@ -23,6 +23,7 @@
 |-- tests
 │   |-- controllers.js
 │   |-- models.js
+│   |-- shared.js
 │   |-- middleware.js
 │   |-- services.js
 |-- routing
