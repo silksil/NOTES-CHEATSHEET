@@ -19,7 +19,7 @@
 │   |-- authentication.js
 |-- services
 │   |-- nodemailer.js
-│   |-- facebook_login.js
+│   |-- facebookLogin.js
 |-- routing
 |-- tests
 |-- server.js
