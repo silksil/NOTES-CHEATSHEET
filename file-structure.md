@@ -22,7 +22,6 @@
 │   |-- facebookLogin.js
 |-- tests
 │   |-- controllers.js
-│   |-- helpers.js
 │   |-- models.js
 │   |-- middleware.js
 │   |-- services.js
