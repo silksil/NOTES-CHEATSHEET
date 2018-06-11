@@ -2,19 +2,19 @@
 ```
 |-- config
 |-- controllers
-│   |-- application_controller.js
-│   |-- books_controller.js
+│   |-- applicationController.js
+│   |-- booksController.js
 |-- helpers
-│   |-- application_helper.js
+│   |-- applicationHelper.js
 |-- models
 │   |-- author.json
 │   |-- author.js
 │   |-- book.json
 │   |-- book.js
 |-- shared
-│   |-- encrypt.js
-│   |-- formatted_date.js
-│   |-- error_handler.js
+│   |-- encryptString.js
+│   |-- formatDate.js
+│   |-- handleError.js
 |-- middleware
 │   |-- authentication.js
 |-- services
@@ -25,5 +25,6 @@
 |-- server.js
 |-- package.json
 |-- node_modules
+|-- README.md
 |-- .gitignore
 ```
