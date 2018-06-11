@@ -17,7 +17,7 @@ Server-side
 |-- middleware
 │   |-- error_handler.js
 │   |-- authentication
-|-- middleware/services
+|-- services
 │   |-- nodemailer.js
 │   |-- facebook_login.js
 |-- routing
