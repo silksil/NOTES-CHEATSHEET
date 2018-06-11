@@ -20,8 +20,8 @@
 |-- services
 │   |-- googleLogin.js
 │   |-- facebookLogin.js
-|-- routing
 |-- tests
+|-- routing
 |-- server.js
 |-- package.json
 |-- node_modules
