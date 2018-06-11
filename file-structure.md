@@ -2,18 +2,18 @@ Server-side
 ```
 |-- config
 |-- controllers
-│   |-- application_controller.rb
-│   |-- books_controller.rb
+│   |-- application_controller.js
+│   |-- books_controller.js
 |-- helpers
-│   |-- application_helper.rb
-│   |-- books_helper.rb
+│   |-- application_helper.js
+│   |-- books_helper.js
 |-- models
-│   |-- author.rb
-│   |-- book.rb
+│   |-- author.js
+│   |-- book.js
 |-- shared
-│   |-- formattedDate
+│   |-- formattedDate.js
 |-- middleware/services
-│   |-- nodemailer
+│   |-- nodemailer.js
 |-- routing
 |-- tests
 |-- app.js
