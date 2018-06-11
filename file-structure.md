@@ -26,10 +26,7 @@
 │   |-- shared.js
 │   |-- middleware.js
 │   |-- services.js
-|-- routing
-│   |-- common.js
-│   |-- buyers.js
-│   |-- sellers.js
+|-- routing.js
 |-- server.js
 |-- package.json
 |-- node_modules
