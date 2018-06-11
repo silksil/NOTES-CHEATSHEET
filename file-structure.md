@@ -4,8 +4,8 @@
 |-- controllers
 │   |-- applicationController.js
 │   |-- booksController.js
-|-- helpers
-│   |-- applicationHelper.js
+│   |-- helpers
+│   |   |-- applicationHelper.js
 |-- models
 │   |-- author.json
 │   |-- author.js
@@ -21,6 +21,11 @@
 │   |-- googleLogin.js
 │   |-- facebookLogin.js
 |-- tests
+│   |-- controllers.js
+│   |-- helpers.js
+│   |-- models.js
+│   |-- middleware.js
+│   |-- services.js
 |-- routing
 |-- server.js
 |-- package.json
