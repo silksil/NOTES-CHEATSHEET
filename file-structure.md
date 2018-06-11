@@ -1,7 +1,5 @@
-There are a lot of possible ways to organize a Node.js projecs.
-
+Server-side
 ```
-Server: 
 |-- config
 |-- controllers
 │   |-- application_controller.rb
