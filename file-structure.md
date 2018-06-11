@@ -6,23 +6,23 @@ Server-side
 │   |-- books_controller.js
 |-- helpers
 │   |-- application_helper.js
-│   |-- books_helper.js
 |-- models
 │   |-- author.json
 │   |-- author.js
 │   |-- book.json
 │   |-- book.js
 |-- shared
+│   |-- encrypt.js
 │   |-- formatted_date.js
-|-- middleware
 │   |-- error_handler.js
-│   |-- authentication
+|-- middleware
+│   |-- authentication.js
 |-- services
 │   |-- nodemailer.js
 │   |-- facebook_login.js
 |-- routing
 |-- tests
-|-- app.js
+|-- server.js
 |-- package.json
 |-- node_modules
 |-- .gitignore
