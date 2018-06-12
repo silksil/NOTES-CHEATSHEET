@@ -6,10 +6,11 @@ General helpers for handling auth in Express aps
 #### 2. Passport Strategy
 Helpers for authentication with one very specific method (email/password, Google, Facebook etc.)
 
-Installation
-Install passport `npm install --save passport`
+### Installation
+#### Install passport 
+`npm install --save passport`
 
-Install strategy
+#### Install strategy
 1. Google: `npm install --save passport-google-oauth20`
 
 
