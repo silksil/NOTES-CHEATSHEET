@@ -9,7 +9,7 @@ Mongo stores record in different collections. Every collection can have many dif
 
 ### Mongoose
 Mongoose is an Object Document Mapper (ODM). This means that Mongoose allows you to define objects with a strongly-typed schema that is mapped to a MongoDB document. Mongoose provides functionality around creating and working with schemas. 
-![mongoose-functionality](images/mongoDB-storeinfo.png?raw=true "Mongoose functionality") </br>
+![mongoose-functionality](images/mongoose.png?raw=true "Mongoose functionality") </br>
 
 
 
