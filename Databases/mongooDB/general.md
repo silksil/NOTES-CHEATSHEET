@@ -1,7 +1,7 @@
 ### MongoDB-Mongoose-Express-Node.js
 
 ![mongoDB-diagram](images/mongoDB.png?raw=true "MongoDB Express/Node.js Diagram") </br>
-
+The diagram above shows the interaction between the different stacks. 
 
 ### Storing info
 ![mongoDB-storeinfo](images/mongoDB-storeinfo.png?raw=true "MongoDB store info diagram") </br>
