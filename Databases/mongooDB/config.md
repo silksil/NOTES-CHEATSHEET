@@ -2,8 +2,9 @@
 ### Mongoose 
 `npm install --save mongoose`
 
-### Condfig
+### Config
 ```
 const mongoose = require('mongoose')
-mongoose.connect('instanceMongoDB');
+const keys = require('./config/keys')
+mongoose.connect(keys.mongoURI);
 ````
