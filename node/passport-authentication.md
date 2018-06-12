@@ -1,4 +1,5 @@
-### Passport includes 2 library components:
+### Introduction
+Passport includes 2 library components:
 #### 1. Passport 
 General helpers for handling auth in Express aps
 
