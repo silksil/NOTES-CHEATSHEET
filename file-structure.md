@@ -18,8 +18,6 @@
 │   |-- authentication.js
 |-- services
 │   |-- nodemailer.js
-│   |-- googleLogin.js
-│   |-- facebookLogin.js
 |-- tests
 │   |-- controllers.js
 │   |-- models.js
