@@ -1,5 +1,5 @@
 ### image here
 
-![Alt text](images/mongoose-mongoDB.png?raw=true "Title")
+![mongoDB-diagram](images/mongoDB.png?raw=true "MongoDB Express/Node.js Diagram")
 
 ### Mongoose
