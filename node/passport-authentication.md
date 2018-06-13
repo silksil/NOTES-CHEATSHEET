@@ -7,8 +7,8 @@ General helpers for handling auth in Express apps.
 Helpers for authentication with one very specific method (e.g Email, Google, Facebook, Linkedin)
 
 ## General Info
-https://medium.com/@bitshadow/how-basic-http-authentication-and-session-works-d29af9caec31
-https://www.quora.com/What-is-the-difference-advantage-between-of-using-cookie-session-and-token-based-authentication
+- https://medium.com/@bitshadow/how-basic-http-authentication-and-session-works-d29af9caec31
+- https://www.quora.com/What-is-the-difference-advantage-between-of-using-cookie-session-and-token-based-authentication
 
 ## Example flow
 Below you can find an example using Google OAuth and cookies. 
