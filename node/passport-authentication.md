@@ -1,10 +1,10 @@
 ## Introduction
 Passport is Express-compatible authentication middleware for Node.js. Passport includes 2 library components:
 #### 1. Passport 
-General helpers for handling auth in Express aps
+General helpers for handling auth in Express apps.
 
 #### 2. Passport Strategy
-Helpers for authentication with one very specific method (email/password, Google, Facebook etc.)
+Helpers for authentication with one very specific method (e.g Email, Google, Facebook, Linkedin)
 
 ## Example flow
 Below you can find an example using Google oAuth. 
@@ -16,10 +16,6 @@ In the example below, passport is used to make connection to an strategy, get an
 Users info is used to create a cookie. 
 
 ![Passport flow](../images/googleOauth-passport-cookies-flow-1.png?raw=true "Passport flow") </br>
-
-
-
-
 
 
 ## Installation
