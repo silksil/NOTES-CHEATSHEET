@@ -9,6 +9,8 @@ Helpers for authentication with one very specific method (email/password, Google
 ## Example flow
 Below you can find an example using Google oAuth. 
 
+In the example below, passport is used to make connection to an strategy, get an profile, create new user/or identify existing user and create a cookie. 
+
 ![Passport flow](../images/googleOauth-passport-cookies-flow.png?raw=true "Passport flow") </br>
 
 
