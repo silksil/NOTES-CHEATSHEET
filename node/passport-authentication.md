@@ -22,12 +22,13 @@ Users info is used to create a cookie.
 
 
 
-### Installation
+## Installation
 #### Install passport 
 `npm install --save passport`
 
 #### Install strategy
-1. Google: `npm install --save passport-google-oauth20`
+##### Google: 
+`npm install --save passport-google-oauth20`
 
 Go to https://console.developers.google.com and: `create project > enable API > search for Google+ API > should state OAuth 2.0 somewhere > enable > create Credentials > OAuth client id > configure consent screen > fill in data > select application type >> fill in data > create >` Get back:
 1. clientId = public key
