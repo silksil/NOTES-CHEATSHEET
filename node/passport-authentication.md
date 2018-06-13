@@ -13,6 +13,7 @@ In the example below, passport is used to make connection to an strategy, get an
 
 ![Passport flow](../images/googleOauth-passport-cookies-flow.png?raw=true "Passport flow") </br>
 
+Users info is used to create a cookie. 
 
 ![Passport flow](../images/googleOauth-passport-cookies-flow-1.png?raw=true "Passport flow") </br>
 
