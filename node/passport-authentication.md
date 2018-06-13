@@ -9,6 +9,9 @@ Helpers for authentication with one very specific method (email/password, Google
 ## Example flow
 Below you can find an example using Google oAuth. 
 
+![Passport flow](../images/googleOauth-passport-cookies-flow.png?raw=true "Passport flow") </br>
+![Passport flow](../images/googleOauth-passport-cookies-flow-1.png?raw=true "Passport flow") </br>
+
 
 
 
