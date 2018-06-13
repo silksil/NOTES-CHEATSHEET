@@ -8,7 +8,7 @@ Helpers for authentication with one very specific method (e.g Email, Google, Fac
 
 ## General Info
 #### Difference cookies, sessions, tokens
-See: https://www.quora.com/What-is-the-difference-advantage-between-of-using-cookie-session-and-token-based-authentication
+https://www.quora.com/What-is-the-difference-advantage-between-of-using-cookie-session-and-token-based-authentication
 
 ## Example flow
 Below you can find an example using Google OAuth and cookies. 
