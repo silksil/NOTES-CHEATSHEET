@@ -20,7 +20,7 @@ Users info is used to create a cookie. If we request info, the same cookie is de
 
 Session to user flow: 
 
-![Session to user flow](../images/session-to-user-flow.png?raw=true "Session to user flow") </br>
+![Session to user flow](../images/session-to-user.png?raw=true "Session to user flow") </br>
 
 
 
