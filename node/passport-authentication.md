@@ -17,10 +17,6 @@ If we use the cookie-session library we say that the cookie is the session. The 
 ##### express-session
 Express session stores a reference to a session. It will store inside the cookie an id to a session. Express session takes the id, then looks up all relevant session data, or 'session 'store' in a remote db. This will then retrieve us the user info. 
 
-##### Reading material: 
-- https://medium.com/@bitshadow/how-basic-http-authentication-and-session-works-d29af9caec31
-- https://www.quora.com/What-is-the-difference-advantage-between-of-using-cookie-session-and-token-based-authentication
-
 ## Example flow
 Below you can find an example using Google OAuth and the cookie-sessions library. 
 
@@ -53,6 +49,10 @@ const cookieSession = require('cookie-session')
 Go to https://console.developers.google.com and: `create project > enable API > search for Google+ API > should state OAuth 2.0 somewhere > enable > create Credentials > OAuth client id > configure consent screen > fill in data > select application type >> fill in data > create >` Get back:
 1. clientId = public key
 2. clientSecret = private key
+
+##### Reading material: 
+- https://medium.com/@bitshadow/how-basic-http-authentication-and-session-works-d29af9caec31
+- https://www.quora.com/What-is-the-difference-advantage-between-of-using-cookie-session-and-token-based-authentication
 
 
 
