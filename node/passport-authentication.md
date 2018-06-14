@@ -13,16 +13,15 @@ Helpers for authentication with one very specific method (e.g Email, Google, Fac
 ## Example flow
 Below you can find an example using Google OAuth and cookies. 
 
-In the example below, passport is used to make connection to an strategy, get an profile, create new user/or identify existing user and create a cookie to identify a user. 
-
+##### Connecting with Google OAuth
+In the example below, passport is used to make connection to an strategy, get an profile, create new user/or identify existing user and the creation of an cookie. 
 ![Passport flow](../images/googleOauth-passport-cookies-flow.png?raw=true "Passport flow") </br>
 
-Users info is used to create a cookie. If we request info, the same cookie is deserialized to identify the user. 
-
+##### Serialize and Deserialize
 ![Passport flow](../images/googleOauth-passport-cookies-flow-1.png?raw=true "Passport flow") </br>
 
-Session to user flow: 
-
+##### The flow when a request comes in 
+Once a he cookie-session middleware (#1) extract cookie data, passport than extract id from the cookie data and than queries the user by id. 
 ![Session to user flow](../images/session-to-user.png?raw=true "Session to user flow") </br>
 
 
