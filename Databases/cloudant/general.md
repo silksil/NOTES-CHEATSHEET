@@ -70,24 +70,6 @@ The _rev should be used if we want to update or delete a document. The _rev toke
     
 Source: https://medium.com/ibm-watson-data-lab/cloudant-fundamentals-the-rev-token-fb0fc19a3145
 
-
-## Views
-A view can selectively filter documents. It can speed up searching for content. It can be used to 'pre-process' the results before they are returned to the client. Views are useful for many purposes:
-- Filtering the documents in your database to find those relevant to a particular process.
-- Extracting data from your documents and presenting it in a specific order.
-- Building efficient indexes to find documents by any value or structure that resides in them.
-- Use these indexes to represent relationships among documents.
-- Finally, with views you can make all sorts of calculations on the data in your documents. For example, if documents represent your company’s financial transactions, a view can answer the question of what the spending was in the last week, month, or year.
-
-You provide DB with view functions as strings stored inside the views field of a design document. You don’t run it yourself. Instead, when you query your view, the DB takes the source code and runs it for you on every document in the database your view was defined in. You query your view to retrieve the view result. 
-
-If you read carefully over the last few paragraphs, one part stands out: “When you query your view, Cloudant takes the source code and runs it for you on every document in the database.” If you have a lot of documents, that takes quite a bit of time and you might wonder if it is not horribly inefficient to do this. Yes, it would be, but CouchDB is designed to avoid any extra costs: it only runs through all documents once, when you first query your view. If a document is changed, the map function is only run once, to recompute the keys and values for that single document. 
-
-Using views, we can replace all of the queries we were performing on these tables, and the calculations would be performed once, and then stored. Accessing that data would be as simple as issuing a single HTTP request, which would efficiently pull the data from the view’s B-Tree. In other words, it would be fast, and very efficient.
-
-Sources: 1. http://guide.couchdb.org/draft/views.html 2. http://johnpwood.net/2009/07/10/couchdb-views-the-advantages/
-
-
 ## Types of indexes
 Different type of indexes you can use to query your database, and user cases for different types of indexes. See also https://developer.ibm.com/clouddataservices/docs/cloudant/indexes/
 
@@ -108,4 +90,21 @@ Is used in the most efficient way to allow 4D quering. Stored in design document
 
 #### 6. Cloudant Query
 Can be build in the Cloudant Dashboard, or by posting JSON data.
+
+
+## Views
+A view can selectively filter documents. It can speed up searching for content. It can be used to 'pre-process' the results before they are returned to the client. Views are useful for many purposes:
+- Filtering the documents in your database to find those relevant to a particular process.
+- Extracting data from your documents and presenting it in a specific order.
+- Building efficient indexes to find documents by any value or structure that resides in them.
+- Use these indexes to represent relationships among documents.
+- Finally, with views you can make all sorts of calculations on the data in your documents. For example, if documents represent your company’s financial transactions, a view can answer the question of what the spending was in the last week, month, or year.
+
+You provide DB with view functions as strings stored inside the views field of a design document. You don’t run it yourself. Instead, when you query your view, the DB takes the source code and runs it for you on every document in the database your view was defined in. You query your view to retrieve the view result. 
+
+If you read carefully over the last few paragraphs, one part stands out: “When you query your view, Cloudant takes the source code and runs it for you on every document in the database.” If you have a lot of documents, that takes quite a bit of time and you might wonder if it is not horribly inefficient to do this. Yes, it would be, but CouchDB is designed to avoid any extra costs: it only runs through all documents once, when you first query your view. If a document is changed, the map function is only run once, to recompute the keys and values for that single document. 
+
+Using views, we can replace all of the queries we were performing on these tables, and the calculations would be performed once, and then stored. Accessing that data would be as simple as issuing a single HTTP request, which would efficiently pull the data from the view’s B-Tree. In other words, it would be fast, and very efficient.
+
+Sources: 1. http://guide.couchdb.org/draft/views.html 2. http://johnpwood.net/2009/07/10/couchdb-views-the-advantages/
 
