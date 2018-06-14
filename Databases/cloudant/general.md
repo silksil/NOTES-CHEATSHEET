@@ -86,3 +86,28 @@ If you read carefully over the last few paragraphs, one part stands out: “When
 Using views, we can replace all of the queries we were performing on these tables, and the calculations would be performed once, and then stored. Accessing that data would be as simple as issuing a single HTTP request, which would efficiently pull the data from the view’s B-Tree. In other words, it would be fast, and very efficient.
 
 Sources: 1. http://guide.couchdb.org/draft/views.html 2. http://johnpwood.net/2009/07/10/couchdb-views-the-advantages/
+
+
+## Types of indexes
+See also https://developer.ibm.com/clouddataservices/docs/cloudant/indexes/
+
+Different type of indexes you can use to query your database, and user cases for different types of indexes.
+1. Document lookup
+
+If you need to find a document by id, use the direct document lookup. Built-in. http://ablanks.cloudant.com/animaldb/id
+2. Primary Index
+
+Document id is used as the primary key. To get a list of of documents by their id. Built-in. ablanks.cloudant.com/animaldb/_all_docs
+3. Secondary Index (or View)
+
+Is used if it requires more than lookups that uses the primary key, Is build by the map-reduce paradigm. Includes indexes that require mathematical calcaltions. Stored in design documents.
+4. Search Index
+
+For ad hoc queries or searches that require large blocks of text, use a search index. Stored in design documents.
+5. Geospatial Index
+
+Is used in the most efficient way to allow 4D quering. Stored in design documents.
+6. Cloudant Query
+
+Can be build in the Cloudant Dashboard, or by posting JSON data.
+
