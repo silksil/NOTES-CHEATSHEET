@@ -104,7 +104,7 @@ function storeUniqueValues(arr) {
 console.log(storeUniqueValues(values)); // expected output: [ 'a', 'b', 'c', 'e' ]
 ```
 ### Use sort() and localCompare() to sort a list
-```
+```javascript
 let items = ['réservé', 'premier', 'baguette', 'cliché', 'communiqué', 'café', 'adieu'];
 console.log(items.sort((a, z) => a.localeCompare(z))); // expected output: ['adieu', 'baguette', 'café', 'cliché', 'communiqué', 'premier', 'réservé']
 ```
