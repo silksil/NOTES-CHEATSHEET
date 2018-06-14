@@ -9,9 +9,7 @@ Helpers for authentication with one very specific method (e.g Email, Google, Fac
 
 ### Cookies
 #### Difference cookie-session and express-session
-The key difference is how the data is being stored in the cookie; cookie-session stores all info in the cookie, and with express-session you store all the data outside of the cookie. 
-
-With express-session you can store more data. 
+The key difference is how the data is being stored in the cookie; cookie-session stores all info in the cookie, and with express-session you store all the data outside of the cookie. With express-session you can store more data. 
 
 ##### cookie-session
 If we use the cookie-session library we say that the cookie is the session. The cookie contains all the data concerning the current session; it contains the user_id. To find out which user it is, we look to the cookie, decode the value and that is the exact value that is stored in req.session. 
