@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 Passport is Express-compatible authentication middleware for Node.js. Passport includes 2 library components:
 #### 1. Passport 
 General helpers for handling auth in Express apps.
@@ -26,7 +26,7 @@ When the request comes in, the cookie-session middleware extract cookie data, pa
 ![Session to user flow](../images/session-to-user.png?raw=true "Session to user flow") </br>
 
 
-## Installation
+# Installation
 #### Install passport 
 `npm install --save passport`
 Cookie
