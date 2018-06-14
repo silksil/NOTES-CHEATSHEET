@@ -7,13 +7,17 @@ General helpers for handling auth in Express apps.
 ##### 2. Passport Strategy
 Helpers for authentication with one very specific method (e.g Email, Google, Facebook, Linkedin)
 
-### Cookie
+### Cookies
 #### Difference cookie-session and express-session
+The key difference is how the data is being stored in the cookie; cookie-session stores all info in the cookie, and with express-session you store all the data outside of the cookie. 
+
+With express-session you can store more data. 
+
 ##### cookie-session
-The key difference is how the data is being stored in the cookie. If we use the cookie-session library we say that the cookie is the session. The cookie contains all the data concerning a session; it contains the cookie id. To find out which user it is, we look to the cookie, decode the value and the extract value, which is stored in req.session. 
+If we use the cookie-session library we say that the cookie is the session. The cookie contains all the data concerning the current session; it contains the user_id. To find out which user it is, we look to the cookie, decode the value and that is the exact value that is stored in req.session. 
 
 ##### express-session
-Express session stores a reference to a session. It will store inside an id to a session. Express session takes the id, then looks up all relevant session data, or 'session 'store' in a remote db. 
+Express session stores a reference to a session. It will store inside the cookie an id to a session. Express session takes the id, then looks up all relevant session data, or 'session 'store' in a remote db. This will then retrieve us the user info. 
 
 ##### Reading material: 
 - https://medium.com/@bitshadow/how-basic-http-authentication-and-session-works-d29af9caec31
@@ -33,9 +37,6 @@ In the example below, passport is used to make connection to an strategy, get an
 When the request comes in, the cookie-session middleware extract cookie data, passport than extract id from the cookie data and than queries the user by id. 
 
 ![Session to user flow](../images/session-to-user.png?raw=true "Session to user flow") </br>
-
-
-
 
 
 # Installation
