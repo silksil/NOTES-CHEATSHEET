@@ -1,3 +1,4 @@
+## Methods
 ### Filter
 `Filter()` expects a callback function to return a true or false > takes away items thare are false.
 
@@ -91,6 +92,7 @@ expected output:
 /*
 ```
 
+## Cases
 ### Use Set() to get unique values out of array
 ```javascript
 const values = ['a', 'a', 'b', 'b', 'c', 'd'];
@@ -100,6 +102,11 @@ function storeUniqueValues(arr) {
 }
 
 console.log(storeUniqueValues(values)); // expected output: [ 'a', 'b', 'c', 'e' ]
+```
+### Use sort() and localCompare() to sort a list
+```
+let items = ['réservé', 'premier', 'baguette', 'cliché', 'communiqué', 'café', 'adieu'];
+console.log(items.sort((a, z) => a.localeCompare(z))); // expected output: ['adieu', 'baguette', 'café', 'cliché', 'communiqué', 'premier', 'réservé']
 ```
 
 ### Loop through nested arrays
