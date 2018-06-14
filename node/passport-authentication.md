@@ -21,7 +21,7 @@ In the example below, passport is used to make connection to an strategy, get an
 ![Passport flow](../images/googleOauth-passport-cookies-flow-1.png?raw=true "Passport flow") </br>
 
 #### The flow when a request comes in 
-Once a he cookie-session middleware (#1) extract cookie data, passport than extract id from the cookie data and than queries the user by id. 
+Once a hte cookie-session middleware  extract cookie data, passport than extract id from the cookie data and than queries the user by id. 
 ![Session to user flow](../images/session-to-user.png?raw=true "Session to user flow") </br>
 
 
