@@ -1,17 +1,26 @@
 # Introduction
+### Passport
 Passport is Express-compatible authentication middleware for Node.js. Passport includes 2 library components:
-#### 1. Passport 
+##### 1. Passport 
 General helpers for handling auth in Express apps.
 
-#### 2. Passport Strategy
+##### 2. Passport Strategy
 Helpers for authentication with one very specific method (e.g Email, Google, Facebook, Linkedin)
+
+### Cookie
+#### Difference cookie-session and express-session
+##### cookie-session
+The key difference is how the data is being stored in the cookie. If we use the cookie-session library we say that the cookie is the session. The cookie contains all the data concerning a session; it contains the cookie id. To find out which user it is, we look to the cookie, decode the value and the extract value, which is stored in req.session. 
+
+##### express-session
+Express session stores a reference to a session. It will store inside an id to a session. Express session takes the id, then looks up all relevant session data, or 'session 'store' in a remote db. 
 
 ##### Reading material: 
 - https://medium.com/@bitshadow/how-basic-http-authentication-and-session-works-d29af9caec31
 - https://www.quora.com/What-is-the-difference-advantage-between-of-using-cookie-session-and-token-based-authentication
 
 ## Example flow
-Below you can find an example using Google OAuth and cookies. 
+Below you can find an example using Google OAuth and the cookie-sessions library. 
 
 #### Connecting with Google OAuth
 In the example below, passport is used to make connection to an strategy, get an profile, create new user/or identify existing user and the creation of an cookie. 
@@ -24,6 +33,9 @@ In the example below, passport is used to make connection to an strategy, get an
 When the request comes in, the cookie-session middleware extract cookie data, passport than extract id from the cookie data and than queries the user by id. 
 
 ![Session to user flow](../images/session-to-user.png?raw=true "Session to user flow") </br>
+
+
+
 
 
 # Installation
