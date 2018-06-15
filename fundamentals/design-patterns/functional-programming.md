@@ -74,9 +74,14 @@ console.log(`${ a.foo.greeting }, ${ a.bar }${a.baz}`);
 ###  Declarative vs Imperative
 Functional programming is a declarative paradigm, meaning that the program logic is expressed without explicitly describing the flow control.
 
+### Reusability Through Higher Order Functions
+Functional programming tends to reuse a common set of functional utilities to process data. Object oriented programming tends to colocate methods and data in objects. Those colocated methods can only operate on the type of data they were designed to operate on, and often only the data contained in that specific object instance.
+
+A higher order function is any function which takes a function as an argument, returns a function, or both
+
 
 
 Sources
 1. https://codeburst.io/functional-programming-in-javascript-e57e7e28c0e5
-2. ehttps://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0
+2. https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0
 
