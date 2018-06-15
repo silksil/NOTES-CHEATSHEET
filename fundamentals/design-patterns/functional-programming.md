@@ -15,6 +15,76 @@ Functional programming favors:
 - Expressions over statements
 - Containers & higher order functions over ad-hoc polymorphism
 
+### Shared state
+Shared state is any variable, object, or memory space that exists in a shared scope, or as the property of an object being passed between scopes. A shared scope can include global scope or closure scopes. Often, in object oriented programming, objects are shared between scopes by adding properties to other objects.
+
+For example, a computer game might have a master game object, with characters and game items stored as properties owned by that object. Functional programming avoids shared state — instead relying on immutable data structures and pure calculations to derive new data from existing data. 
+
+The problem with shared state is 1.) that in order to understand the effects of a function, you have to know the entire history of every shared variable that the function uses or affects. 2.) Another common problem associated with shared state is that changing the order in which functions are called can cause a cascade of failures because functions which act on shared state are timing dependent:
+
+```javscript
+// With shared state, the order in which function calls are made
+// changes the result of the function calls.
+const x = {
+  val: 2
+};
+
+const x1 = () => x.val += 1;
+
+const x2 = () => x.val *= 2;
+
+x1();
+x2();
+
+console.log(x.val); // 6
+
+// This example is exactly equivalent to the above, except...
+const y = {
+  val: 2
+};
+
+const y1 = () => y.val += 1;
+
+const y2 = () => y.val *= 2;
+
+// ...the order of the function calls is reversed...
+y2();
+y1();
+
+// ... which changes the resulting value:
+console.log(y.val); // 5
+```
+
+When you avoid shared state, the timing and order of function calls don’t change the result of calling the function. With pure functions, given the same input, you’ll always get the same output. This makes function calls completely independent of other function calls, which can radically simplify changes and refactoring
+```javascript
+const x = {
+  val: 2
+};
+
+const x1 = x => Object.assign({}, x, { val: x.val + 1});
+
+const x2 = x => Object.assign({}, x, { val: x.val * 2});
+
+console.log(x1(x2(x)).val); // 5
+
+
+const y = {
+  val: 2
+};
+
+// Since there are no dependencies on outside variables,
+// we don't need different functions to operate on different
+// variables.
+
+// this space intentionally left blank
+
+
+// Because the functions don't mutate, you can call these
+// functions as many times as you want, in any order, 
+// without changing the result of other function calls.
+x2(y);
+x1(y);
+```
 
 ### Side effects
 ```javascript
