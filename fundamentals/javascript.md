@@ -13,7 +13,7 @@ When people try to be accurate, they distinguish between "property" (the whole t
 Source: https://stackoverflow.com/questions/28648090/properties-vs-keys-vs-values-in-javascript?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 
 ### Higher-order functions
-A higher order function is a function that takes one or more functions as arguments. 
+A higher order function is a function that takes one or more functions as arguments. It allows us to put small functions in a big function. 
 
 ```javascript
 var animals = [
@@ -33,7 +33,14 @@ filter in the above example is a so-called higher-order function. This is a fanc
 
 Source: https://medium.com/humans-create-software/a-dirt-simple-introduction-to-higher-order-functions-in-javascript-b33bf9e19056
 
+## Functional programming
+https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0
+
 ### Pure functions
+
+### Imutable state
+
+### Declarative programming
 
 
 
