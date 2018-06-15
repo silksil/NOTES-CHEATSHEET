@@ -30,7 +30,7 @@ In the example below, passport is used to make connection to an strategy, get an
 #### The flow when a request comes in 
 When the request comes in, the cookie-session middleware extract cookie data, passport than extract id from the cookie data and than queries the user by id. 
 
-![Session to user flow](../../images/server/session-to-user.png?raw=true "Session to user flow") </br>
+![Session to user flow](../../images/session-to-user.png?raw=true "Session to user flow") </br>
 
 
 # Installation
