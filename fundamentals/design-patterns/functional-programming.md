@@ -22,7 +22,7 @@ For example, a computer game might have a master game object, with characters an
 
 The problem with shared state is 1.) that in order to understand the effects of a function, you have to know the entire history of every shared variable that the function uses or affects. 2.) Another common problem associated with shared state is that changing the order in which functions are called can cause a cascade of failures because functions which act on shared state are timing dependent:
 
-```javscript
+```javascript
 // With shared state, the order in which function calls are made
 // changes the result of the function calls.
 const x = {
