@@ -10,6 +10,7 @@ Asynchronous — moves with the inertia of the first throw by the quarterbac
 - Reading from the DB
 - Returning the result back to your program
 
+Two main advantages of asyncronous code is that you are less depedent on other functions and that the execution is usually faster.
 
 ### Javascript is synchronous that can act in an asynchronous way
 JavaScript is single threaded, that means only one statement is executed at a time. Say we have 2 lines of codes Line-1 followed by Line-2. Synchronous means Line-2 can not start running until the Line-1 has finished executing.
