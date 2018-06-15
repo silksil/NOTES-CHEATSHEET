@@ -1,8 +1,8 @@
 # Introduction
-- OOO makes code understandable by encapsulating moving parts.
-- FP makes code understandable by minimizing moving parts.
+Object-oriented languages are good when you have a fixed set of operations on things, and as your code evolves, you primarily add new things. This can be accomplished by adding new classes which implement existing methods, and the existing classes are left alone. For example: animal > dog > goldenretriever. It's easy to add a new dog. If you would add a operation, e.g. sleepTime, it would require you to edit all 'things;. 
 
-The biggest difference between the two “schools of thought” concerns the **relationship between data**  and **operations on the data** . 
+Functional languages are good when you have a fixed set of things, and as your code evolves, you primarily add new operations on existing things. This can be accomplished by adding new functions which compute with existing data types, and the existing functions are left alone. 
+
 
 ## OOO is about grouping data with functions that govern that data
 The central tenet of OOP is that data and the operations upon it are tightly coupled: An object owns its data and it owns the implementation of the operations on the data. It hides those from other objects via its interface, a collection of methods or messages it responds to. Thus, the central model for abstraction is the data itself, hidden as it is behind a small API in the form of its interface.
@@ -22,3 +22,4 @@ A mathematical function, or ‘pure function’ operates on the supplied argumen
 
 Sources:
 https://medium.com/@darrickmckirnan/object-oriented-programming-oop-functional-programming-what-are-they-the-pros-and-cons-11f98a971e38
+https://stackoverflow.com/questions/2078978/functional-programming-vs-object-oriented-programming
