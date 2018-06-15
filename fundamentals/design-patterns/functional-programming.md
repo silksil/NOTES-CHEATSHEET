@@ -154,4 +154,5 @@ A higher order function is any function which takes a function as an argument, r
 Sources
 1. https://codeburst.io/functional-programming-in-javascript-e57e7e28c0e5
 2. https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0
+3. https://trello.com/c/GEVPl6hL/74-what-are-the-pros-and-cons-of-functional-programming-vs-object-oriented-programming
 
