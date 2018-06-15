@@ -1,7 +1,5 @@
 - Imperative Pattern focuses on describing how a program operates, it consists of commands for the computer to perform.
-- Declarative Pattern focuses on what the program should accomplish without specifying how the program should achieve the result.
-    
-Functional programming follows declarative pattern.
+- Declarative Pattern focuses on what the program should accomplish without specifying how the program should achieve the result. Functional programming follows declarative pattern.
 
 ```javascript
 let books = [
@@ -21,5 +19,4 @@ books.map((book)=> {
   return book;
 });
 
-console.log(books);
 ```
