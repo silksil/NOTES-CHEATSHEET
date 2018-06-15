@@ -47,11 +47,3 @@ When the request comes in, the cookie-session middleware extract cookie data, pa
 Go to https://console.developers.google.com and: `create project > enable API > search for Google+ API > should state OAuth 2.0 somewhere > enable > create Credentials > OAuth client id > configure consent screen > fill in data > select application type >> fill in data > create >` Get back:
 1. clientId = public key
 2. clientSecret = private key
-
-##### Reading material: 
-- https://medium.com/@bitshadow/how-basic-http-authentication-and-session-works-d29af9caec31
-- https://www.quora.com/What-is-the-difference-advantage-between-of-using-cookie-session-and-token-based-authentication
-
-
-
-
