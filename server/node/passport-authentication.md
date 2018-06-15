@@ -36,12 +36,10 @@ When the request comes in, the cookie-session middleware extract cookie data, pa
 # Installation
 #### Install passport 
 `npm install --save passport`
-Cookie
-```
-npm install --save cookie-session
 
-const cookieSession = require('cookie-session')
-```
+#### Install cookie-session
+`npm install --save cookie-session` 
+
 #### Install strategy
 ##### Google: 
 `npm install --save passport-google-oauth20`
