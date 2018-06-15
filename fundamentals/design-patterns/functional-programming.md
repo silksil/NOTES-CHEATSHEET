@@ -129,7 +129,7 @@ a.foo = 'Goodbye';
 ```
 
 But frozen objects are only superficially immutable. For example, the following object is mutable:
-```
+```javascript
 const a = Object.freeze({
   foo: { greeting: 'Hello' },
   bar: 'world',
@@ -147,7 +147,7 @@ Functional programming is a declarative paradigm, meaning that the program logic
 ### Reusability Through Higher Order Functions
 Functional programming tends to reuse a common set of functional utilities to process data. Object oriented programming tends to colocate methods and data in objects. Those colocated methods can only operate on the type of data they were designed to operate on, and often only the data contained in that specific object instance.
 
-A higher order function is any function which takes a function as an argument, returns a function, or both
+A higher order function is any function which takes a function as an argument, returns a function, or both.
 
 
 
