@@ -22,7 +22,7 @@ Below you can find an example using Google OAuth and the cookie-sessions library
 
 #### Connecting with Google OAuth
 In the example below, passport is used to make connection to an strategy, get an profile, create new user/or identify existing user and the creation of an cookie. 
-![Passport flow](../images/server/node/googleOauth-passport-cookies-flow.png?raw=true "Passport flow") </br>
+![Passport flow](/images/server/node/googleOauth-passport-cookies-flow.png?raw=true "Passport flow") </br>
 
 #### Serialize and Deserialize
 ![Passport flow](../images/server/googleOauth-passport-cookies-flow-1.png?raw=true "Passport flow") </br>
