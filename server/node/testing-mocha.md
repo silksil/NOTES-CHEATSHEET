@@ -13,7 +13,11 @@
 
 
 
+### It
+If you don't pass any second argument, it will become blue if you run the test; it will list as a pending test. It says that you haven't written a test for it. 
 
-it('define what it should')
-Let's you define a new test case
+If you write test first before the functionality, if it red it says: you probably are working on it, if it is green it is probably done and if it is blue it basically says that it still should be done done (it's a pending test > you haven't written a test for it). 
+
+Example pending test - becomes blue because you don't pass a second argument. `it('define what it should do')`
+
 
