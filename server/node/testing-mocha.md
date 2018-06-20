@@ -55,5 +55,7 @@ it('succeeds silently!', function() {   // <= No done callback
 ```
 When done is passed in, Mocha will wait until the call to done(), or until the timeout expires. done also accepts an error parameter when signaling completion.
 
-Sources: https://github.com/chaijs/chai-http
+##### Sources: 
+- https://github.com/chaijs/chai-http
+- http://mherman.org/blog/2015/09/10/testing-node-js-with-mocha-and-chai/
 
