@@ -1,3 +1,9 @@
+### Intro
+Check this video for more info about test-driven development and unit testing: https://www.youtube.com/watch?v=Nf5pIGU4Snc
+
+Find here an overview between unit testing and api-testing: https://www.linkedin.com/pulse/difference-between-api-testing-unit-mj-alavi/
+
+
 ## Configuration
 `npm i mocha --save-dev` you don't need to run it on a service; you only need to it for testing personally on the machine.
 
