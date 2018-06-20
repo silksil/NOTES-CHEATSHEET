@@ -21,7 +21,7 @@
 - **Timing** Inside node nothing should take more than 1 second. Mocha's standard waiting time is max. 2000ms. 
 
 
-### hhtp requests
+### HTTP requests
 To make the request and assert on its response, the end method can be used:
 ```javascript
 chai.request(app)
