@@ -14,7 +14,13 @@
 ```
 
 ### General
-- **describe()**: 
+- **describe()**: describe can be used to organize and cluster your tests. If you use describe to cluster a specific method, it is convention to add #: 
+```javascript
+describe ("Test Util", () =>{
+  describe('#addFunction', () => {
+  });
+});
+```
 - **it()**: 
 - **Running test and getting feedback in the terminal** If you run tests, the terminal will provide feedback on whether tests have passed. If you write test first before the functionality, if it is red it says: you probably are working on it, if it is green it is probably done and if it is blue it basically says that it still should be done done (it's a pending test > you haven't written a test for it).  Example pending test - becomes blue if you don't pass the second argument:  `it('define what it should do')`
 - **done()** The done argument specified makes Mocha understand you run a ascynchronous function - it does not finish processing the test before done is being called. 
