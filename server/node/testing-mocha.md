@@ -4,12 +4,15 @@ Check this video for more info about test-driven development and unit testing: h
 Find info about the difference between unit testing and api-testing: 
 - https://www.linkedin.com/pulse/difference-between-api-testing-unit-mj-alavi/
 - https://www.quora.com/What-are-the-differences-between-an-API-unit-test-and-an-API-functional-test
+-
 
 
 ## Configuration
 `npm i mocha --save-dev` you don't need to run it on a service; you only need to it for testing personally on the machine.
 
 `npm i supertest --sav-dev`
+
+`npm i sinon --save-dev`
 
 
 ###  Run tests (package.json)
@@ -71,7 +74,29 @@ it('succeeds silently!', function() {   // <= No done callback
 ```
 When done is passed in, Mocha will wait until the call to done(), or until the timeout expires. done also accepts an error parameter when signaling completion.
 
+## Unit testing
+Besides testing the the response of an API, you can test what is happening inside the API. In other words, you can open the black box, so you not only know whether the output is correct, but also test the individual units. 
+
+Testing code with Ajax, networking, timeouts, databases, or other dependencies can be difficult. For example, if you use Ajax or networking, you need to have a server, which responds to your requests. With databases, you need to have a testing database set up with data for your tests.
+
+All of this means that writing and running tests is harder, because you need to do extra work to prepare and set up an environment where your tests can succeed
+
+-**Spies**, which offer information about function calls, without affecting their behavior. When that test function is being called you can make certain assertions about it to make sure it is being called with certain arguments. 
+- **Stubs**, which are like spies, but completely replace the function. This makes it possible to make a stubbed function do whatever you like — throw an exception, return a specific value, etc
+- **Mocks**, which make replacing whole objects easier by combining both spies and stubs
+
+Here are some examples of other useful assertions provided by Sinon:
+
+    sinon.assert.calledWith can be used to verify the a function was called with specific parameters (this is probably the one I use most often)
+    sinon.assert.callOrder can verify functions were called in a specific order
+
+
+
+
+
+
 ##### Sources: 
 - https://github.com/chaijs/chai-http
 - http://mherman.org/blog/2015/09/10/testing-node-js-with-mocha-and-chai/
+- https://www.youtube.com/watch?v=7QtlKGjR50o
 
