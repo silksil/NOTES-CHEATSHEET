@@ -29,7 +29,7 @@ In the case of asynchronous actions you could, instead of arranging for a functi
 #### Sometimes there is a ready-made promise
 You can create a promise by calling the ES6 Promise constructor function with new (see Listing 1 below), then call resolve() when results are ready or reject() on detecting an error. Sometimes you can get a ready-made promise by calling an appropriate API or library function, like the fetch() Web API function in Listing 1
 
-#### Receive a 'promised'value with .then
+#### Receive a 'promised' value with .then
 You can receive the 'promised' value by calling the .then() method of the promise, passing it a function that will receive that value as its argument as soon as it is available.
 
 #### Three states
