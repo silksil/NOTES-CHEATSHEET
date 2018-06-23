@@ -24,11 +24,19 @@ Source: https://codeburst.io/how-node-js-single-thread-mechanism-work-understand
 Asynchronous callbacks allow you to invoke a callback function which sends a database request (and any other nested callbacks) off to your app, where it waits for the response from the database, freeing up the rest of your code to continue running.
 
 ### Promises
-In the case of asynchronous actions you could, instead of arranging for a function to be called at some point in the future, return an object that represents this future event.
+In the case of asynchronous actions you could, instead of arranging for a function to be called at some point in the future, return an object that represents this future event.This is what the standard class Promise is for. A promise is an asynchronous action that may complete at some point and produce a value. It is able to notify anyone who is interested when its value is available.
 
-This is what the standard class Promise is for. A promise is an asynchronous action that may complete at some point and produce a value. It is able to notify anyone who is interested when its value is available.
+#### Sometimes there is a ready-made promise
+You can create a promise by calling the ES6 Promise constructor function with new (see Listing 1 below), then call resolve() when results are ready or reject() on detecting an error. Sometimes you can get a ready-made promise by calling an appropriate API or library function, like the fetch() Web API function in Listing 1
 
-A promise is an object that may produce a single value some time in the future: either a resolved value, or a reason that it’s not resolved (e.g., a network error occurred). A promise may be in one of 3 possible states: fulfilled, rejected, or pending. Promise users can attach callbacks to handle the fulfilled value or the reason for rejection.
+#### Receive a 'promised'value with .then
+You can receive the 'promised' value by calling the .then() method of the promise, passing it a function that will receive that value as its argument as soon as it is available.
+
+#### Three states
+Internally, a promise can be in one of three states:
+- pending: the asynchronous result is still awaiting delivery
+- fulfilled: the asynchronous result has been delivered and is available (resolve() was called)
+- rejected: an error was encountered: the promise could not be fulfilled (reject() was called)
 
 ### When to use callbacks and when to use promises
 Regular JavaScript computations can fail by throwing an exception. Asynchronous computations often need something like that. A network request may fail, or some code that is as part of the asynchronous computation may throw an exception.
