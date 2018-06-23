@@ -38,6 +38,31 @@ Internally, a promise can be in one of three states:
 - fulfilled: the asynchronous result has been delivered and is available (resolve() was called)
 - rejected: an error was encountered: the promise could not be fulfilled (reject() was called)
 
+#### Chaining
+Because .then() always returns a new promise, it’s possible to chain promises with precise control over how and where errors are handled. Promises allow you to mimic normal synchronous code’s try/catch behavior. 
+
+To chain promises, you specifically have to state return. If you make use of the arrow syntax shorthand, specifying return is not required. 
+
+```javascript
+let wordnikAPI = 'link'
+giphyApi = 'link'
+
+function setup () {
+  fetch(wordnikAPI)
+    .then(response => response.json()) // arrows syntax shorthand, return is not required
+    .then(json => {
+      createP(json.word);
+      return fetch(giphyAPI + json.word); //including return is required
+    })
+    .then(response => {
+      return response.json();
+    })
+    .then(json => {
+      createImg(json.data.data[0].images['fixed_height_small'].url)
+    })
+    .catch(err => console.log(err));
+}
+```
 
 Sources:
 https://medium.com/@kvosswinkel/is-javascript-synchronous-or-asynchronous-what-the-hell-is-a-promise-7aa9dd8f3bfb
