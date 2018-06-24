@@ -2,9 +2,6 @@
 "instance" is best understood as it relates to "class" in programming. "Classes" are used to define the properties and behavior of a category of things. E.g. A "Car" class might dictate that all cars be defined by their make, model, year, and mileage.
 But you cant provide specifics about a particular car (for example, that 1978 Chevy Impala with 205,000 miles on it that your uncle Mickey drives) until you create an "instance" of a Car. It's the instance that captures the detailed information about one particular Car.
 
-Source: https://stackoverflow.com/questions/20461907/what-is-meaning-of-instance-in-programming?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
-
-
 ### Constructor Functions (pre-ES6) and the `new` keyword
 In the example below, instead of using object literals,  we use a function in conjunction with the `new` keyword to create objects. Such a function is called a **constructor** function, and, by convention, we start its name with an uppercase letter.
 
@@ -44,14 +41,13 @@ months
 ```
 
 ### ES6 Classes
-
 In ES6 a new way of defining objects and its methods was introduced. It uses the same prototype mechanism behind the scenes, but its syntax is closer to that of other object-oriented languages, such as Java, etc. Because it is only new syntax, hiding the intricacies of the prototype, it is often designated as 'syntactic sugaring'.
 
 In ES6 classes we use the class keyword to define a class. The constructor method takes the place of the constructor function of the previous examples.
 
 We define methods by creating functions inside the class body, however without the function keyword. As previously, the this keyword refers to the object that a method is called upon.
 
-```
+```js
 class Month {
   constructor(name, days) {
     this.name = name;
@@ -100,7 +96,6 @@ The term property (also: attribute, less common or even used for different thing
 
 When people try to be accurate, they distinguish between "property" (the whole thing, part of an object), "property name" (the string used as the key) and "property value" (the stored data).
 
-Source: https://stackoverflow.com/questions/28648090/properties-vs-keys-vs-values-in-javascript?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 
 ### Higher-order functions
 A higher order function is a function that takes one or more functions as arguments. It allows us to put small functions in a big function. 
@@ -121,16 +116,15 @@ var oldDogs = animals.filter(function(animal) {
 
 filter in the above example is a so-called higher-order function. This is a fancy word for a function that accepts another function as an argument. In the above example, the function passed to filter will be called once with each item in the animals array as the argument. This passed function is sometimes referred to as the callback. If the callback returns true, the items makes the cut for the new array that filter is creating, which is what ends up in the oldDogs variable.
 
-Source: https://medium.com/humans-create-software/a-dirt-simple-introduction-to-higher-order-functions-in-javascript-b33bf9e19056
+Sources: 
+- https://medium.com/humans-create-software/a-dirt-simple-introduction-to-higher-order-functions-in-javascript-b33bf9e19056
+- https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/oop_classes.md
+- https://stackoverflow.com/questions/28648090/properties-vs-keys-vs-values-in-javascript?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+- https://stackoverflow.com/questions/20461907/what-is-meaning-of-instance-in-programming?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 
-## Functional programming
-https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0
 
-### Pure functions
 
-### Imutable state
 
-### Declarative programming
 
 
 
