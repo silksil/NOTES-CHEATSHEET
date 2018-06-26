@@ -6,7 +6,6 @@ import lodash from 'lodash';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
-const API_KEY = 'AIzaSyDB4WWMs9JfJsoD-O5vZQI0GfkA_DIEHOA';
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +20,7 @@ class App extends Component {
   }
 
     videoSearch(term) {
-      YTSearch({key: API_KEY, term: term}, (videos) => {
+      YTSearch({key: process.env.API_KEY, term: term}, (videos) => {
         this.setState({
           videos, videos,
           selectedVideo: videos[0]
