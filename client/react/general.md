@@ -3,7 +3,7 @@
 - React lets you define components as classes or functions.
 
 ## class nameComponent extends React.Component {} 
-- - The only method you must define in a React.Component subclass is called `render()`. All the other methods described are optional.
+- The only method you must define in a React.Component subclass is called `render()`. All the other methods described are optional.
 - `setState()` enqueues changes to the component state and tells React that this component and its children need to be re-rendered with the updated state. This is the primary method you use to update the user interface in response to event handlers and server responses.
 - `The state` contains data specific to this component that may change over time. The state is user-defined, and it should be a plain JavaScript object.
 
