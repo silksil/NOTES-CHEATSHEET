@@ -10,3 +10,6 @@ Is a function that reduces a piece of the application state. Because an applicat
   activeBook: { title: 'Javascript' } // >> activeBook reducer
 }
 ```
+
+# Containers
+A container is a component that has direct access to the state of Redux. 
