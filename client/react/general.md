@@ -1,6 +1,14 @@
 # Components
 - Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
 - React lets you define components as classes or functions.
+- Whether you declare a component as a function or a class, it must never modify its own props. It should be a `pure function`
+
+## Element
+An element describes what you want to see on the screen:
+`const element = <h1>Hello, world</h1>;`
+
+- Unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements. Elements are what components are “made of”. 
+- React elements are immutable. Once you create an element, you can’t change its children or attributes. An element is like a single frame in a movie: it represents the UI at a certain point in time.
 
 ## class nameComponent extends React.Component {} 
 - The only method you must define in a React.Component subclass is called `render()`. All the other methods described are optional.
@@ -8,8 +16,10 @@
 - `The state` contains data specific to this component that may change over time. The state is user-defined, and it should be a plain JavaScript object.
 
 #### constructor(props) {}
+- When the component class is being created, the constuctor is called first. So it's the right place initialize everything - including state. 
 - Constructor is the only place where you should assign this.state directly. In all other methods, you need to use this.setState() instead.
 - Avoid copying props into state. 
+- The super keyword is used to access and call function in an object's parent. 
 
 #### render(){}
 - The render() method is the only required method in a class component. When called, it should examine this.props and this.state and return one of the following types:
@@ -18,7 +28,6 @@
     - Portals. Let you render children into a different DOM subtree. See the documentation on portals for more details.
     - String and numbers. These are rendered as text nodes in the DOM.
     - Booleans or null. Render nothing. (Mostly exists to support return test && <Child /> pattern, where test is boolean.)
-
 
 ### ReactDOM.render()
 
