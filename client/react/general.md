@@ -71,8 +71,8 @@ class App extends Component {
         <SearchBar onSearchTermChange={videoSearch} />
         <VideoList
           onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-          videos={this.state.videos}/>
-        <VideoDetail video={this.state.selectedVideo}/
+          videos={this.state.videos} />
+        <VideoDetail video={this.state.selectedVideo} />
       </div>
     );
   }
