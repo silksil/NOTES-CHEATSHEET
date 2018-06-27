@@ -34,7 +34,7 @@ ReactDOM.render() controls the contents of the container node you pass in. Any e
 
 ## Example
 ```jsx
-t React, { Component} from 'react';
+import React, { Component} from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import lodash from 'lodash';
