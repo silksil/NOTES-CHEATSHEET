@@ -34,7 +34,7 @@ ReactDOM.render() controls the contents of the container node you pass in. Any e
 
 ## Example
 ```jsx
-import React, { Component} from 'react';
+t React, { Component} from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import lodash from 'lodash';
@@ -59,7 +59,7 @@ class App extends Component {
         this.setState({
           videos, videos,
           selectedVideo: videos[0]
-         });
+        });
       });
     }
 
@@ -72,7 +72,7 @@ class App extends Component {
         <VideoList
           onVideoSelect={selectedVideo => this.setState({selectedVideo})}
           videos={this.state.videos}/>
-        <VideoDetail video={this.state.selectedVideo}/>
+        <VideoDetail video={this.state.selectedVideo}/
       </div>
     );
   }
