@@ -29,8 +29,10 @@ An element describes what you want to see on the screen:
     - String and numbers. These are rendered as text nodes in the DOM.
     - Booleans or null. Render nothing. (Mostly exists to support return test && <Child /> pattern, where test is boolean.)
 
-### ReactDOM.render()
+## ReactDOM.render()
+ReactDOM.render() controls the contents of the container node you pass in. Any existing DOM elements inside are replaced when first called. Later calls use React’s DOM diffing algorithm for efficient updates.
 
+## Example
 ```jsx
 import React, { Component} from 'react';
 import ReactDOM from 'react-dom';
