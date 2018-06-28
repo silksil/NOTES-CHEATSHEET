@@ -115,7 +115,7 @@ const rootReducer = combineReducers({
 export default rootReducer;
 ```
 
-# Action => Reducer => Container 
+# Action => Reducer => RootReducer => Container 
 The only way to change the state is by sending a signal to the state: an *action* initiates this signal and a *reducer* returns the new state
 - Action creator is trigger through an certain event (e.g. product added to the basket)
 - Action creator returns an object (which is called the action) that describes the action. It can return:
