@@ -23,7 +23,7 @@ Is a function that reduces a piece of the application state - the data is return
 - Takes in two arguments: state and action.
 - Has a switch statement to check the action type. The type property value is used to calculate the next state.
 - Calculates the next state depending on the action type. When no action type matches, it should return at least an initial state.
-- Assure that the state is updated in an immutable way => copy curren state plus new data:
+- Assure that the state is updated in an immutable way => copy current state plus new data:
   - Array's: concat(), slice(), ...spread
   - Object's: object.assign() and ..spread
 
