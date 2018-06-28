@@ -75,7 +75,7 @@ function mapDispatchToProps(dispatch) {
   //dispatch receives actions and spits it out to all reducers
 }
 ```
-- - Action creator returns an object (which is called the action) that describes the action. It can return:
+- Action creator returns an object (which is called the action) that describes the action. It can return:
   - A 'type' property - a value that describe how / what state should change.
   - A 'payload' (optional) - includes specific data.
 ```javascript
