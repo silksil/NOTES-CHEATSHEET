@@ -20,11 +20,11 @@ The only way to change the state is by sending a signal to the state: an *action
 - Example of action creators: 
   - Direct: clicking on a button, hovering
   - Indirect: ajax or webpage finish loading
-- Action creator returns the action as an object that describes the action. It can return:
+- Action creator returns an object (which is called the action) that describes the action. It can return:
   - A 'type' property - a value that describe how / what state should change.
   - A 'payload' (optional) - includes specific data.
 - Action automatically send to all reducers.
-- Through the switch statement it checks whether the action is related to the reducer.
+- Through the switch statement the reducer checks whether the action is related to the reducer.
 - Depending on the action, a reducer can return a new piece of state and that can be piped in the application state, which causes all components to re-render. 
 
 # Reducer
