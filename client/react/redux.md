@@ -20,10 +20,11 @@ A container is a component that has direct access to the Redux store, it:
   - Indirect: ajax or webpage finish loading. 
 - To bind an action to an component we should import action the action, e.g. `import { selectBook } from '../actions/index';`
 - Then we import a function to make sure that the action created from the action creator, flows through all reducers: `import { bindActionCreators } from 'redux';`
-- To bind an action happening on the front-end to all reducers. We can use `function mapDispatchToProps(dispatch}:
+- To bind an action happening on the front-end to all reducers. We can use `function mapDispatchToProps(dispatch}`:
 ```jsx 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectBook: selectBook}, dispatch); //dispatch receives actions and spits it out to all reducers
+  return bindActionCreators({ selectBook: selectBook }, dispatch); 
+  //dispatch receives actions and spits it out to all reducers
 }
 ```
 
