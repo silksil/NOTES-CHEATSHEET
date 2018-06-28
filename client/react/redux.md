@@ -126,13 +126,13 @@ The only way to change the state is by sending a signal to the state: an *action
 ```jsx
 // state argument is not the app state, it is only refering to the state this reducer is responsible for
 export default function(state = null, action) {
-	switch(action.type) {
-    case 'BOOK_SELECTED':
-			return action.payload;
-    }
-    return state;
+ switch(action.type) {
+  case 'BOOK_SELECTED':
+   return action.payload;
+  }
+  return state;
 }
-
+```
 - Depending on the action, a reducer can return a new piece of state and that can be piped in the application state. If all reducers have been processed net state has been assembled.
 - Then, containers will be notified of the changes to the state, causing the containers to re-render wit the new props.
 
