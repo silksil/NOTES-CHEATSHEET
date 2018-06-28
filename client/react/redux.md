@@ -7,20 +7,20 @@ Whereas React displays the views, Redux collects all the data of the application
 # Containers
 A container is a component that has direct access to the Redux storem, it:
 1. Receives state updates.
-2. Dispatches actions
+2. Dispatches actions.
 
-- To make the connection between react-redux you hav to `import { connect } from 'react-redux'`
+- To make the connection between react-redux you hav to `import { connect } from 'react-redux'`.
 - The function `mapStateToProps(state){}` takes in the application state as an argument, and object is returned that can be extracted as props in the container. 
-- The function `function mapDispatchToProps(dispatch) {}`
-- To produce the container and glue React with Redux we have to connect the function(s) with the component, e.g. `export default connect(mapStateToProps)(Booklist)`. 
+- The function `function mapDispatchToProps(dispatch) {}`.
+- To produce the container and glue React with Redux we have to connect the function(s) with the component, e.g. `export default connect(mapStateToProps, mapDispatchToProps)(BookList);`. 
 
 # Reducer
-Reducers manage/return the new state.
+Reducers returns the new state.
 
 ## childrenReducer
 Is a function that reduces a piece of the application state - the data is returned through a function. Because an application can have many different pieces of state, it can have many different reducers. 
 
-- Takes in two arguments: state and action
+- Takes in two arguments: state and action.
 - Has a switch statement to check the action type. The type property value is used to calculate the next state.
 - Calculates the next state depending on the action type. When no action type matches, it should return at least an initial state.
 - Assure that the state is updated in an immutable way => copy curren state plus new data:
@@ -48,7 +48,7 @@ The only way to change the state is by sending a signal to the state: an *action
 
 The reducer can return:
 1. A 'type' property - a value that describe how / what state should change.
-2. A 'payload' (optional) - includes specific data
+2. A 'payload' (optional) - includes specific data.
 
 #### Sources
 - https://www.valentinog.com/blog/react-redux-tutorial-beginners/#React_Redux_tutorial_getting_to_know_Redux_actions
