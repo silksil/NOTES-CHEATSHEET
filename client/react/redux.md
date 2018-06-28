@@ -11,22 +11,22 @@ A container is a component that has direct access to the Redux store, it:
 
 - To make the connection between react-redux you hav to `import { connect } from 'react-redux'`.
 - The function `mapStateToProps(state){}` takes in the application state as an argument, and object is returned that can be extracted as props in the container. 
-- The function `function mapDispatchToProps(dispatch) {}`.
+- The function `function mapDispatchToProps(dispatch) {}`. See also the section below about actions. 
 - To produce the container and glue React with Redux we have to connect the function(s) with the component, e.g. `export default connect(mapStateToProps, mapDispatchToProps)(BookList);`. 
 
-# Action => Reducer
-The only way to change the state is by sending a signal to the state: an *action* initiates this signal and a *reducer* returns the new state. 
+# Action 
+- Actions creaters are functions that return a specific action. Examples of action creators: 
+  - Direct: clicking on a button, hovering, add something to the basket. 
+  - Indirect: ajax or webpage finish loading. 
+- To bind an action to an component we should import action the action, e.g. `import { selectBook } from '../actions/index';`
+- Then we import a function to make sure that the action created from the action creator, flows through all reducers: `import { bindActionCreators } from 'redux';`
+- To bind an action happening on the front-end to all reducers. We can use `function mapDispatchToProps(dispatch}:
+```jsx 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ selectBook: selectBook}, dispatch); //dispatch receives actions and spits it out to all reducers
+}
+```
 
-- Example of action creators: 
-  - Direct: clicking on a button, hovering
-  - Indirect: ajax or webpage finish loading
-- Action creator returns an object (which is called the action) that describes the action. It can return:
-  - A 'type' property - a value that describe how / what state should change.
-  - A 'payload' (optional) - includes specific data.
-- Action automatically send to all reducers.
-- Through the switch statement the reducer checks whether the action is related to the reducer.
-- Depending on the action, a reducer can return a new piece of state and that can be piped in the application state. If all reducers have been processed net state has been assembled.
-- Then, containers will be notified of the changes to the state, causing the containers to re-render wit the new props.
 # Reducer
 Reducers returns the new state.
 
@@ -54,6 +54,17 @@ const rootReducer = combineReducers({
 
 export default rootReducer;
 ```
+
+# Action => Reducer => Container 
+The only way to change the state is by sending a signal to the state: an *action* initiates this signal and a *reducer* returns the new state
+- Action creator is trigger through an certain event (e.g. product added to the basket)
+- Action creator returns an object (which is called the action) that describes the action. It can return:
+  - A 'type' property - a value that describe how / what state should change.
+  - A 'payload' (optional) - includes specific data.
+- Action automatically send to all reducers.
+- Through the switch statement the reducer checks whether the action is related to the reducer.
+- Depending on the action, a reducer can return a new piece of state and that can be piped in the application state. If all reducers have been processed net state has been assembled.
+- Then, containers will be notified of the changes to the state, causing the containers to re-render wit the new props.
 
 
 #### Sources
