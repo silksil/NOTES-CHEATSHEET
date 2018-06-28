@@ -14,7 +14,7 @@ A container is a component that has direct access to the Redux store, it:
 - The function `function mapDispatchToProps(dispatch) {}`.
 - To produce the container and glue React with Redux we have to connect the function(s) with the component, e.g. `export default connect(mapStateToProps, mapDispatchToProps)(BookList);`. 
 
-## Action => Reducer
+# Action => Reducer
 The only way to change the state is by sending a signal to the state: an *action* initiates this signal and a *reducer* returns the new state. 
 
 - Example of action creators: 
