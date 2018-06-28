@@ -5,7 +5,7 @@ Whereas React displays the views, Redux collects all the data of the application
 - If the state changes, the containers will instantly re-render.
 
 # Containers
-A container is a component that has direct access to the Redux store. It:
+A container is a component that has direct access to the Redux storem, it:
 1. Receives state updates.
 2. Dispatches actions
 
