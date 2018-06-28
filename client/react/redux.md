@@ -2,9 +2,11 @@
 Whereas React displays the views, Redux collects all the data of the application. With Redux we centralize all the data in a single object - we refer to this as 'state'. The state can change through events, e.g. a user clicks on somehting, or new data coming in from a server.
 
 # Containers
-A container is a component that has direct access to the Redux store. It...
-- Receives state updates.
-- Dispatches actions
+A container is a component that has direct access to the Redux store. It:
+1. Receives state updates.
+2. Dispatches actions
+
+- 
 
 # Reducer
 Reducers manage/return the new state.
@@ -34,6 +36,12 @@ const rootReducer = combineReducers({
 
 export default rootReducer;
 ```
+
+## Reducer
+The only way to change the state is by sending a signal to the state - an *action* initiates this signal and a *reducer* returns the new state. 
+The reducer can return:
+1. A 'type' property - a value that describe how / what state should change.
+2. A 'payload' (optional) - includes specific data
 
 #### Sources
 - https://www.valentinog.com/blog/react-redux-tutorial-beginners/#React_Redux_tutorial_getting_to_know_Redux_actions
