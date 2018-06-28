@@ -18,7 +18,7 @@ A container is a component that has direct access to the Redux store, it:
 Reducers returns the new state.
 
 ## childrenReducer
-Is a function that reduces a piece of the application state - the data is returned through a function. Because an application can have many different pieces of state, it can have many different reducers. 
+Is a function that returns a piece of the application state.  Because an application can have many different pieces of state, it can have many different reducers. 
 
 - Takes in two arguments: state and action.
 - Has a switch statement to check the action type. The type property value is used to calculate the next state.
