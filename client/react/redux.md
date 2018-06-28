@@ -81,10 +81,10 @@ function mapDispatchToProps(dispatch) {
   
 ```jsx
 export function selectBook(book) {
-	return {
-		type: 'BOOK_SELECTED',
-		payload: book
-	};
+ return {
+  type: 'BOOK_SELECTED',
+  payload: book
+ };
 }
 ```
 
