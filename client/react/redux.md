@@ -67,7 +67,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(BookList);
   - Indirect: ajax or webpage finish loading. 
 - To bind an action to an component we should import action the action, e.g. `import { selectBook } from '../actions/index';`
 - Then we import a function to make sure that the action created from the action creator, flows through all reducers: `import { bindActionCreators } from 'redux';`
-- To bind an action happening on the front-end to all reducers. We can use `function mapDispatchToProps(dispatch}`:
+- To bind an action happening to all reducers we can use `function mapDispatchToProps(dispatch}`:
 ```jsx 
 // Anything returned from this function will end up as props on the container
 function mapDispatchToProps(dispatch) {
