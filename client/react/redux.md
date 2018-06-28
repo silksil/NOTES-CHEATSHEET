@@ -7,7 +7,7 @@ A container is a component that has direct access to the Redux store. It...
 - Dispatches actions
 
 # Reducer
-Reducers manage the state.
+Reducers manage/return the new state.
 
 ## childrenReducer
 Is a function that reduces a piece of the application state - the data is returned through a function. Because an application can have many different pieces of state, it can have many different reducers. 
@@ -35,5 +35,7 @@ const rootReducer = combineReducers({
 export default rootReducer;
 ```
 
+#### Sources
+- https://www.valentinog.com/blog/react-redux-tutorial-beginners/#React_Redux_tutorial_getting_to_know_Redux_actions
 
 
