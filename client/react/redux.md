@@ -13,3 +13,7 @@ Is a function that reduces a piece of the application state. Because an applicat
 
 # Containers
 A container is a component that has direct access to the state of Redux. 
+
+
+Sources:
+https://www.valentinog.com/blog/react-redux-tutorial-beginners/#React_Redux_tutorial_getting_to_know_Redux_actions
