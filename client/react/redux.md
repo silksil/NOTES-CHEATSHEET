@@ -14,6 +14,53 @@ A container is a component that has direct access to the Redux store, it:
 - The function `function mapDispatchToProps(dispatch) {}`. See also the section below about actions. 
 - To produce the container and glue React with Redux we have to connect the function(s) with the component, e.g. `export default connect(mapStateToProps, mapDispatchToProps)(BookList);`. 
 
+```jsx
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { selectBook } from '../actions/index';
+import { bindActionCreators } from 'redux';
+
+class BookList extends Component {
+	renderList() {
+		return this.props.books.map((book) => {
+			return (
+				<li
+					key={book.title}
+					onClick={() => this.props.selectBook(book)}
+					// we call the action creator everytime we click
+					className="list-group-item">
+					{book.title}
+				</li>
+			);
+		});
+	}
+	render() {
+		return (
+			<ul className="list-group col-sm-4">
+				{this.renderList()}
+			</ul>
+		);
+	}
+}
+
+//anything returned from this function will end up as props on the booklist container.
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({ selectBook }, dispatch);
+	// dispatch receives actions results and spits it out to all reducers everytime selectBook is called.
+
+}
+
+// whenever our application state changes, it will re-render.
+function mapStateToProps(state) {
+	return {
+		books: state.books
+	};
+}
+
+// connect takes a function(s) and component and produces a container.
+export default connect(mapStateToProps, mapDispatchToProps)(BookList);
+```
+
 # Action 
 - Actions creaters are functions that return a specific action. Examples of action creators: 
   - Direct: clicking on a button, hovering, add something to the basket. 
