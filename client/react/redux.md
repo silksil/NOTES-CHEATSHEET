@@ -78,14 +78,15 @@ function mapDispatchToProps(dispatch) {
 - Action creator returns an object (which is called the action) that describes the action. It can return:
   - A 'type' property - a value that describe how / what state should change.
   - A 'payload' (optional) - includes specific data.
-```javascript
+  
+```jsx
 export function selectBook(book) {
 	return {
 		type: 'BOOK_SELECTED',
 		payload: book
 	};
-}```
-
+}
+```
 
 # Reducer
 Reducers returns the new state.
@@ -101,7 +102,6 @@ Is a function that returns a piece of the application state.  Because an applica
 
 ## rootReducer
 The rootReducer/combineReducer extract what is returned from every reducer in a single object => the state. The example below shows how the BooksReducer and ActiveBookReducer are assigned to the different keys/pieces of state.  
-
 ```jsx
 import { combineReducers } from 'redux';
 import BooksReducer from './reducer_books';
