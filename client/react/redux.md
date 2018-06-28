@@ -21,40 +21,40 @@ import { selectBook } from '../actions/index';
 import { bindActionCreators } from 'redux';
 
 class BookList extends Component {
-	renderList() {
-		return this.props.books.map((book) => {
-			return (
-				<li
-					key={book.title}
-					onClick={() => this.props.selectBook(book)}
-					// we call the action creator everytime we click
-					className="list-group-item">
-					{book.title}
-				</li>
-			);
-		});
-	}
-	render() {
-		return (
-			<ul className="list-group col-sm-4">
-				{this.renderList()}
-			</ul>
-		);
-	}
+  renderList() {
+    return this.props.books.map((book) => {
+      return (
+        <li
+          key={book.title}
+          onClick={() => this.props.selectBook(book)}
+          // we call the action creator everytime we click
+          className="list-group-item">
+          {book.title}
+        </li>
+      );
+    });
+  }
+  render() {
+    return (
+      <ul className="list-group col-sm-4">
+        {this.renderList()}
+      </ul>
+    );
+  }
 }
 
 //anything returned from this function will end up as props on the booklist container.
 function mapDispatchToProps(dispatch) {
-	return bindActionCreators({ selectBook }, dispatch);
-	// dispatch receives actions results and spits it out to all reducers everytime selectBook is called.
+  return bindActionCreators({ selectBook }, dispatch);
+  // dispatch receives actions results and spits it out to all reducers everytime selectBook is called.
 
 }
 
 // whenever our application state changes, it will re-render.
 function mapStateToProps(state) {
-	return {
-		books: state.books
-	};
+  return {
+    books: state.books
+  };
 }
 
 // connect takes a function(s) and component and produces a container.
