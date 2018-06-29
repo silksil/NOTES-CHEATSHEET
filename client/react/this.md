@@ -1,3 +1,5 @@
+source: https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/this.md
+
 At any point during the execution of a JavaScript program there is a context-dependent value that you can access through the keyword this.
 
 > Note: The value of `this` is only useful if used inside a function. When accessed outside of any function, the value of `this` is different depending on whether you run your program in the browser or in Node. In the case of the browser, the value of `this` refers to the global `window` object. In the case of Node, the value of `this` outside any function is an empty object (`{}`).
@@ -24,13 +26,6 @@ whatIsThis.call('world!', 'Hello'); // --> Hello world!
 ```
 
 However, in practice there are not many occasions where we would need to use the `call` method ourselves to set the value of `this`.
-
-Next, we will see how `this` becomes relevant when used in combination with JavaScript objects.
-
-More info on `this` and JavaScript function properties and methods:
-
-- [Understanding JavaScript Function Invocation and "this"](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/), by Yehuda Katz.
-- MDN: [Function prototype object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function#Function_prototype_object)
 
 ## JavaScript objects and 'this'
 
