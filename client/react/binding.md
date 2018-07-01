@@ -29,7 +29,7 @@ super(props);
  this.state = { term: '' }
 
  this.onInputChange = this.onInputChange.bind(this);
-  }
+}
 ```
 The statement above states: the existing function = take existing function and bind it to this. 
 
