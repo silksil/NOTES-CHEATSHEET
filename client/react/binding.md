@@ -24,7 +24,7 @@ onInputChange(event) {
 If we pass of the event handler **through a callback**, the value of `this` is not referring to the SearchBar component, causing an error. In order to solve this, we need to bind the event handler to the right context: 
 ```jsx
 constructor(props) {
-super(props);
+ super(props);
 
  this.state = { term: '' }
 
