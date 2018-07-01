@@ -28,11 +28,34 @@ super(props);
 
  this.state = { term: '' }
 
- this.onFormSubmit = this.onFormSubmit.bind(this);
+ this.onInputChange = this.onInputChange.bind(this);
   }
 ```
+The statement above states: the existing function = take existing function and bind it to this. 
+
+#### Function.prototype.bind
+The `bind` method is avaiable on every function (although it has no effect on fat arrow functions). To set the value of `this` you call the `bind` method with a single parameter, passing the value to be assigned to `this`. The `bind` method returns a new function for which the `this` value is fixed to the value specified in the `bind` parameter, as shown below.
+
+```js
+const myObj = {
+  myData: 'Hello world!'
+};
+
+function printMyData() {
+  console.log(this.myData);
+}
+
+const newFunction = printMyData.bind(myObj);
+newFunction(); // --> Hello world!
+```
+
+Using the `printMyData` function as a basis, the `bind` method fixes the `this` value to `myObj` and returns a new function assigned here to the variable `newFunction`. When we call `newFunction` the `this` value will be `myObj`, and therefore we can console.log `myData` through the `this` keyword.
 
 
+Sources:
+- https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/this.md]
+- https://medium.freecodecamp.org/react-binding-patterns-5-approaches-for-handling-this-92c651b5af56
+- https://reactjs.org/docs/handling-events.html
 
 
 
