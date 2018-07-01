@@ -12,13 +12,15 @@ The value of our input is set by our state, not the other way around. You can th
   />
 </form>
 ```
-All event handlers, e.g. onChange, come along with the event object. To get the typed input, we can refer to even.target.value.
 #### The change handler
+All event handlers, e.g. onChange, come along with the event object. To get the typed input, we can refer to even.target.value.
 ```jsx
 onInputChange(event) {
  this.setState({ term: event.target.value });
 }
+
 ```
+#### Binding
 If we pass of the event handler **through a callback**, the value of `this` is not referring to the SearchBar component, causing an error. In order to solve this, we need to bind the event handler to the right context: 
 ```jsx
 constructor(props) {
