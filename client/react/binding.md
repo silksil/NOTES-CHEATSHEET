@@ -1,4 +1,4 @@
-## A controlled field component
+#### A controlled field component
 The value of our input is set by our state, not the other way around. You can this by stating the value to the state, and by refering on the onChange attribute to a function that changes the state.
 
 #### The form
