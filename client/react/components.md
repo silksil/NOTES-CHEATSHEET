@@ -80,5 +80,23 @@ class App extends Component {
 
 ReactDOM.render(<App />, document.querySelector('.container'));
 ```
+## Passing props to child component
+The example below displays how a property can be passed on to a child componnent. In this case, the RenderWeather function receives multiple objects that contain weather data regarding a specific city. For that city we want to create seperate charts that display the temp, humidity and pressure. To avoid duplication, we create a component that can be used to display the data of the three paramaters.
+```jsx
+renderWeather(cityData) {
+ const name = cityData.city.name;
+ const temp = cityData.list.map(weather => weather.main.temp);
+ const pressure = cityData.list.map(weather => weather.main.pressure);
+ const humidity = cityData.list.map(weather => weather.main.humidity);
 
+ return (
+ <tr key={name}>
+  <td>{name}</td>
+  <td> <Chart data={temp} color="orange"/> </td>
+  <td> <Chart data={pressure} color="red"/> </td>
+  <td> <Chart data={humidity} color="blue"/> </td>
+ </tr>
+  );
+}
+```
 
