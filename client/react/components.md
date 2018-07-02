@@ -82,6 +82,7 @@ ReactDOM.render(<App />, document.querySelector('.container'));
 ```
 ## Passing props to child component
 The example below displays how a property can be passed on to a child componnent. In this case, the RenderWeather function receives multiple objects that contain weather data regarding a specific city. For that city we want to create seperate charts that display the temp, humidity and pressure. To avoid duplication, we create a component that can be used to display the data of the three paramaters.
+#### Mother component
 ```jsx
 renderWeather(cityData) {
  const name = cityData.city.name;
@@ -97,6 +98,27 @@ renderWeather(cityData) {
   <td> <Chart data={humidity} color="blue"/> </td>
  </tr>
   );
+}
+```
+#### Child component
+```jsx
+import Lodash from 'lodash';
+import React from 'react';
+import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
+
+export default (props) => {
+ function average(data) {
+  return Lodash.round(Lodash.sum(data)/data.length);
+}
+return (
+<div>
+ <Sparklines height={110} width={180} data={props.data}>
+  <SparklinesLine color={props.color}/>
+  <SparklinesReferenceLine type="avg"/>
+ </Sparklines>
+ <div>{average(props.data)} {props.units}</div>
+</div>
+ )
 }
 ```
 
