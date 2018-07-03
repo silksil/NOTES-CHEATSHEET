@@ -101,4 +101,4 @@ Here are some examples of other useful assertions provided by Sinon:
 - https://github.com/chaijs/chai-http
 - http://mherman.org/blog/2015/09/10/testing-node-js-with-mocha-and-chai/
 - https://www.youtube.com/watch?v=7QtlKGjR50o
-
+- https://devhints.io/chai
