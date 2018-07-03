@@ -124,7 +124,7 @@ function addAll(arr) {
 console.log(addAll([[1, 2], [3, 4], [5, 6, 7]])); //expected output: 28
 ```
 
-### Transfrom an array with objects to an object that has object with a key
+### Transfrom an array with objects to an object that has objects with a key of a certain property (e.g. id)
 ```javascript
 let friendList = [
   	{id: '9', name: 'Sil'},
