@@ -124,3 +124,18 @@ function addAll(arr) {
 console.log(addAll([[1, 2], [3, 4], [5, 6, 7]])); //expected output: 28
 ```
 
+### Transfrom an array with objects to an object that has object with a key
+```javascript
+let friendList = [
+  	{id: '9', name: 'Sil'},
+  	{id: '10', name: 'Bert'}
+  ]
+
+const arrayToObject = (array, keyField) =>
+   array.reduce((obj, item) => {
+     obj[item[keyField]] = item
+     return obj
+   }, {})
+
+arrayToObject(friendList, 'id') // {"9":{"id":9,"name":"Sil"},"10":{"id":10,"name":"Bert"}}
+```
