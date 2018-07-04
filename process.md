@@ -12,7 +12,7 @@ Use the following process as a guide for the coding process.
 10. Test locally
 11. Open PR and merge with Dev
 12. Test in Dev
-13. Showcase PM // could also be done after having it tested it locally
+13. Showcase PM
 14. Test in Prod
 16. Update documentation
 
