@@ -18,7 +18,7 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
 ```
 
 ## Navigation
-You don't ues anchor tags because you do discrete navigation. Instead you want to show a new set of components. In order to do this you use the Link library.
+Within the render method, you don't use anchor tags because you do discrete navigation. Instead you want to show a new set of components. In order to do this you use the Link library.
 ```jsx
 import { Link } from 'react-router-dom';
 ```
@@ -29,7 +29,7 @@ import { Link } from 'react-router-dom';
 </Link>
 ```
 
-The route functionality passes history to handle with navigation. By default, when you click on a <Link> from React Router, it will use history.push to navigate. More specifically, the push method allows you to go to a new location. Example:
+The route functionality passes `history` to handle with navigation (used outside the render method). By default, when you click on a <Link> from React Router, it will use history.push to navigate. More specifically, the push method allows you to go to a new location. Example:
  
 ```jsx
 onDeleteClick() {
