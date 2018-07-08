@@ -29,6 +29,17 @@ import { Link } from 'react-router-dom';
 </Link>
 ```
 
+The route functionality passes history to handle with navigation. By default, when you click on a <Link> from React Router, it will use history.push to navigate. More specifically, the push method allows you to go to a new location. Example:
+ 
+```jsx
+onDeleteClick() {
+ const { id } = this.props.match.params; //alternative you could do this.props.post.id 
+  this.props.deletePost(id, () => {
+  this.props.history.push('/')
+  });
+}
+``
+
 Sources:
 - https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf
 - https://medium.com/@pshrmn/a-little-bit-of-history-f245306f48dd
