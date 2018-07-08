@@ -28,3 +28,7 @@ import { Link } from 'react-router-dom';
  Add a post
 </Link>
 ```
+
+Sources:
+- https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf
+- https://medium.com/@pshrmn/a-little-bit-of-history-f245306f48dd
