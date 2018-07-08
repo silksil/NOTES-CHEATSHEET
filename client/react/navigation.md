@@ -1,11 +1,9 @@
  ```jsx 
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
  ```
-- **BrowserRouter** type of route > used for servers that handle dynamic requests.
-- **Route** used if you want to render content based on the locations pathname. Location is defined in the first prop (path), component second prop
-- **Switch** 
-
-   
+- **BrowserRouter**: type of route > used for servers that handle dynamic requests.
+- **Route**: used if you want to render content based on the locations pathname. Location is defined in the first prop (path), component second prop
+- **Switch**: <Route>s can be created anywhere inside of the router, but often it makes sense to render them in the same place. You can use the<Switch> component to group <Route>s. The <Switch> will iterate over its children elements (the routes) and only render the first one that matches the current pathname, so you want to put your most specific route at the top.
 ```jsx
     <BrowserRouter>
       <div>
@@ -17,11 +15,6 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
       </div>
     </BrowserRouter>
 ```
-
-```jsx
-```
-
-
 
 ## Navigation
 You don't ues anchor tags because you do discrete navigation. Instead you want to show a new set of components. In order to do this you use the Link library.
