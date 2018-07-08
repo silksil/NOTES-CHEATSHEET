@@ -24,7 +24,7 @@ import { Link } from 'react-router-dom';
 ```
 
 ```jsx
-<Link className="btn btn-primary" to="/posts/new">
+<Link className="btn" to="/posts/new">
  Add a post
 </Link>
 ```
