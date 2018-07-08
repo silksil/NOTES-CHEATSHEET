@@ -1,14 +1,21 @@
  ```jsx 
- import { BrowserRouter, Route} from 'react-router-dom';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
  ```
+- **BrowserRouter** type of route > used for servers that handle dynamic requests.
+- **Route** used if you want to render content based on the locations pathname. Location is defined in the first prop (path), component second prop
+- **Switch** 
+
    
 ```jsx
-<BrowserRouter>
- <div>
-  <Route path="/hello" component={Hello}/>
-  <Route path="/goodbye" component={Goodbye}/>
- </div>
-</BrowserRouter>
+    <BrowserRouter>
+      <div>
+        <Switch>
+          <Route path="/posts/new" component={PostsNew}/>
+          <Route path="/posts/:id" component={PostsShow}/>
+          <Route path="/" component={PostsIndex}/>
+        </Switch>
+      </div>
+    </BrowserRouter>
 ```
 
 ```jsx
