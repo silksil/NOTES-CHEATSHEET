@@ -43,7 +43,7 @@ To load a specific state out of an array we could create two states:
 ```js
 let posts = [ 
              { title: 'Hello', id: 4, content: 'Hi', tags: 'greetings' },
-             { title: 'Bye', id: 12, content: 'Bye, tags:'greetings' },
+             { title: 'Bye', id: 12, content: 'Bye, tags:'greetings' }
             ];
 let activePost = { title: 'Hello', id: 4, content: 'Hi', tags: 'greetings' }
 ```
