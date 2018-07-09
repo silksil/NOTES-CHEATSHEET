@@ -6,7 +6,7 @@ Middleware intercepts all actions and can let actions:
 - Stop.
 
 ## Redux-Promise
-`https://www.npmjs.com/package/redux-promise`
+https://www.npmjs.com/package/redux-promise </br>
 The main purpose of this library is to clean up the code. It:
 - Sees the incoming action and ooks to the payload property.
 - If it is an promise it  stops the action.
