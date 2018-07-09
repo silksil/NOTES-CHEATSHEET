@@ -2,16 +2,17 @@
 Whereas React displays the views, Redux collects all the data of the application. 
 - With Redux we centralize all the data in a single object - we refer to this as 'state'. 
 - The state can change through events, e.g. a user clicks on something, or new data coming in from a server. 
-- If the state changes, the containers will instantly re-render.
+- If the state changes the containers will instantly re-render.
 
 ## Containers
 A container is a component that has direct access to the Redux store, it:
 1. Receives state updates.
 2. Dispatches actions.
 
-- To make the connection between react-redux you hav to `import { connect } from 'react-redux'`.
-- The function `mapStateToProps(state){}` takes in the application state as an argument, and object is returned that can be extracted as props in the container. 
-- The function `function mapDispatchToProps(dispatch) {}` is a method that retuns what should be included in the container's props. See also the section below about actions. 
+In general a container includes:
+- To make the connection between react-redux you include `import { connect } from 'react-redux'`.
+- The function `mapStateToProps(state){}` takes in the application state as an argument, and an object is returned that can be included as props in the container. 
+- The function `function mapDispatchToProps(dispatch) {}` is a method that returns what should be included in the container's props. See also the section below about actions. 
 - To produce the container and glue React with Redux we have to connect the function(s) with the component, e.g. `export default connect(mapStateToProps, mapDispatchToProps)(BookList);`. 
 
 ```jsx
@@ -47,7 +48,6 @@ class BookList extends Component {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ selectBook }, dispatch);
   // dispatch receives actions results and spits it out to all reducers everytime selectBook is called.
-
 }
 
 // whenever our application state changes, it will re-render.
