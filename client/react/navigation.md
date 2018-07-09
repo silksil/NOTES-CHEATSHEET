@@ -44,7 +44,7 @@ To load a specific state out of an array we could create two states:
 let posts = [ {title: 'Hello', id: 4, content: 'Hi'}, {title: 'Bye', id: 12, content: 'Bye'}];
 let activePost = {title: 'Hello', id: 4, content: 'Hi', tags: 'greetings'};
 ```
-Nonetheless, if you include a specific state in the url -- like `/posts/5` -- this would could create a duplicate piece state. Thus, activePost state does not have to be created. To make it easier to find a particulur post you could consider writing it as an object with keys and assigned objects. This would prevent writing a for loop or a findArray helper, and instead allow you do something like: state.posts[postId]. 
+Nonetheless, if you include a specific state in the url -- like `/posts/5` -- this would could create a duplicate piece state. Thus, activePost state does not have to be created. To make it easier to find a particulur post you could consider writing it as an object with keys and assigned objects. This would prevent writing a for loop or a findArray helper, and instead allow you do something like `state.posts[postId`]. 
 ```javascript
 let posts = {4: {title: 'Hello', id: 4, content: 'Hi'}, 12: {title: 'Bye', id: 12, content: 'Bye'}};
 ```
