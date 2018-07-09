@@ -7,7 +7,7 @@ import _ from 'lodash';
 ```
 
 ### Mapping over an object 
-Same as array.map, but then for an object
+Similar as array.map, but then for an object.
 ```jsx
 renderPosts() {
  return  _.map(this.props.posts, post => {
