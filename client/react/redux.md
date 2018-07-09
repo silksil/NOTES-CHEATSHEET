@@ -1,10 +1,10 @@
-# General
+## General
 Whereas React displays the views, Redux collects all the data of the application. 
 - With Redux we centralize all the data in a single object - we refer to this as 'state'. 
 - The state can change through events, e.g. a user clicks on something, or new data coming in from a server. 
 - If the state changes, the containers will instantly re-render.
 
-# Containers
+## Containers
 A container is a component that has direct access to the Redux store, it:
 1. Receives state updates.
 2. Dispatches actions.
@@ -61,7 +61,7 @@ function mapStateToProps(state) {
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);
 ```
 
-# Action 
+## Action 
 - Actions creaters are functions that return a specific action. Examples of action creators: 
   - Direct: clicking on a button, hovering, add something to the basket. 
   - Indirect: ajax or webpage finish loading. 
@@ -71,9 +71,13 @@ export default connect(mapStateToProps, mapDispatchToProps)(BookList);
 ```jsx 
 // Anything returned from this function will end up as props on the container
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectBook: selectBook }, dispatch); 
+  return bindActionCreators({ selectBook }, dispatch); 
   //dispatch receives actions and spits it out to all reducers
 }
+```
+- Alternatively we could write it directly in the connect functionality:
+```jsx
+export default connect( mapStateToProps, { selectBook })(PostIndex);
 ```
 - Action creator returns an object (which is called the action) that describes the action. It can return:
   - A 'type' property - a value that describe how / what state should change.
@@ -88,10 +92,10 @@ export function selectBook(book) {
 }
 ```
 
-# Reducer
+## Reducer
 Reducers returns the new state.
 
-## childrenReducer
+### childrenReducer
 Is a function that returns a piece of the application state.  Because an application can have many different pieces of state, it can have many different reducers. 
 
 - Takes in two arguments: state and action.
@@ -100,7 +104,7 @@ Is a function that returns a piece of the application state.  Because an applica
   - Array's: concat(), slice(), ...spread
   - Object's: object.assign() and ..spread
 
-## rootReducer
+### rootReducer
 The rootReducer/combineReducer extract what is returned from every reducer in a single object => the state. The example below shows how the BooksReducer and ActiveBookReducer are assigned to the different keys/pieces of state.  
 ```jsx
 import { combineReducers } from 'redux';
@@ -115,7 +119,7 @@ const rootReducer = combineReducers({
 export default rootReducer;
 ```
 
-# Action => Reducer => RootReducer => Container 
+## Action => Reducer => RootReducer => Container 
 The only way to change the state is by sending a signal to the state: an *action* initiates this signal and a *reducer* returns the new state
 - Action creator is trigger through an certain event (e.g. product added to the basket)
 - Action creator returns an object (which is called the action) that describes the action. It can return:
