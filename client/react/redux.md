@@ -75,7 +75,7 @@ function mapDispatchToProps(dispatch) {
   //dispatch receives actions and spits it out to all reducers
 }
 ```
-- Alternatively we could write it directly in the connect functionality:
+- Alternatively we could write it directly in the connect functionality and leave out the code above:
 ```jsx
 export default connect( mapStateToProps, { selectBook })(PostIndex);
 ```
