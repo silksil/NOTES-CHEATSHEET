@@ -75,7 +75,7 @@ function mapDispatchToProps(dispatch) {
   //dispatch receives actions and spits it out to all reducers
 }
 ```
-- Alternatively we could write it directly in the connect functionality and leave out `import { bindActionCreators } from 'redux'` and the code above:
+- Alternatively we could write it directly in the connect functionality and leave out `import { bindActionCreators } from 'redux'` and the whole mapDispatchToProps function:
 :
 ```jsx
 export default connect( mapStateToProps, { selectBook })(PostIndex);
