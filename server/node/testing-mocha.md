@@ -39,41 +39,42 @@ describe ("Test Util", () =>{
 - **before() and after()** can be used to prepping data and clean it up afterwards. e.g. add a user to the db, and delete it from the db. So will call before(), then it() and then after(). 
 
 
-### HTTP requests
-To make the request and assert on its response, the end method can be used:
-```javascript
-chai.request(app)
-  .put('/user/me')
-  .send({ password: '123', confirmPassword: '123' })
-  .end(function (err, res) {
-     expect(err).to.be.null;
-     expect(res).to.have.status(200);
-  });
-```
+### Functional API testing
+#### Done()
 Because the end function is passed a callback, assertions are run asynchronously. Therefore, a mechanism must be used to notify the testing framework that the callback has completed. Otherwise, the test will pass before the assertions are checked.
 
 For example, in the Mocha test framework, this is accomplished using the done callback, which signal that the callback has completed, and the assertions can be verified:
 
 To make the request and assert on its response, the end method can be used:
 ```javascript
-it('fails, as expected', function(done) { // <= Pass in done callback
-  chai.request('http://localhost:8080')
+it('fails, as expected', (done) =>  { // <= Pass in done callback
+  chai.request(server)
   .get('/')
   .end(function(err, res) {
-    expect(res).to.have.status(123);
+    res.should.have.status(200);
     done();                               // <= Call done to signal callback end
   });
 });
 
-it('succeeds silently!', function() {   // <= No done callback
-  chai.request('http://localhost:8080')
+it('succeeds silently!', (done) => () {   // <= No done callback
+  chai.request(server)
   .get('/')
   .end(function(err, res) {
-    expect(res).to.have.status(123);    // <= Test completes before this runs
+    res.should.have.status(200);    // <= Test completes before this runs
   });
 });
 ```
 When done is passed in, Mocha will wait until the call to done(), or until the timeout expires. done also accepts an error parameter when signaling completion.
+
+#### Examples
+```js
+.end((err, res) => {
+ res.should.have.status(200);
+ res.body.should.have.keys(['success', 'message']);
+ res.body.should.include({'success': false});
+ done();
+});
+```
 
 ## Unit testing
 Besides testing the the response of an API, you can test what is happening inside the API. In other words, you can open the black box, so you not only know whether the output is correct, but also test the individual units. 
