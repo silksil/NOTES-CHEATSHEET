@@ -1,9 +1,9 @@
 # Middleware 
 Middleware intercepts all actions and can let actions:
 - Pass.
-- Manipulate it.
-- Log it.
-- Stop it.
+- Manipulate.
+- Log.
+- Stop.
 
 ## Redux-Promise
 https://www.npmjs.com/package/redux-promise
