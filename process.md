@@ -19,6 +19,7 @@ Use the following process as a guide for the coding process.
 ## Daily 
 1. Review what you have done yesterday.
 2. Set a goal for today (in relation to a story, be clear about the subtasks you want to finish).
-3. If possible and needed, split up the subtask in even more subtasks. 
-4. Take notes of learnings throughout the day. 
+3. If possible and needed, split up the subtask in even more subtasks.
+4. If need assignments or tasks pop-up, write them down and consider repriortizing.
+4. Take notes of learnings. 
 
