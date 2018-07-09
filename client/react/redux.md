@@ -12,7 +12,7 @@ A container is a component that has direct access to the Redux store, it:
 In general a container includes:
 - To make the connection between react-redux you include `import { connect } from 'react-redux'`.
 - The function `mapStateToProps(state){}` takes in the application state as an argument, and an object is returned that can be included as props in the container. 
-- The function `function mapDispatchToProps(dispatch) {}` is a method that returns what should be included in the container's props. See also the section below about actions. 
+- The function `function mapDispatchToProps(dispatch) {}` dispatches an action. This is the only way to trigger a state change. See also the section below about actions. 
 - To produce the container and glue React with Redux we have to connect the function(s) with the component, e.g. `export default connect(mapStateToProps, mapDispatchToProps)(BookList);`. 
 
 ```jsx
