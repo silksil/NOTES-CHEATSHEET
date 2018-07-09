@@ -27,9 +27,9 @@ Nonetheless, if you include a specific state in the url -- like `/posts/5` -- th
 ```javascript
 let posts = {4: {title: 'Hello', id: 4, content: 'Hi'}, 12: {title: 'Bye', id: 12, content: 'Bye'}};
 ```
-See this link to find how how to transform the array to an object as stated in the code above: https://github.com/silksil/best-practices-cheatsheets/blob/master/javascript/array's.md
+- See this link to find how how to transform the array to an object as stated in the code above: https://github.com/silksil/best-practices-cheatsheets/blob/master/javascript/array's.md
+- See this link on how to use lodash to map over over an object with objects: https://github.com/silksil/best-practices-cheatsheets/blob/master/client/lodash.md
 
- 
 ## Navigation
 Within the render method, you don't use anchor tags because you do discrete navigation. Instead you want to show a new set of components. In order to do this you use the Link library.
 ```jsx
