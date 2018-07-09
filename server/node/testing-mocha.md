@@ -1,7 +1,7 @@
 ## Intro
 Check this video for more info about test-driven development and unit testing: https://www.youtube.com/watch?v=Nf5pIGU4Snc
 
-Find info about the difference between unit testing and api-testing: 
+Find info about the difference between unit testing and functional testing: 
 - https://www.linkedin.com/pulse/difference-between-api-testing-unit-mj-alavi/
 - https://www.quora.com/What-are-the-differences-between-an-API-unit-test-and-an-API-functional-test
 -
