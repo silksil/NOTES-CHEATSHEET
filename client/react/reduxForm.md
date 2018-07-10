@@ -42,20 +42,19 @@ export default reduxForm({ // wire up Redux Form
 ### Single field
 The field component represents a distinct input. The name property refers to the piece of state it produces. The field component doesn't know how to show itself on the screen. Therefore we have to include a component in 'component' to show something on the screen.
 ```jsx
-class PostsNew extends Component {
+render() {
  const { handleSubmit } = this.props;
- render() {
-  return (
-   <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-    <Field
-     name="title"
-     component={this.renderTitleField}
-    />
-    <button type="submit"> Submit </button>
-   </form>
-  );
- }
+ return (
+  <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+   <Field
+    name="title"
+    component={this.renderTitleField}
+   />
+   <button type="submit"> Submit </button>
+  </form>
+ );
 }
+
 ```
 To include the component we refer to `this.renderTitleField`  and we include in this function the argument `field`. This field object includes event handlers that we need to wire up. In this case, the renderTitleField is being linked to the component through the field argument. `Field.input` is an object with a bunch of different event handlers (e.g. onFocus, onChange, onBlur) and props (e.g. value input). Through `{...field.input}` we say that the different properties of that object should be communicated as props to the input tag.
 ```jsx
