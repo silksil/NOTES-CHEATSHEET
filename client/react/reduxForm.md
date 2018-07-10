@@ -214,7 +214,7 @@ Redux Form handles the state of the form, but it doesn't communicate it to a ser
 render() {
  const { handleSubmit } = this.props; // here we pull of handleSubmit from this.props
  return (
-  <form onSubmit={handleSubmit(this.onSubmit.bind(this))}> // we call .bind(this) to refer to the component
+  <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
    <Field
     label="Title"
     name="title"
