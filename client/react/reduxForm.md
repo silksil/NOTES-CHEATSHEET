@@ -188,7 +188,7 @@ renderField(field) {
  );
 }
 ```
-We can use deconstructing to pull of touched and error and clean up the code. 
+We can use deconstructuring to pull of `touched` and `error` of the meta property to make the code a bit more tidy. 
 ```jsx
 renderField(field) {
  const { meta: { touched, error } } = field;
