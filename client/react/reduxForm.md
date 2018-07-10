@@ -188,6 +188,25 @@ renderField(field) {
  );
 }
 ```
+We can use deconstructing to pull of touched and error and clean up the code. 
+```jsx
+renderField(field) {
+ const { meta: { touched, error } } = field;
+ const className = `form-group ${touched && error ? 'has-danger' : ''}`; 
+ return (
+  <div>
+   <label>{field.label}</label>
+   <input
+    type="text"
+    {...field.input}
+   />
+   <div className="text-help>
+    {touched ? error : ''}
+   </div>
+  </div>
+ );
+}
+```
 
 ### Submitting the form
 Redux Form handles the state of the form, but it doesn't communicate it to a server, we still have to do this manually. When we wire up the Redux Form helper, it passes a ton of additional properties. One of them is the `handleSubmit`. handleSubmit checks whether the form is valid. If it is valid, it is passed to our assigned function `onSubmit` (as said before it is not the responsiblity of Redux Form as soon it is validated / submitted). We call `.bind(this)`, because we passing onSubmit as a callback function that will operate in a different context. Thus, with the `.bind(this)` we refer to the component.
