@@ -151,7 +151,7 @@ renderField(field) {
  );
 }
 ```
-There are three different states of a input in a form: pristine(not filled something into the input field), touched (enter text and focus away) and invalid. Now the errors will show up directly, but in this case we want to only show the errors if the user enters the touched state.
+There are three different states of a input in a form: pristine(not filled something into the input field), touched (enter text and focus away) and invalid. Now the errors will show up directly, but in this case we want to only show the errors if the user enters the touched state. `{field.meta.touched ? field.meta.error : ''}` states: show error only if user touched field, else empty string.
 ```jsx
 renderField(field) {
  return (
@@ -163,7 +163,6 @@ renderField(field) {
    />
    {field.meta.touched ? field.meta.error : ''}
   </div>
-  */show error only if user touched field, else empty string*/
  );
 }
 ```
