@@ -136,5 +136,22 @@ function validate(values) {
  return errors; // if errors is empty, the Redux Form is ok with submitting
 }
 ```
+The property `metta.error` is automatically added to the `field argument` in a `field component` through our `validate` function. If the error object has a property that is equal to the name of a `field element` (in the form), it will automaticaly link the error to `metta.error` with a string containing the error.
+```jsx
+renderField(field) {
+ return (
+  <div>
+   <label>{field.label}</label>
+   <input
+    type="text"
+    {...field.input}
+   />
+   {field.meta.error}
+  </div>
+ );
+ ```
+}
+
+
 Sources:
 - https://redux-form.com/7.4.2/
