@@ -110,6 +110,7 @@ renderField(field) {
   </div>
  );
 }
+```
 ### Validation
 We use the Redux Form validate function. Firstly, hook up the functionality:
 ```jsx
