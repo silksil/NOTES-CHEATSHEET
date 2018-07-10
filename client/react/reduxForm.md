@@ -39,17 +39,19 @@ export default reduxForm({ // wire up Redux Form
 ```
 
 ### Form Component
+### Single field
 The field component represents a distinct input. The name property refers to the piece of state it produces. The field component doesn't know how to show itself on the screen. Therefore we have to include a component in 'component' to show something on the screen.
 ```jsx
 class PostsNew extends Component {
+ const { handleSubmit } = this.props;
  render() {
   return (
    <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
     <Field
-     label="Title"
      name="title"
      component={this.renderTitleField}
     />
+    <button type="submit"> Submit </button>
    </form>
   );
  }
@@ -60,6 +62,7 @@ To include the component we refer to `this.renderTitleField`  and we include in 
 renderTitleField(field) {
  return (
   <div>
+   <label>Title</label>
    <input
     type="text"
     {...field.input}
@@ -68,6 +71,35 @@ renderTitleField(field) {
  );
 }
   ```
+  
+### Multiple fields
+We can pass arbiturary arguments (with any given name, doesn't have to be label) we can access it through the field property.
+```jsx
+render() {
+ const { handleSubmit } = this.props;
+ return (
+  <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+   <Field
+    label="Title"
+    name="title"
+    component={this.renderField}
+   />
+   <Field
+    label="Categories"
+    name="categories"
+    component={this.renderField}
+   />
+   <Field
+    label="Post Content"
+    name="content"
+    component={this.renderField}
+   />
+   <button type="submit"> Submit </button>
+  </form>
+ );
+}
+
+```
 
 ### Validation
 
