@@ -170,11 +170,10 @@ renderField(field) {
 ```
 To apply css when there is an error, we can conditionall include a className.
 ```jsx
-const className = `form-group ${field.meta.touched && field.meta.error ? 'has-danger' : ''}`; 
-// form-group is always assigned. 
-// has-danger is the className to make it red
-
 renderField(field) {
+ const className = `form-group ${field.meta.touched && field.meta.error ? 'has-danger' : ''}`; 
+ // form-group is always assigned. 
+ // has-danger is the className to make it red
  return (
   <div>
    <label>{field.label}</label>
