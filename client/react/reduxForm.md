@@ -34,7 +34,7 @@ import { Field, reduxForm } from 'redux-form';
 Below we wire up the Redux Form. The form property allows us to include a unique string, which allows to include multiple forms on a screen, e.g. login and sign-up form. Make sure the value assigned to the key `form` is unique (throughout the project).
 ```jsx
 export default reduxForm({ // wire up Redux Form
- form: 'PostsNewForm' // have unique value assigned to the key form
+ form: 'PostsNewForm', // have unique value assigned to the key form
  })(PostNew);
 ```
 
