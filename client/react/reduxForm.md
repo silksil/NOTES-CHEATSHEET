@@ -23,5 +23,24 @@ const rootReducer = combineReducers({
 export default rootReducer;
 ```
 
+### Import
+Field is a react-form component that helps wire up event handlers. ReduxForm is a function similar to the connect helper; it allows our component to directly talk to the formReducer in the Redux Store.
+```jsx
+import React, { Component } from 'React';
+import { Field, reduxForm } from 'redux-form';
+```
+
+### Export
+Below we wire up the Redux Form. The form property allows us to include a unique string, which allows to include multiple forms on a screen, e.g. login and sign-up form. Make sure the value assigned to the key `form` is unique (throughout the project).
+```
+export default reduxForm({ // wire up Redux Form
+ form: 'PostsNewForm'  // have unique value assigned to the key form
+ })(PostNew);
+```
+
+### Component
+
+### Validation
+
 Sources:
 - https://redux-form.com/7.4.2/
