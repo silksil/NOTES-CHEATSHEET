@@ -38,7 +38,7 @@ export default reduxForm({ // wire up Redux Form
  })(PostNew);
 ```
 
-### Component
+### Form Component
 The field component represents a distinct input. The name property refers to the piece of state it produces. The field component doesn't know how to show itself on the screen. Therefore we have to include a component in 'component' to show something on the screen.
 ```jsx
 class PostsNew extends Component {
