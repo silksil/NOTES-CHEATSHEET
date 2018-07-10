@@ -17,7 +17,7 @@ import { reducer as formReducer } from 'redux-form'; // rename to formReducer
 formReducer has to be assigned to form. 
 ```js
 const rootReducer = combineReducers({
-  form: formReducer // make sure to assign it to form 
+  form: formReducer, // make sure to assign it to form 
 });
 
 export default rootReducer;
