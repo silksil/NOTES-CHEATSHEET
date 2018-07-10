@@ -55,16 +55,18 @@ class PostsNew extends Component {
  }
 }
 ```
-To 
+To include the component we refer to `this.renderTitleField`  and we include in this function the argument `field`. This field object includes event handlers that we need to wire up. In this case, the renderTitleField is being linked to the component through the field argument. `Field.input` is an object with a bunch of different event handlers (e.g. onFocus, onChange, onBlur) and props (e.g. value input). Through `{...field.input}` we say that the different properties of that object should be communicated as props to the input tag.
 ```jsx
 renderTitleField(field) {
-    return (
-      <div>
-        <input
-        />
-      </div>
-    );
-  }
+ return (
+  <div>
+   <input
+    type="text"
+    {...field.input}
+   />
+  </div>
+ );
+}
   ```
 
 ### Validation
