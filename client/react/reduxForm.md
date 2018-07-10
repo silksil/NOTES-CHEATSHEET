@@ -161,8 +161,9 @@ renderField(field) {
     type="text"
     {...field.input}
    />
-   {field.meta.touched ? field.meta.error : ''} {*/show error only if user touched field, else empty string*/}
+   {field.meta.touched ? field.meta.error : ''}
   </div>
+  */show error only if user touched field, else empty string*/
  );
 }
 ```
