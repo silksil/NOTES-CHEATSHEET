@@ -175,7 +175,7 @@ renderField(field) {
  // form-group is always assigned. 
  // has-danger is the className to make it red
  return (
-  <div>
+  <div className={className}>
    <label>{field.label}</label>
    <input
     type="text"
@@ -194,7 +194,7 @@ renderField(field) {
  const { meta: { touched, error } } = field;
  const className = `form-group ${touched && error ? 'has-danger' : ''}`; 
  return (
-  <div>
+  <div className={className}>
    <label>{field.label}</label>
    <input
     type="text"
