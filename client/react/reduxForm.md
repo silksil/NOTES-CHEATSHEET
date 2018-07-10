@@ -152,12 +152,12 @@ renderField(field) {
 }
 ```
 ### Submitting the form
-Redux Form handles the state of the form, but it doesn't communicate it to a server, we still have to do this manually. When we wire up the Redux Form helper, it passes a ton of additional properties. One of them is the `handleSubmit`. handleSubmit checks whether the form is valid. If it is valid, it is passed to our assigned function `onSubmit`.
+Redux Form handles the state of the form, but it doesn't communicate it to a server, we still have to do this manually. When we wire up the Redux Form helper, it passes a ton of additional properties. One of them is the `handleSubmit`. handleSubmit checks whether the form is valid. If it is valid, it is passed to our assigned function `onSubmit` (as said before it is not the responsiblity of Redux Form as soon it is validated / submitted). We call `.bind(this)`, because we passing onSubmit as a callback function that will operate in a different context. Thus, with the `.bind(this)` we refer to the component.
 ```jsx
 render() {
  const { handleSubmit } = this.props; // here we pull of handleSubmit from this.props
  return (
-  <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+  <form onSubmit={handleSubmit(this.onSubmit.bind(this))}> // we call .bind(this) to refer to the component
    <Field
     label="Title"
     name="title"
@@ -178,6 +178,15 @@ render() {
  );
 }
 ```
+If the form is validated, it will end up at `onSubmit`. It will be called with an object including the values of the form that by convention is called `values`.
+onSubmit(values) {
+    this.props.createPost(values, () => {
+      this.props.history.push('/')
+    });
+  }
+
+
+
 
 Sources:
 - https://redux-form.com/7.4.2/
