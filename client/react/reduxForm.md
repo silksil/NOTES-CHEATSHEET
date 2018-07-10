@@ -151,6 +151,21 @@ renderField(field) {
  );
 }
 ```
+There are three different states of a input in a form: pristine(not filled something into the input field), touched (enter text and focus away) and invalid. Now the errors will show up directly, but in this case we want to only show the errors if the user enters the touched state.
+```jsx
+renderField(field) {
+ return (
+  <div>
+   <label>{field.label}</label>
+   <input
+    type="text"
+    {...field.input}
+   />
+   {field.meta.touched ? field.meta.error : ''} // show error only if user touched field, else empty string
+  </div>
+ );
+}
+```
 ### Submitting the form
 Redux Form handles the state of the form, but it doesn't communicate it to a server, we still have to do this manually. When we wire up the Redux Form helper, it passes a ton of additional properties. One of them is the `handleSubmit`. handleSubmit checks whether the form is valid. If it is valid, it is passed to our assigned function `onSubmit` (as said before it is not the responsiblity of Redux Form as soon it is validated / submitted). We call `.bind(this)`, because we passing onSubmit as a callback function that will operate in a different context. Thus, with the `.bind(this)` we refer to the component.
 ```jsx
