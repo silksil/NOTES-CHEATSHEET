@@ -241,6 +241,11 @@ onSubmit(values) {
   console.log(values)
 }
 ```
+Whenever we have to save data or make a API request in Redux, we have to call an action creator. .
+Let's set up the action creator.
+Link it to the state
+
+
 
 
 
