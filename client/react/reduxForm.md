@@ -8,16 +8,16 @@ In short, Redux Form does the following:
 ```npm install --save redux-form```
 
 ## Reducer
-We have to import a reducer from the Redux Form library and hook it up to the combineReducer call.  We assign a different name to reducer because formReducer is more specific. 
+We have to import a reducer from the Redux Form library and hook it up to the combineReducer call. Due to this we don't have to include manual created action creators. We assign a different name to reducer because formReducer is more specific. 
 ```js
 import { combineReducers } from 'redux';
-import { reducer as formReducer } from 'redux-form';
+import { reducer as formReducer } from 'redux-form'; // rename to formReducer
 ```
-
+formReducer has to be assigned to form. 
 ```js
 const rootReducer = combineReducers({
   posts: PostReducer,
-  form: formReducer //make sure to assign it to form 
+  form: formReducer // make sure to assign it to form 
 });
 
 export default rootReducer;
