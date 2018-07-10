@@ -153,9 +153,9 @@ renderField(field) {
 ```
 ### Submitting the form
 Redux Form handles the state of the form, but it doesn't communicate it to a server, we still have to do this manually. When we wire up the Redux Form helper, it passes a ton of additional properties. One of them is the `handleSubmit`. handleSubmit checks whether the form is valid. If it is valid, it is passed to our assigned function `onSubmit`.
-```
+```jsx
 render() {
- const { handleSubmit } = this.props;
+ const { handleSubmit } = this.props; // here we pull of handleSubmit from this.props
  return (
   <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
    <Field
