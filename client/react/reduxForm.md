@@ -149,8 +149,8 @@ renderField(field) {
    {field.meta.error}
   </div>
  );
- ```
 }
+```
 
 
 Sources:
