@@ -179,11 +179,11 @@ render() {
 }
 ```
 If the form is validated, it will end up at `onSubmit`. It will be called with an object including the values of the form that by convention is called `values`.
+```jsx
 onSubmit(values) {
-    this.props.createPost(values, () => {
-      this.props.history.push('/')
-    });
-  }
+  console.log(values)
+}
+```
 
 
 
