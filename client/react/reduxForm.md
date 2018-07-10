@@ -69,7 +69,7 @@ renderTitleField(field) {
   </div>
  );
 }
-  ```
+```
   
 ### Multiple fields
 We can pass arbiturary arguments (with any given name, doesn't have to be label) we can access it through the field property.
@@ -97,8 +97,19 @@ render() {
   </form>
  );
 }
-
 ```
+```jsx
+renderField(field) {
+ return (
+  <div>
+   <label>{field.label}</label>
+   <input
+    type="text"
+    {...field.input}
+   />
+  </div>
+ );
+}
 ### Validation
 We use the Redux Form validate function. Firstly, hook up the functionality:
 ```jsx
