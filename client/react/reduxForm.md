@@ -99,8 +99,16 @@ render() {
 }
 
 ```
-
 ### Validation
-
+We use the Redux Form validate function. Firstly, hook up the functionality:
+```jsx
+export default reduxForm({
+  validate, // include the validate functionality of Redux Form
+  form: 'PostsNewForm',
+})(
+  connect(null, { createPost })(PostNew)
+);
+```
+To include validation we should create a function of Redux Form, called `validate`. It will be called automatically throughout the form lifecycle; when submitting. We pass the argument `values`. This contains an object with all properties of the form, e.g. `{ title: 'asdf', categories: 'asdf' etc.}` We include an error variable that contains an error, and return this object. If error is empty, the form is fine to submit. If not, Redux Form assumes the form is invalid. To validate if there are errors, we include if-statements.
 Sources:
 - https://redux-form.com/7.4.2/
