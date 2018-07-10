@@ -1,3 +1,4 @@
+## Introduction
 In short, Redux Form does the following: 
 1. Identifies different pieces of form state.
 2. Makes one 'Field' component per piece of state (created by Redux Form).
