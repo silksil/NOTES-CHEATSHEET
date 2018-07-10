@@ -121,7 +121,7 @@ function validate(values) {
  if (!values.content) {
   errors.content = 'Enter some content please';
  }
- return errors; // if errors is empty, the Redux Form is ok with submiting
+ return errors; // if errors is empty, the Redux Form is ok with submitting
 }
 ```
 Sources:
