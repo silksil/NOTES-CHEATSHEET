@@ -107,6 +107,6 @@ constructor(props) {
  this.onFormSubmit = this.onFormSubmit.bind(this); // set the right context
 }
 ```
-Now in the terminal(Network > XHR) the the request and results should display.
+Now in the terminal(Network > XHR) the request and results should display.
 
 
