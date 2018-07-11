@@ -33,7 +33,7 @@ ReactDOM.render(
  , document.querySelector('.container'));
 ```
 #### Example
-One way the middleware is helpfull is when we use axios to fetch some data. Axios returns a promise, and instead unwrapping the promise we can include the request in the payload. 
+One way the middleware is helpfull is when we use axios to fetch some data. Axios returns a promise, and instead of unwrapping the promise we can include the whole promise in the payload. 
 ```jsx
 export function fetchWeather(city) {
 
