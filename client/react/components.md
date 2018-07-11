@@ -3,7 +3,7 @@
 - React lets you define components as `classes` or `functions`.
 - Components must never modify its own props - should be a `pure function`.
 
-## React.Component
+## Deconstructuring React.Component
 - The only method you must define in a React.Component subclass is called `render()`. All the other methods described are optional.
 - `setState()` enqueues changes to the component state and tells React that this component and its children need to be re-rendered with the updated state. This is the primary method you use to update the user interface in response to event handlers and server responses.
 - `this.state.` contains data specific to this component that may change over time. The state is user-defined, and it should be a plain JavaScript object.
@@ -30,7 +30,7 @@ An element describes what you want to see on the screen:
 - React elements are immutable. Once you create an element, you can’t change its children or attributes. An element is like a single frame in a movie: it represents the UI at a certain point in time.
 
 ## ReactDOM.render()
-`ReactDOM.render()` controls the contents of the container node you pass in. Any existing DOM elements inside are replaced when first called. Later calls use React’s DOM diffing algorithm for efficient updates.
+`ReactDOM.render(element, container[, callback])` Render a React element into the DOM in the supplied container and return a reference to the component (or returns null for stateless components).
 
 ## Example Component
 ```jsx
