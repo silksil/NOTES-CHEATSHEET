@@ -10,7 +10,7 @@ An element describes what you want to see on the screen:
 - Unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements. Elements are what components are “made of”. 
 - React elements are immutable. Once you create an element, you can’t change its children or attributes. An element is like a single frame in a movie: it represents the UI at a certain point in time.
 
-## class nameComponent extends React.Component {} 
+## React.Component
 - The only method you must define in a React.Component subclass is called `render()`. All the other methods described are optional.
 - `setState()` enqueues changes to the component state and tells React that this component and its children need to be re-rendered with the updated state. This is the primary method you use to update the user interface in response to event handlers and server responses.
 - `The state` contains data specific to this component that may change over time. The state is user-defined, and it should be a plain JavaScript object.
@@ -81,9 +81,11 @@ class App extends Component {
 ReactDOM.render(<App />, document.querySelector('.container'));
 ```
 ## Passing props to child component
-The example below displays how a property can be passed on to a child componnent. In this case, the RenderWeather function receives multiple objects that contain weather data regarding a specific city. For that city we want to create seperate charts that display the temp, humidity and pressure. To avoid duplication, we create a component that can be used to display the data of the three paramaters.
+The example below displays how a property can be passed on to a child componnent. In this case, the RenderWeather function receives multiple objects that contain weather data regarding a specific city. For that city we want to create seperate charts that display the temp, humidity and pressure. To avoid duplication, we create a `Chart` component that can be used to display the data of the three paramaters.
 #### Mother component
 ```jsx
+import Chart from '../components/chart';
+
 renderWeather(cityData) {
  const name = cityData.city.name;
  const temp = cityData.list.map(weather => weather.main.temp);
@@ -102,13 +104,13 @@ renderWeather(cityData) {
 ```
 #### Child component
 ```jsx
-import Lodash from 'lodash';
+import _ from 'lodash';
 import React from 'react';
 import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
 
 export default (props) => {
  function average(data) {
-  return Lodash.round(Lodash.sum(data)/data.length);
+  return _.round(_.sum(data)/data.length);
 }
 return (
  <div>
