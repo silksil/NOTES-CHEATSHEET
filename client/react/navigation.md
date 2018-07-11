@@ -32,7 +32,7 @@ let posts = {4: {title: 'Hello', id: 4, content: 'Hi'}, 12: {title: 'Bye', id: 1
 
 #### Loading page based on parameter
 Let's say we are on a page with all the posts and for every post we created a link based on the id of the post. We could then load the page  of a specific post based on the paramater in the link and extract all the info of a specific post from the state with all posts. Nonetheless, this state maybe not be available if a user would directly navigate to a specific post, as the page with with all posts is not first loading the state. Thus, the specific component should be responsible for fetching the data.
-```
+```jsx
 componentDidMount() {
  const { id } = this.props.match.params; //is directly provided by react router > params list wild-card tokens
  this.props.fetchPost(id);
