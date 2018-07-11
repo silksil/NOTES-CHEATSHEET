@@ -39,20 +39,6 @@ onInputChange(event) {
 #### Callback binding
 If we pass of the event handler **through a callback**, the value of `this` is not referring to the component, causing an error. In order to solve this, we need to bind the event handler to the right context: 
 ```jsx
-<form onSubmit={this.onFormSubmit} className="input-group">
- <input
-  className="form-control"
-  value={this.state.term}
-  onChange={this.onInputChange}
- />
-</form>
-```
-```jsx
-onInputChange(event) {
- this.setState({ term: event.target.value });
-}
-```
-```jsx
 constructor(props) {
     super(props);
 
