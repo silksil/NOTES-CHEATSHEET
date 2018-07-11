@@ -241,9 +241,27 @@ onSubmit(values) {
   console.log(values)
 }
 ```
-Whenever we have to save data or make a API request in Redux, we have to call an action creator. .
-Let's set up the action creator.
-Link it to the state
+Whenever we have to save data or make a API request in Redux, we have to call an action creator.
+```jsx
+import { connect } from 'react-redux';
+import { createPost } from '../actions/index.js'; // the action creator
+```
+```jsx
+onSubmit(values) {
+ this.props.createPost(values, () => {
+ });
+}
+```
+```jsx
+export default reduxForm({
+  validate,
+  form: 'PostsNewForm',
+})(
+  connect(null, { createPost })(PostNew)
+);
+```
+
+
 
 
 
