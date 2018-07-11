@@ -78,3 +78,34 @@ export function fetchWeather(city) {
     payload: request
   };
 }
+```
+
+## Connect Component to Action
+```jsx
+import { connect } from 'react-redux';
+import { fetchWeather } from '../actions/index';
+```
+The first argument is `null`, because we do not include `mapStateToProps`. `mapDispatchToProps` always comes as the second argument
+```jsx
+export default connect(null, { fetchWeather })(SearchBar);
+```
+If we an user clicks on submit or hits enter, it will fetch the data and then we will clear the search input. As we are working with a callback in the form, we also have to assure we set the right context.
+```jsx
+onFormSubmit(event) {
+ event.preventDefault();
+ this.props.fetchWeather(this.state.term);
+ this.setState({ term: '' }) // clear the search input
+}
+```
+```jsx
+constructor(props) {
+ super(props);
+
+ this.state = { term: '' }
+
+ this.onInputChange = this.onInputChange.bind(this);
+ this.onFormSubmit = this.onFormSubmit.bind(this); // set the right context
+}
+```
+
+
