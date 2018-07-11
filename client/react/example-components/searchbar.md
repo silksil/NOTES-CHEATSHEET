@@ -43,7 +43,7 @@ constructor(props) {
 ```
 ## Prevent Page Reload
 We created a seachbar out of a form element - it has specific handlers build in (e.g. onEnter onSubmit) that `input` doesn't have. If you click or hit enter, the browser automatically thinks you want to submit a form, causing the page to be reloaded. For a single page application, this is not what you want. Thus we refer to a function that handles the submittal.
-```
+```jsx
 render() {
  return (
   <form onSubmit={this.onFormSubmit} className="input-group">
@@ -67,7 +67,7 @@ onFormSubmit(event) {
 ```
 ## Set-Up Action Creator
 Before submitting we set up the action creator that fetches the data through axios. 
-```
+```javascript
 export function fetchWeather(city) {
 
   const url = `${ROOT_URL}&q=${city},us`;
