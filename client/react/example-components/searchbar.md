@@ -1,5 +1,5 @@
 You create a `controlled field component`: ghe value of our input is set by our state, not the other way around. To get the state you can do this by relating the value to the state, and to update it you can refer trough the onChange attribute to a function that changes the state.
-```
+```jsx
 render() {
  return (
   <form onSubmit={this.onFormSubmit} className="input-group">
