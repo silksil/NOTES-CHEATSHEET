@@ -85,7 +85,7 @@ export function fetchWeather(city) {
 import { connect } from 'react-redux';
 import { fetchWeather } from '../actions/index';
 ```
-The first argument is `null`, because we do not include `mapStateToProps`. `mapDispatchToProps` always comes as the second argument
+The first argument is `null`, because we do not include `mapStateToProps`. `mapDispatchToProps` always comes as the second argument.
 ```jsx
 export default connect(null, { fetchWeather })(SearchBar);
 ```
