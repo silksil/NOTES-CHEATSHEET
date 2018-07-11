@@ -121,6 +121,6 @@ export default function(state = [], action) {
   return state;
 }
 ```
-Alternatively we could return only the latests searched item: `[ action.payload.data ]`.
+Alternatively we could return only the latests searched item: `return action.payload.data`.
 
 
