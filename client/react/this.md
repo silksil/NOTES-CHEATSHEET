@@ -1,5 +1,3 @@
-source: https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/this.md
-
 At any point during the execution of a JavaScript program there is a context-dependent value that you can access through the keyword this.
 
 > Note: The value of `this` is only useful if used inside a function. When accessed outside of any function, the value of `this` is different depending on whether you run your program in the browser or in Node. In the case of the browser, the value of `this` refers to the global `window` object. In the case of Node, the value of `this` outside any function is an empty object (`{}`).
@@ -139,3 +137,6 @@ class MyClass {
 const myClass = new MyClass();
 myClass.sayDelayed();
 ```
+
+#### Source:
+- source: https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/this.md
