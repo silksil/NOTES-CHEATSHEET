@@ -108,5 +108,17 @@ constructor(props) {
 }
 ```
 Now in the terminal(Network > XHR) the request and results should display.
+## Set-Up The Reducer
+The last step includes setting up the reducer. In this example, we add every search item to the list.
+```jsx
+export default function(state = [], action) {
+  switch(action.type) {
+  case FETCH_WEATHER:
+    return [ action.payload.data, ...state ]; 
+  }
+  return state;
+}
+```
+Alternatively we could return only the latests searched item: `[ action.payload.data ]`.
 
 
