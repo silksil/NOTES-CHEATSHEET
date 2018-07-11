@@ -1,14 +1,7 @@
-# Components
+# General
 - Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
-- React lets you define components as classes or functions.
+- React lets you define components as `classes` or `functions`.
 - Components must never modify its own props - should be a `pure function`.
-
-## Element
-An element describes what you want to see on the screen:
-`const element = <h1>Hello, world</h1>;`
-
-- Unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements. Eventually, elements are what components are “made of”. 
-- React elements are immutable. Once you create an element, you can’t change its children or attributes. An element is like a single frame in a movie: it represents the UI at a certain point in time.
 
 ## React.Component
 - The only method you must define in a React.Component subclass is called `render()`. All the other methods described are optional.
@@ -28,6 +21,13 @@ An element describes what you want to see on the screen:
     - Portals. Let you render children into a different DOM subtree. See the documentation on portals for more details.
     - String and numbers. These are rendered as text nodes in the DOM.
     - Booleans or null. Render nothing. (Mostly exists to support return test && <Child /> pattern, where test is boolean.)
+    
+##### More on elements
+An element describes what you want to see on the screen:
+`const element = <h1>Hello, world</h1>;`
+
+- Unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements. Eventually, elements are what components are “made of”. 
+- React elements are immutable. Once you create an element, you can’t change its children or attributes. An element is like a single frame in a movie: it represents the UI at a certain point in time.
 
 ## ReactDOM.render()
 `ReactDOM.render()` controls the contents of the container node you pass in. Any existing DOM elements inside are replaced when first called. Later calls use React’s DOM diffing algorithm for efficient updates.
