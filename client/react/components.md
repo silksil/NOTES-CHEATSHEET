@@ -1,6 +1,7 @@
 # General
 - Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
 - React lets you define components as `classes` or `functions`.
+- Components as functions are stateless. It means that you can’t reach `this.state` inside it. It also has no lifecycle so you can’t use componentDidMount and other hooks.
 - Components must never modify its own props - should be a `pure function`.
 
 ## Deconstructuring React.Component
