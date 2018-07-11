@@ -51,7 +51,7 @@ import { Link } from 'react-router-dom';
 </Link>
 ```
 
-The route functionality passes `history` to handle with navigation (<Link> is only for withing the DOM, instead this is programmetric navigation). By default, when you click on a <Link> from React Router, it will use history.push to navigate. More specifically, the push method allows you to go to a new location. For example:
+The route functionality passes `history` to handle with navigation ( <Link> is only for within the DOM, instead this is programmetric navigation). By default, when you click on a <Link> from React Router, it will use history.push to navigate. More specifically, the push method allows you to go to a new location. For example:
  
 ```jsx
 onDeleteClick(id) {
