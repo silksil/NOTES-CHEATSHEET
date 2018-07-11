@@ -24,7 +24,7 @@ render() {
  )
 }
 ```
-All event handlers, e.g. `onChange`, come along with the event object. To get the typed input, we can refer to even.target.value. If we now type, it would say 'cannot read property setState of undefined'.
+All event handlers, e.g. `onChange`, come along with the event object. To get the typed input, we can refer to even.target.value. If we now type, it would say `'cannot read property setState of undefined'`.
 ```jsx
 onInputChange(event) {
  this.setState({ term: event.target.value });
