@@ -261,7 +261,7 @@ export default reduxForm({
 );
 ```
 ### Navigation
-The code below shows the function that send the data to an API. In this case, it includes a callback, because after the post we navigate to a page to shows the post. Thus, through this we assure that it is included in the back-end and shows up on the screen.
+The code below shows the function that sends the data to an API. In this case, it includes a callback, because after the post we navigate to a page to shows the post, including that specific post. Thus, through this we assure that it is included in the back-end, and only then the screen can be loaded that includes the specific post.
 ```jsx
 export function createPost(values, callback) {
   const request = axios.post(`${ROOT_URL}/posts/${API_KEY}`, values)
@@ -273,7 +273,7 @@ export function createPost(values, callback) {
   };
 }
 ```
-After the callback is being called, we navigate to the next page.
+After the callback is being called, we can navigate to the next page through `history.push`.
 ```jsx
 onSubmit(values) {
  this.props.createPost(values, () => {
