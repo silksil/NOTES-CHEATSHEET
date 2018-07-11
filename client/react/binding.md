@@ -14,20 +14,8 @@ newFunction(); // --> Hello world!
 ```
 Using the `printMyData` function as a basis, the `bind` method fixes the `this` value to `myObj` and returns a new function assigned here to the variable `newFunction`. When we call `newFunction` the `this` value will be `myObj`, and therefore we can console.log `myData` through the `this` keyword.
 
-#### Callback binding
-If we pass of the event handler **through a callback**, the value of `this` is not referring to the component, causing an error. In order to solve this, we need to bind the event handler to the right context: 
-```jsx
-constructor(props) {
- super(props);
-
- this.state = { term: '' }
-
- this.onInputChange = this.onInputChange.bind(this);
-}
-```
-
 ## A controlled field component
-### The input field
+#### The input field
 The value of our input is set by our state, not the other way around. To get the state you can do this by relating the value to the state, and to update it you can refer the onChange attribute to a function that changes the state.
 ```jsx
 <form onSubmit={this.onFormSubmit} className="input-group">
@@ -48,8 +36,31 @@ onInputChange(event) {
 }
 ``` 
 
+#### Callback binding
+If we pass of the event handler **through a callback**, the value of `this` is not referring to the component, causing an error. In order to solve this, we need to bind the event handler to the right context: 
+```jsx
+<form onSubmit={this.onFormSubmit} className="input-group">
+ <input
+  className="form-control"
+  value={this.state.term}
+  onChange={this.onInputChange}
+ />
+</form>
+```
+```jsx
+onInputChange(event) {
+ this.setState({ term: event.target.value });
+}
+```
+```jsx
+constructor(props) {
+    super(props);
 
+    this.state = { term: '' }
 
+    this.onInputChange = this.onInputChange.bind(this); // here we set the right context
+  }
+```
 
 Sources:
 - https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/this.md]
