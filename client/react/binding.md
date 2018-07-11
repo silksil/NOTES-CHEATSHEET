@@ -14,7 +14,7 @@ newFunction(); // --> Hello world!
 ```
 Using the `printMyData` function as a basis, the `bind` method fixes the `this` value to `myObj` and returns a new function assigned here to the variable `newFunction`. When we call `newFunction` the `this` value will be `myObj`, and therefore we can console.log `myData` through the `this` keyword.
 
-## A controlled field component
+## A Controlled Field Component
 #### The input field
 The value of our input is set by our state, not the other way around. To get the state you can do this by relating the value to the state, and to update it you can refer the onChange attribute to a function that changes the state.
 ```jsx
