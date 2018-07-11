@@ -281,12 +281,5 @@ onSubmit(values) {
  });
 }
 ```
-
-
-
-
-
-
-
-Sources:
+#### Sources:
 - https://redux-form.com/7.4.2/
