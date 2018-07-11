@@ -109,14 +109,15 @@ constructor(props) {
 ```
 Now in the terminal(Network > XHR) the request and results should display.
 ## Set-Up The Reducer
-The last step includes setting up the reducer. In this example, we add every search item to the list.
+The last step includes setting up the reducer(in this case Redux-Promise is used, so no need to unwrap). In this example, we add every search item to the list.
 ```jsx
 import { FETCH_WEATHER } from '../actions/index';
 
 export default function(state = [], action) {
   switch(action.type) {
   case FETCH_WEATHER:
-    return [ action.payload.data, ...state ]; 
+    return [ action.payload.data, ...state ]; // alternatively: return state.concat([action.payload.data])
+    // never push() the data into the state > we don't manipulate, but return a new instance of state
   }
   return state;
 }
