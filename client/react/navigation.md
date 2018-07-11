@@ -34,10 +34,11 @@ let posts = {4: {title: 'Hello', id: 4, content: 'Hi'}, 12: {title: 'Bye', id: 1
 Let's say we are on a page with all the posts and for every post we created a link based on the id of the post. We could then load the page  of a specific post based on the paramater in the link and extract all the info of a specific post from the state with all posts. Nonetheless, this state maybe not be available if a user would directly navigate to a specific post, as the page with with all posts is not first loading the state. Thus, the specific component should be responsible for fetching the data.
 ```jsx
 componentDidMount() {
- const { id } = this.props.match.params; //is directly provided by react router > params list wild-card tokens
+ const { id } = this.props.match.params; // get the wild-cart tokens of the url
  this.props.fetchPost(id);
 }
 ```
+`match.params` is directly provided by React Router: `match` is the top-level property,  `params` list  all wild-card tokens (could be multiple).
 
 ## Navigation
 Within the render method, you don't use anchor tags because you do discrete navigation. Instead you want to show a new set of components. In order to do this you use the Link library.
