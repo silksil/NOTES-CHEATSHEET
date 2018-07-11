@@ -111,6 +111,8 @@ Now in the terminal(Network > XHR) the request and results should display.
 ## Set-Up The Reducer
 The last step includes setting up the reducer. In this example, we add every search item to the list.
 ```jsx
+import { FETCH_WEATHER } from '../actions/index';
+
 export default function(state = [], action) {
   switch(action.type) {
   case FETCH_WEATHER:
