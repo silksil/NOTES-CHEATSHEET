@@ -66,7 +66,7 @@ onFormSubmit(event) {
 }
 ```
 ## Set-Up Action Creator
-Before submitting we set up the action creator that fetches the data through axios. 
+Before submitting we set up the action creator that fetches the data.
 ```javascript
 export function fetchWeather(city) {
 
