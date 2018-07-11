@@ -260,7 +260,27 @@ export default reduxForm({
   connect(null, { createPost })(PostNew)
 );
 ```
+### Navigation
+The code below shows the function that send the data to an API. In this case, it includes a callback, because after the post we navigate to a page to shows the post. Thus, through this we assure that it is included in the back-end and shows up on the screen.
+```jsx
+export function createPost(values, callback) {
+  const request = axios.post(`${ROOT_URL}/posts/${API_KEY}`, values)
+    .then(() => callback());
 
+  return {
+    type: CREATE_POSTS,
+    payload: request,
+  };
+}
+```
+After the callback is being called, we navigate to the next page.
+```jsx
+onSubmit(values) {
+ this.props.createPost(values, () => {
+  this.props.history.push('/')
+ });
+}
+```
 
 
 
