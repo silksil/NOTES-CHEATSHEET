@@ -1,3 +1,5 @@
+This component displays a fetching and displaying a list of blog posts. Every item includes a link to an specific blog posts.
+
 ### Create Action Creator
 ```js
 import axios from 'axios';
