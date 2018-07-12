@@ -88,7 +88,7 @@ To check whether we have received our props we can console.log within render(). 
 ### Map items
 Lastly we map-out out all items. In this case, we use lodash's library to map (as we map over an object). Additionaly, an link to every indvidual item is included. For more info see https://github.com/silksil/best-practices-cheatsheets/blob/master/client/react/navigation.md
 
-```
+```jsx
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 ```
