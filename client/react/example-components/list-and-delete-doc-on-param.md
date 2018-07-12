@@ -47,7 +47,7 @@ export default function (state = {}, action) {
 }
 ```
 ### Import Action Creator
-```
+```jsx
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPost} from '../actions';
@@ -136,7 +136,7 @@ export function deletePost(id, callback) {
 ```
 ### Include Navigation Callback
 If we want to navigate the user after he has clicked and the request has been completed,  we can include a callback.
-```
+```jsx
 export function deletePost(id, callback) {
   const request = axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`)
     .then(() => callback());
@@ -159,6 +159,7 @@ onDeleteClick() {
 We use the lodash library to delete the post.
 ```jsx
 import _ from 'lodash';
+import { FETCH_POSTS, FETCH_POST, DELETE_POST } from '../actions';
 
 export default function (state = {}, action) {
   switch (action.type) {
