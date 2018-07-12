@@ -17,13 +17,21 @@ export function fetchPost(id) {
 ```
 
 ### Create Action Creator
+Instead of tossing all the previous posts we have fetched, we want to add to the all the other posts that have been fetched before
 ```jsx
 import {FETCH_POST} from '../actions';
 
 export default function (state = {}, action) {
   switch (action.type) {
-    case FETCH_POST:
+    case FETCH_POST: // this is the action creator this component is referring too
       return { ...state, [action.payload.data.id]: action.payload.data }
+    case FETCH_POSTS:
+    const arrayToObject = (array, keyField) =>
+      array.reduce((obj, item) => {
+        obj[item[keyField]] = item
+        return obj
+      }, {})
+    return arrayToObject(action.payload.data, 'id')
     default:
       return state;
   }
