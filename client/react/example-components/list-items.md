@@ -1,4 +1,4 @@
-This component displays a fetching and displaying a list of blog posts. Every item includes a link to an specific blog posts.
+This component displays a fetching and displaying a list of blog posts. Every item includes a link to a specific blog post.
 
 ### Create Action Creator
 ```js
