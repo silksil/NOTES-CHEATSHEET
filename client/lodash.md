@@ -1,7 +1,7 @@
 Lodash makes JavaScript easier by taking the hassle out of working with arrays,
 numbers, objects, strings, etc. It is the most dependent on npm package.
 
-``` js
+``` 
 npm install --save lodash
 import _ from 'lodash';
 ```
