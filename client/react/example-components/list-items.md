@@ -52,7 +52,7 @@ import { connect } from 'react-redux';;
 
 import { fetchPosts } from '../actions';
 ```
-```
+```jsx
 class PostIndex extends Component {
  render() {
   return (
