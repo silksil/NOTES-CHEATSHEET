@@ -111,7 +111,7 @@ constructor(props) {
 ```
 Now in the terminal(Network > XHR) the request and results should display.
 ## Set-Up The Reducer
-The last step includes setting up the reducer(in this case Redux-Promise is used, so no need to unwrap). In this example, we add every searched item to the list.Alternatively we could return only the latests searched item: `return action.payload.data`.
+The last step includes setting up the reducer(in this case Redux-Promise is used, so no need to unwrap). In this example, we add every searched item to the list. Alternatively we could return only the latests searched item: `return action.payload.data`.
 ```jsx
 import { FETCH_WEATHER } from '../actions/index';
 
