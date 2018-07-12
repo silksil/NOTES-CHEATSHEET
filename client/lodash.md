@@ -22,7 +22,7 @@ renderPosts() {
 }
 ```
 
-### Delete a item from an object based on its key
+### Delete a object from an motherObject based on its key
 ```js
 _.omit(object, key) // it looks to the object > if it is has the inserted key > delete it
 ```
