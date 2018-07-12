@@ -32,6 +32,7 @@ export default function (state = {}, action) {
       newState[post.id] = post;
       return newState;
       */ 
+    /*
     case FETCH_POSTS: // refers to an action creator related to a different component
     const arrayToObject = (array, keyField) =>
       array.reduce((obj, item) => {
@@ -39,6 +40,7 @@ export default function (state = {}, action) {
         return obj
       }, {})
     return arrayToObject(action.payload.data, 'id')
+    */ 
     default:
       return state;
   }
