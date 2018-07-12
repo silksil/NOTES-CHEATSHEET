@@ -1,3 +1,5 @@
+This component includes an input field in which a user can search. If the user clicks enter an ajax request will be fired that fetches data and update the state.
+
 ## Create Controlled Component
 You create a **controlled component**: the value of our input is set by our state, not the other way around. To get the state you can do this by relating the value to the state, and to update it you can refer trough the onChange attribute to a function that changes the state.
 ```jsx
