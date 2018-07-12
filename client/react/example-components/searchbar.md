@@ -1,4 +1,4 @@
-This component includes an input field in which a user can search. If the user clicks enter an ajax request will be fired that fetches data and update the state.
+This component includes an input field in which a user can search. If the user clicks enter an ajax request will be fired that fetches data and update the states.
 
 ## Create Controlled Component
 You create a **controlled component**: the value of our input is set by our state, not the other way around. To get the state you can do this by relating the value to the state, and to update it you can refer trough the onChange attribute to a function that changes the state.
@@ -111,7 +111,7 @@ constructor(props) {
 ```
 Now in the terminal(Network > XHR) the request and results should display.
 ## Set-Up The Reducer
-The last step includes setting up the reducer(in this case Redux-Promise is used, so no need to unwrap). In this example, we add every search item to the list.
+The last step includes setting up the reducer(in this case Redux-Promise is used, so no need to unwrap). In this example, we add every searched item to the list.Alternatively we could return only the latests searched item: `return action.payload.data`.
 ```jsx
 import { FETCH_WEATHER } from '../actions/index';
 
@@ -124,6 +124,6 @@ export default function(state = [], action) {
   return state;
 }
 ```
-Alternatively we could return only the latests searched item: `return action.payload.data`.
+
 
 
