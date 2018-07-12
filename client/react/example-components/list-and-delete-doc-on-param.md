@@ -17,7 +17,7 @@ export function fetchPost(id) {
 ```
 
 ### Create Action Creator
-Instead of tossing away all the previous posts we have fetched, we want to add all the other posts that have been fetched before -- including posts that have been fetched through other action types (the reducer below also includes the case that is responsible for fetching all posts). In the case of 'FETCH_POST', the  `...state` refers to all the previous fetched posts. We want to add the most recenty fetched post by assigning the id to it's key. We do this through `[action.payload.data.id]: action.payload.data `.
+Instead of tossing away all the previous posts we have fetched, we want to add all the other posts that have been fetched before -- including posts that have been fetched through other action types (the reducer below also includes the case that is responsible for fetching all posts). In the case of `'FETCH_POST`', the  `...state` refers to all the previous fetched posts. We want to add the most recenty fetched post by assigning the id to it's key. We do this through `[action.payload.data.id]: action.payload.data `.
 ```jsx
 import { FETCH_POST, FETCH_POST} from '../actions';
 
