@@ -52,8 +52,13 @@ import { connect } from 'react-redux';;
 
 import { fetchPosts } from '../actions';
 ```
+React always render the component as soon as possible, thus loading beforehand doesn't make a change. Therefore, use componentDidMount. 
 ```jsx
 class PostIndex extends Component {
+componentDidMount() {
+    this.props.fetchPosts();
+  }
+  
  render() {
   return (
    <div>
@@ -64,5 +69,58 @@ class PostIndex extends Component {
 ```
 ```jsx
 export default connect(null, { fetchPosts })(PostIndex);
+```
+### Test Network Request
+If set-up correclty the console in network tab > XHR request will show the request if we reload the page. 
+
+### Link it to the application state
+```jsx
+function mapStateToProps(state) {
+  return { posts: state.posts };
+}
+```
+```jsx
+export default connect(mapStateToProps, { fetchPosts })(PostIndex);
+```
+### Log Props
+To check whether we have received our props we can console.log within render(). It should log twice: once when the page is loaded first, secondly after data is being fetched and returned to the state. 
+
+### Map items
+Lastly we map-out out all items. In this case, we use lodash's library to map (as we map over an object). Additionaly, an link to every indvidual item is included. For more info see https://github.com/silksil/best-practices-cheatsheets/blob/master/client/react/navigation.md
+
+```
+import { Link } from 'react-router-dom';
+import _ from 'lodash';
+```
+
+```jsx
+class PostIndex extends Component {
+  componentDidMount() {
+    this.props.fetchPosts();
+  }
+
+  renderPosts() {
+    return _.map(this.props.posts, post => {
+      return (
+        <li className="list-group-item" key={post.id}>
+          <Link to={`/posts/${post.id}`}>
+            {post.title}
+          </Link>
+        </li>
+      );
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <h3> Posts </h3>
+        <ul className="list-group">
+          {this.renderPosts()}
+        </ul>
+      </div>
+    );
+  }
+}
 ```
 
