@@ -14,21 +14,8 @@ export function fetchPosts() {
 }
 ```
 ### Create Reducer
-
-### Include reducer in rootReducer
-```js
-import { combineReducers } from 'redux';
-
-import PostReducer from './reducer_posts';
-
-const rootReducer = combineReducers({
-  posts: PostReducer,
-});
-
-export default rootReducer;
-```
-
-```
+In this example the data we get is an array and we transform it in an object with objects, to make it easier to access a specific item. See paragraph `Current route as piece of state` for more info https://github.com/silksil/best-practices-cheatsheets/blob/master/client/react/navigation.md
+```jsx
 import { FETCH_POSTS } from '../actions';
 
 export default function(state = {}, action) { // default you return an object
@@ -45,3 +32,37 @@ export default function(state = {}, action) { // default you return an object
   }
 }
 ```
+### Include Reducer in rootReducer
+```js
+import { combineReducers } from 'redux';
+
+import PostReducer from './reducer_posts';
+
+const rootReducer = combineReducers({
+  posts: PostReducer,
+});
+
+export default rootReducer;
+```
+
+### Hook-up Action Creator
+```jsx
+import React, { Component } from 'react';
+import { connect } from 'react-redux';;
+
+import { fetchPosts } from '../actions';
+```
+```
+class PostIndex extends Component {
+ render() {
+  return (
+   <div>
+   </div>
+  );
+ }
+}
+```
+```jsx
+export default connect(null, { fetchPosts })(PostIndex);
+```
+
