@@ -15,7 +15,7 @@ export function fetchPosts() {
 }
 ```
 ### Create Reducer
-In this example the data we get is an array and we transform it in an object with objects, to make it easier to access a specific item. See paragraph `Current route as piece of state` for more info https://github.com/silksil/best-practices-cheatsheets/blob/master/client/react/navigation.md
+In this example the data we get is an array and we transform it in an object with objects, to make it easier to access a specific item on an individual page. See paragraph `Current route as piece of state` for more info https://github.com/silksil/best-practices-cheatsheets/blob/master/client/react/navigation.md
 ```jsx
 import { FETCH_POSTS } from '../actions';
 
