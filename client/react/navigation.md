@@ -1,4 +1,8 @@
  ## Router
+ 
+ ### Installation & Import
+ `npm install --save react-router-dom`
+ ```
  ```jsx 
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
  ```
