@@ -65,6 +65,28 @@ onDeleteClick(id) {
   });
 }
 ```
+
+## Navigation with active links based on route
+With NavLink you dynamically change the classname based on the route that is active. 
+
+```
+import React from 'react';
+import { NavLink } from'react-router-dom';
+
+export default function Nav () {
+	return (
+		<ul className='nav'>
+			<li>
+				<NavLink exact activeClassName='active' to='/'>Home</NavLink>
+			</li>
+			<li>
+				<NavLink activeClassName='active' to='/battle'>Battle</NavLink>
+			</li>
+		</ul>
+	);
+}
+```
+
 Sources:
 - https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf
 - https://medium.com/@pshrmn/a-little-bit-of-history-f245306f48dd
