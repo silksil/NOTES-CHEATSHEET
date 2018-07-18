@@ -58,6 +58,9 @@ componentDidMount() {
 ```
 `match.params` is directly provided by React Router: `match` is the top-level property,  `params` list  all wild-card tokens (could be multiple).
 
+### 
+
+
 ## Navigation
 Within the render method, you don't use anchor tags because you do discrete navigation. Instead you want to show a new set of components. In order to do this you use the Link library.
 ```jsx
@@ -79,8 +82,19 @@ onDeleteClick(id) {
   });
 }
 ```
-
-## Navigation with active links based on route
+### Take path name and pass a query string
+`match.url` takes current url > results is added > and then the query string is being added. 
+```jsx
+<Link
+ className='button'
+ to={{
+  pathname: match.url + '/results',
+  search: '?playerOneName=' + playerOneName + '&playerTwoName=' + playerTwoName
+ }}>
+  Battle
+</Link>}
+```
+### Navigation with active links based on route
 With NavLink you dynamically change the classname based on the route that is active. The `exact` property is added to the home link (path `/)`, to make make sure that the the class does not become active if you visit `/battle` (as it also includes the path of home). 
 
 ```jsx
