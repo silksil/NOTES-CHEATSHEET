@@ -36,3 +36,17 @@ Greeting.propTypes = {
   name: PropTypes.string.isRequired
 };
 ```
+You specificly state what you expect within an array or object: 
+```jsx
+Users.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.object)
+}
+```
+```jsx
+Users.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    friend: PropTypes.bool.isRequired,
+  })),
+}
+```
