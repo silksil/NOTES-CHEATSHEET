@@ -69,7 +69,7 @@ onDeleteClick(id) {
 ## Navigation with active links based on route
 With NavLink you dynamically change the classname based on the route that is active. 
 
-```
+```jsx
 import React from 'react';
 import { NavLink } from'react-router-dom';
 
