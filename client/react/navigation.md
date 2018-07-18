@@ -8,7 +8,7 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
  ```
 - **BrowserRouter**: type of route > used for servers that handle dynamic requests.
 - **Route**: used if you want to render content based on the locations pathname. Location is defined in the first prop (path), component second prop
-- **Switch**: <Route>s can be created anywhere inside of the router, but often it makes sense to render them in the same place. You can use the<Switch> component to group <Route>s. The <Switch> will iterate over its children elements (the routes) and only render the first one that matches the current pathname, so you want to put your most specific route at the top.
+- **Switch**: <Route>s can be created anywhere inside of the router, but often it makes sense to render them in the same place. You can use the<Switch> component to group <Route>s. The <Switch> will iterate over its children elements (the routes) and only render the first one that matches the current pathname, so you want to put your most specific route at the top. If none of the components can be found, the last component that is included will be rendered (in this case the `NotFound` component). 
 ```jsx
 <BrowserRouter>
  <div>
@@ -16,12 +16,12 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
    <Route path="/posts/new" component={PostsNew}/>
    <Route path="/posts/:id" component={PostsShow}/>
    <Route path="/" component={PostsIndex}/>
+   <Route component={NotFound}/>
   </Switch>
  </div>
 </BrowserRouter>
 ```
-
-- **Exact**: alternatively you can include the exact property.
+- **Exact**: alternatively you can include the exact property to make sure the right component is being rendered..
 ```jsx
 <BrowserRouter>
  <div>
@@ -29,10 +29,12 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
    <Route exact path="/" component={PostsIndex}/>
    <Route path="/posts/new" component={PostsNew}/>
    <Route path="/posts/:id" component={PostsShow}/>
+   <Route component={NotFound}/>
   </Switch>
  </div>
 </BrowserRouter>
 ```
+
 ## Current route as piece of state
 To load a specific state out of an array we could create two states:
 ```js
