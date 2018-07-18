@@ -67,7 +67,7 @@ onDeleteClick(id) {
 ```
 
 ## Navigation with active links based on route
-With NavLink you dynamically change the classname based on the route that is active. 
+With NavLink you dynamically change the classname based on the route that is active. The `exact` property is added to the home link, to make make sure that the the class does not become active if you visit `/battle` (as it also includes the path of home). 
 
 ```jsx
 import React from 'react';
