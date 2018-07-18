@@ -19,3 +19,16 @@ console.log(getFee(true));
 console.log(getFee(false));
 // expected output: "$10.00"
 ```
+
+### Inline If with Logical && Operator
+```jsx
+<div>
+ <h1>Hello!</h1>
+ {unreadMessages.length > 0 &&
+  <h2>
+    You have {unreadMessages.length} unread messages.
+  </h2>
+ }
+</div>
+// see also: https://reactjs.org/docs/conditional-rendering.html
+```
