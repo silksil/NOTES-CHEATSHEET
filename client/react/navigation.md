@@ -20,7 +20,19 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
  </div>
 </BrowserRouter>
 ```
- 
+
+- **Exact**: alternatively you can include the exact property.
+```jsx
+<BrowserRouter>
+ <div>
+  <Switch>
+   <Route exact path="/" component={PostsIndex}/>
+   <Route path="/posts/new" component={PostsNew}/>
+   <Route path="/posts/:id" component={PostsShow}/>
+  </Switch>
+ </div>
+</BrowserRouter>
+```
 ## Current route as piece of state
 To load a specific state out of an array we could create two states:
 ```js
