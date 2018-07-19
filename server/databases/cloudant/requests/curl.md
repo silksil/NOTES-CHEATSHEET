@@ -2,6 +2,7 @@
 The -X parameter defines the HTTP method. If omitted it is assumed to be GET, but PUT, POST and DELETE (and others) are allowed.
 
 # One Document
+
 ### Creating a document
 We have to specify the data is JSON by specifying a “Content-type” header:
 ```
