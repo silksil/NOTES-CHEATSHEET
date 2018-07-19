@@ -8,6 +8,7 @@
 - Views are the primary tool used for querying and reporting on CouchDB databases. They are defined in JavaScript (although there are other query servers available). Views can be created in the CouchDB/Cloudant database.
 
 ## The Document
+
 ### Multiple object types in the same database
 One widely used pattern that is odd to folks coming from a relational background is storing different object types in the same database. You could have blog posts and authors in the same Cloudant database using their own separate schema. One convention is to use the type field to indicate which flavour of object it is. 
 
