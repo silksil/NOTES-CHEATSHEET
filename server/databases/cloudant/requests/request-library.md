@@ -4,6 +4,7 @@ const request = require('request');
 ```
 
 ### Basic lay-out function
+
 ```javascript
 function getInfoDb(req, res) {
   request(baseURL, function(error, response, body) {
