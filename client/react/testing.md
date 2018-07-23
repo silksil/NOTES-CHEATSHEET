@@ -20,7 +20,7 @@ it('shows a comment box', () => {
 ```
 
 ### expect
-`expect` is global function. After expect we specify what we are inspecting (in the example below that is `div.innerHTML`). Then we include a matcher statement, stating how we want to inspect the 'subject' (in this case 'toContain'). Lastly, we state the expected value, it's what we want our 'subject' to be (in this case 'Comment Box').
+`expect` is global function. After expect we specify what we are inspecting (in the example below that is `div.innerHTML`). Then we include a matcher statement, stating how we want to inspect the 'subject' (in this case `toContain`). Lastly, we state the expected value, it's what we want our 'subject' to be (in this case `Comment Box`).
 
 ```js
 expect(div.innerHTML).toContain('Comment Box');
