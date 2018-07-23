@@ -40,7 +40,7 @@ You specificly state what you expect within an array or object:
 ```jsx
 Users.propTypes = {
   list: PropTypes.arrayOf(PropTypes.object)
-}
+};
 ```
 ```jsx
 Users.propTypes = {
@@ -48,5 +48,5 @@ Users.propTypes = {
     name: PropTypes.string.isRequired,
     friend: PropTypes.bool.isRequired,
   })),
-}
+};
 ```
