@@ -100,6 +100,8 @@ The term property (also: attribute, less common or even used for different thing
 When people try to be accurate, they distinguish between "property" (the whole thing, part of an object), "property name" (the string used as the key) and "property value" (the stored data).
 
 
+
+## Functions
 ### Higher-order functions
 A higher order function is a function that takes one or more functions as arguments. It allows us to put small functions in a big function. 
 
@@ -118,6 +120,20 @@ var oldDogs = animals.filter(function(animal) {
 ```
 
 filter in the above example is a so-called higher-order function. This is a fancy word for a function that accepts another function as an argument. In the above example, the function passed to filter will be called once with each item in the animals array as the argument. This passed function is sometimes referred to as the callback. If the callback returns true, the items makes the cut for the new array that filter is creating, which is what ends up in the oldDogs variable.
+
+### Pure functions
+The definition of a pure function is:
+- The function always returns the same result if the same arguments are passed in. It does not depend on any state, or data, change during a program’s execution. It must only depend on its input arguments.
+- The function does not produce any observable side effects such as network requests, input and output devices, or data mutation.
+    
+One of the major benefits of using pure functions is they are immediately testable. They will always produce the same result if you pass in the same arguments.
+
+They also makes maintaining and refactoring code much easier. You can change a pure function and not have to worry about unintended side effects messing up the entire application and ending up in debugging hell.
+
+
+Source: 
+- https://medium.com/@jamesjefferyuk/javascript-what-are-pure-functions-4d4d5392d49c
+
 
 Sources: 
 - https://medium.com/humans-create-software/a-dirt-simple-introduction-to-higher-order-functions-in-javascript-b33bf9e19056
