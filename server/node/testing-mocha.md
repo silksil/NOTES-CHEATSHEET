@@ -67,12 +67,12 @@ When done is passed in, Mocha will wait until the call to done(), or until the t
 #### Examples of what you can test
 ```js
 .end((err, res) => {
- res.should.have.status(200);
- res.body.should.be.an('array' || 'object' || 'string' || 'number');
- res.body.should.have.keys(['success', 'message']);
- res.body.should.include({'success': false});
- should.exist(res.body.token);
- model.should.include({
+ res.should.have.status(200); // test status
+ res.body.should.be.an('array' || 'object' || 'string' || 'number'); // test type of data
+ res.body.should.have.keys(['success', 'message']); // test which keys it includes
+ res.body.should.include({'success': false}); // test the key and value of a property
+ should.exist(res.body.token); // test whether it has a certain key
+ model.should.include({ // test properties of a certain object
   _id: 1,
   _submissionDate: 26081992
   });
@@ -81,8 +81,8 @@ When done is passed in, Mocha will wait until the call to done(), or until the t
   _authors: [ 'Sil', 'Kithin' ],
   _endDate: 27081992
   });
- model.should.be.instanceOf(Model);
- should.throw(Error);
+ model.should.be.instanceOf(Model); // test whether it is an instance of an constructor
+ should.throw(Error); // test whether it is throwing an error
  done();
 });
 ```
