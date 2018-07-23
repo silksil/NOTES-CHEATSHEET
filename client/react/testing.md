@@ -29,7 +29,7 @@ Enzyme is a JavaScript Testing utility for React that makes it easier to assert,
 npm install --save enzyme enzyme-adapter-react-${versionReact}
 ```
 Create file with the name setupTests.js and wire it up to the project
-```
+```js
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16'; // 16 refers to the version of React, so could be 17, 18 etc.
 
@@ -41,7 +41,7 @@ Enzyme gives us three additional capabilities. These are all render functions ta
 - ***Full DOM***: Render the component and all of its children + let us modify it afterwards (e.g. by clicking). 
 
 If you use Enzyme the set-up is a bit different:
-```
+```js
 import React from 'react';
 import { shallow } from 'enzyme';
 
