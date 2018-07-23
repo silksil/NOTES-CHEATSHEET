@@ -11,7 +11,7 @@ The HTTP protocol provides a common language that allows your browser and a bunc
 
 Source: https://www.kirupa.com/html5/making_http_requests_js.htm
 
-### Query vs. Body vs. URL
+## Communiczating through the Query vs. Body vs. URL
 A REST API can have arguments in several places:
 - In the request body - There are a bunch of different ways to format the data you POST to the server:
     1. application/x-www-form-urlencoded
