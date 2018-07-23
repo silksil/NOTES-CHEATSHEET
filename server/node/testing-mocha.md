@@ -1,7 +1,7 @@
 ## Intro
 Check this video for more info about test-driven development and unit testing: https://www.youtube.com/watch?v=Nf5pIGU4Snc
 
-Find info about the difference between unit testing and functional testing: 
+Check these links to understanding teh difference between difference types of testing:
 - https://www.linkedin.com/pulse/difference-between-api-testing-unit-mj-alavi/
 - https://www.quora.com/What-are-the-differences-between-an-API-unit-test-and-an-API-functional-test
 -
@@ -9,9 +9,7 @@ Find info about the difference between unit testing and functional testing:
 
 ## Configuration
 `npm i mocha --save-dev` you don't need to run it on a service; you only need to it for testing personally on the machine.
-
 `npm i supertest --sav-dev`
-
 `npm i sinon --save-dev`
 
 
@@ -27,7 +25,7 @@ Find info about the difference between unit testing and functional testing:
 ### General
 - **describe()**: describe can be used to organize and cluster your tests. If you use describe to cluster a specific method, it is convention to add #: 
 ```javascript
-describe ("Test Util", () =>{
+describe ("Test Util", () => {
   describe('#addFunction', () => {
   });
 });
@@ -66,12 +64,25 @@ it('succeeds silently!', (done) => () {   // <= No done callback
 ```
 When done is passed in, Mocha will wait until the call to done(), or until the timeout expires. done also accepts an error parameter when signaling completion.
 
-#### Examples
+#### Examples of what you can test
 ```js
 .end((err, res) => {
  res.should.have.status(200);
+ res.body.should.be.an('array' || 'object' || 'string' || 'number');
  res.body.should.have.keys(['success', 'message']);
  res.body.should.include({'success': false});
+ should.exist(res.body.token);
+ model.should.include({
+  _id: 1,
+  _submissionDate: 26081992
+  });
+ project.should.deep.include({ // if you need to test values that are array's and objects
+  _id: '1',
+  _authors: [ 'Sil', 'Kithin' ],
+  _endDate: 27081992
+  });
+ model.should.be.instanceOf(Model);
+ should.throw(Error);
  done();
 });
 ```
