@@ -92,6 +92,9 @@ months
   .filter(month => month.isLongMonth())
   .forEach(month => month.toConsole());
   ```
+##### Sources: 
+- https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/oop_classes.md
+- https://stackoverflow.com/questions/20461907/what-is-meaning-of-instance-in-programming?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 
 ## Deconstructing an object
 #### The difference between property, key and value
@@ -99,7 +102,8 @@ The term property (also: attribute, less common or even used for different thing
 
 When people try to be accurate, they distinguish between "property" (the whole thing, part of an object), "property name" (the string used as the key) and "property value" (the stored data).
 
-
+##### Source:
+- https://stackoverflow.com/questions/28648090/properties-vs-keys-vs-values-in-javascript?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 
 ## Functions
 ### Higher-order functions
@@ -121,6 +125,9 @@ var oldDogs = animals.filter(function(animal) {
 
 filter in the above example is a so-called higher-order function. This is a fancy word for a function that accepts another function as an argument. In the above example, the function passed to filter will be called once with each item in the animals array as the argument. This passed function is sometimes referred to as the callback. If the callback returns true, the items makes the cut for the new array that filter is creating, which is what ends up in the oldDogs variable.
 
+##### Source: 
+- https://medium.com/humans-create-software/a-dirt-simple-introduction-to-higher-order-functions-in-javascript-b33bf9e19056
+
 ### Pure functions
 The definition of a pure function is:
 - The function always returns the same result if the same arguments are passed in. It does not depend on any state, or data, change during a program’s execution. It must only depend on its input arguments.
@@ -130,16 +137,10 @@ One of the major benefits of using pure functions is they are immediately testab
 
 They also makes maintaining and refactoring code much easier. You can change a pure function and not have to worry about unintended side effects messing up the entire application and ending up in debugging hell.
 
-
-Source: 
+##### Source: 
 - https://medium.com/@jamesjefferyuk/javascript-what-are-pure-functions-4d4d5392d49c
 
 
-Sources: 
-- https://medium.com/humans-create-software/a-dirt-simple-introduction-to-higher-order-functions-in-javascript-b33bf9e19056
-- https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/oop_classes.md
-- https://stackoverflow.com/questions/28648090/properties-vs-keys-vs-values-in-javascript?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
-- https://stackoverflow.com/questions/20461907/what-is-meaning-of-instance-in-programming?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 
 
 
