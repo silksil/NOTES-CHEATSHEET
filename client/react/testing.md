@@ -23,6 +23,41 @@ it('shows a comment box', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 ```
+### Enzyme
+Enzyme is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components' output.
+```js
+npm install --save enzyme enzyme-adapter-react-${versionReact}
+```
+Create file with the name setupTests.js and wire it up to the project
+```
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16'; // 16 refers to the version of React, so could be 17, 18 etc.
+
+Enzyme.configure({ adapter: new Adapter() });
+```
+Enzyme gives us three additional capabilities. These are all render functions take an instance of our component, tries to render them, and then returns us an object that we can use to write tests around.
+- ***Static Render*** : Render the given component and return HTML plain. It does not allow us to interact, e.g. clicking. 
+- ***Shallow Render***: Render 'just' the given component and none of its children. 
+- ***Full DOM***: Render the component and all of its children + let us modify it afterwards (e.g. by clicking). 
+
+If you use Enzyme the set-up is a bit different:
+```
+import React from 'react';
+import { shallow } from 'enzyme';
+
+import App from '../App';
+import CommentBox from '../CommentBox';
+
+it('shows a comment box', () => {
+  const wrapped = shallow(<App />);
+
+  expect(wrapped.find(CommentBox).length).toEqual(1);
+});
+```
+
+
+
+
 
 
 
