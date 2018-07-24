@@ -2,6 +2,6 @@ In order to determine whether someone is being logged-in or has the authenticati
 
 | Situation   | AuthReducer | Returns  |   
 |-------------|-------------|----------|
-|  Make request to bakcedn to get current user           |             |          |
-|             |             |          |
-|             |             |          |
+|  Make request to bakcedn to get current user           |    null         |   'null' indicates we really don't know whats up right now       |
+|  Request complete, user is logged in          |     User model        |    Object containing user ID      |
+|     Request done, user *is not* logged in        |      false       |   Flase means 'yep, we are sure the user isn't logged in'       |
