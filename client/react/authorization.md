@@ -63,7 +63,7 @@ export default function (state = null, action) { // we return null, so be defaul
 
 ```
 ### Hook-up Root Reducer
-```
+```js
 import { combineReducers } from 'redux';
 import authReducer from './authReducer';
 
