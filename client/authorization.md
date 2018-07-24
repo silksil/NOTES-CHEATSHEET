@@ -2,6 +2,6 @@ In order to determine whether someone is being logged-in or has the authenticati
 
 | Situation   | AuthReducer | Returns  |   
 |-------------|-------------|----------|
-|             |             |          |
+|  Make request to bakcedn to get current user           |             |          |
 |             |             |          |
 |             |             |          |
