@@ -1,4 +1,4 @@
-In order to determine whether someone is being logged-in or has the authentication,  we create an AuthReducer that can return three things:
+In order to determine whether someone has authorization to a certain page,  we create an AuthReducer that can return three things:
 
 | Situation   | AuthReducer | Returns  |   
 |-------------|-------------|----------|
