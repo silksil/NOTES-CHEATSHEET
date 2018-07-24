@@ -1,3 +1,4 @@
+### State Set-Up
 In order to determine whether someone has authorization to a certain page,  we create an AuthReducer that can return three things:
 
 | Situation   | AuthReducer | Returns  |   
@@ -6,6 +7,7 @@ In order to determine whether someone has authorization to a certain page,  we c
 |  Request complete, user is logged in          |     User model        |    Object containing user ID      |
 |     Request done, user *is not* logged in        |      false       |   Flase means 'yep, we are sure the user isn't logged in'       |
 
+### Create Action Creator
 First, we create a action creator that fetches the authentication.
 ```js
 import axios from 'axios';
@@ -17,6 +19,7 @@ export const fetchUser = () => async dispatch => {  // whenever fetchUser is cal
     dispatch({ type: FETCH_USER, payload: res.data });
 };
 ```
+### Connect Action Creator
 As multiple components depend on whether a user is logged in, we want to include an user in the main app component. We want to fetch our current user the instance an application loads, thus we do this through `componentDidMount`.
 ```js
 import React, { Component } from 'react';
@@ -44,20 +47,22 @@ class App extends Component {
 
 export default connect(null, actions)(App) // connect action creators
 ```
-As mentioned above, we either return `null`, `userModel` or `false`. Our us
+### Set-up Reducer
+As mentioned above, we either return `null`, `userModel` or `false`. 
 ```js
 import { FETCH_USER } from '../actions/types';
 
 export default function (state = null, action) { // we return null, so be default we don't know if he is logged-in
   switch (action.type) {
     case FETCH_USER:
-      return (action.payload.length === 0 ? action.payload : false); // if the string is empty string  return false
+      return (action.payload.length !== 0) ? action.payload : false; // if the string is empty string, user is logged-out
     default:
       return state;
   }
 }
+
 ```
-Next, we hook up the authReducer to the root reducer.
+### Hook-up Root Reducer
 ```
 import { combineReducers } from 'redux';
 import authReducer from './authReducer';
@@ -66,7 +71,7 @@ export default combineReducers({
   auth: authReducer,
 });
 ```
-
+### Conditionally Render Components
 Lastly, we can adapt our components based on whether a user is logged in or not.
 ```jsx
 import React, { Component } from 'react';
