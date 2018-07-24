@@ -40,7 +40,7 @@ class App extends Component {
       </div>
     );
   }
-};
+}
 
 export default connect(null, actions)(App) // connect action creators
 ```
