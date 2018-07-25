@@ -1,6 +1,6 @@
 This component is created while working on https://github.com/silksil/survey-app
 - It is a component that allows you to buy credit through Stripe, store in de DB and display it in the front-end.
-- It is functionality build using React and Node.js
+- It is functionality build using React, Node and Mongo.
 - We store the credit state in user model (which e.g. also display id and if he or she is logged in)
 
 ### Make an Account
