@@ -129,7 +129,7 @@ module.exports = app => {
 ```
 
 ### Update Credit In DB (credit is stored in User Model)
-```
+```js
 const keys = require('../config/keys')
 const stripe = require('stripe')(keys.stripeSecretKey);
 const requireLogin = require('../middlewares/requireLogin')
@@ -182,7 +182,7 @@ export default combineReducers({
 ```
 
 ### Display Credit
-```return <li key="credit"> Credits: {this.props.auth.credit} </li>,
+```return <li key="credit"> Credits: {this.props.auth.credit} </li>```
        
 
 
