@@ -18,15 +18,16 @@ if (process.env.NODE_ENV === 'production') {
   } else {
   module.exports = require('./dev');
 }
-```js
+```
+
 ### Config Variables
 ```
-`use strict`;
+'use strict';
 
 module.exports = {
   mongoURI: 'mongodb://YOUR_USERNAME:YOURPASSWORD.....',
 };
-```js
+```
 ### Set-Up Your Model
 ```js
 const mongoose = require('mongoose');
