@@ -31,7 +31,7 @@ class Payments extends Component {
         stripeKey={process.env.REACT_APP_STRIPE_KEY}
       />
       /* amount: here you can define the amount of money you request. The default is U.S. Dollars in cents
-         token: is expecting to receive a callback function, which is called after we succesfully received an authorization token*/
+         token: is expecting to receive a callback function, which is called after we succesfully received an authorization token */
     );
   }
 }
