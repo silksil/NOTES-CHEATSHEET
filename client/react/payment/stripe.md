@@ -38,6 +38,8 @@ class Payments extends Component {
     );
   }
 }
+
+export default Payments;
 ```
 
 export default Payments;
