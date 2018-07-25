@@ -21,7 +21,7 @@ function getUser() {
 Redux-thunk is middleware that looks at every action that passes through the system, and if it’s a function, it calls that function. That’s all it does.
 
 The only thing I left out of that little code snippet is that Redux will pass two arguments to thunk functions: dispatch, so that they can dispatch new actions if they need to; and getState, so they can access the current state. So you can do things like this:
-```
+```js
 export const logOutUser() => async (dispatch, getState) => {
     return axios.post('/logout').then(function() {
       // pretend we declared an action creator
