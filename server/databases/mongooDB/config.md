@@ -10,7 +10,7 @@ const keys = require('./config/keys')
 mongoose.connect(keys.mongoURI);
 ````
 ### Link to PROD or Dev
-```
+```js
 `use strict`;
 
 if (process.env.NODE_ENV === 'production') {
@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'production') {
   } else {
   module.exports = require('./dev');
 }
-```
+```js
 ### Config Variables
 ```
 `use strict`;
@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
   mongoURI: 'mongodb://YOUR_USERNAME:YOURPASSWORD.....',
 };
-```
+```js
 ### Set-Up Your Model
 ```js
 const mongoose = require('mongoose');
