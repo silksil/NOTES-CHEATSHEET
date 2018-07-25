@@ -10,7 +10,7 @@ const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 ## Example
 Instead of return an action, it produces a action and passes it to the dispatch function and sends it to all action creators, causing them to instantly recalculate the app state. So rather returning it, you can dispatch it anyware throughout the action creator.
 
-```
+```js
 import axios from 'axios';
 import { FETCH_USER } from './types';
 
@@ -19,4 +19,4 @@ export const fetchUser = () => async dispatch => {  // whenever fetchUser is cal
 
     dispatch({ type: FETCH_USER, payload: res.data });
 };
-```z
+```
