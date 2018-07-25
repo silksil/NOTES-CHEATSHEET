@@ -7,20 +7,18 @@ import ReduxThunk from 'redux-thunk'
 const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 ````
 
-## Example
-Instead of return an action, it produces a action and passes it to the dispatch function and sends it to all action creators, causing them to instantly recalculate the app state. So rather returning it, you can dispatch it anyware throughout the action creator.
 
+## Dispatch and getState
+If you wanted an action to do something, that code would need to live inside a function. Something like this:
 ```js
-export const fetchUser = () => async dispatch => {  // whenever fetchUser is called it will instantly return a function
-    const res = await axios.get('/api/current_user'); // if ReduxThunk sees we return a function, instead of a normal function, it will automaticall call this function and pass the dispatch function as an argument
-
-    dispatch({ type: FETCH_USER, payload: res.data });
-};
+function getUser() {
+  return function() {
+    return axios.get('/current_user');
+  };
+}
 ```
 
-
-## Dispatch and 
-Well, this is exactly what redux-thunk does: it is a middleware that looks at every action that passes through the system, and if it’s a function, it calls that function. That’s all it does.
+Redux-thunk is middleware that looks at every action that passes through the system, and if it’s a function, it calls that function. That’s all it does.
 
 The only thing I left out of that little code snippet is that Redux will pass two arguments to thunk functions: dispatch, so that they can dispatch new actions if they need to; and getState, so they can access the current state. So you can do things like this:
 ```
