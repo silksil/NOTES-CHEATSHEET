@@ -41,4 +41,4 @@ const userSchema = new Schema({
 mongoose.model('users', userSchema); // state it should create a collection - if it not already exists
 ```
 ### Require Your Model in App file
-require('./models/user');
+`require('./models/user');`
