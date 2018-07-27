@@ -40,6 +40,11 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 
-###
-Push it to a Continious Integration server. A CI server is a server that is a server that is able to run tests.
-.
+### Configue your server
+#### Heroku: 
+- https://devcenter.heroku.com/articles/nodejs-support#customizing-the-build-process
+- Add `"heroku-postbuild": "NPM_CONFIG_PRODUCTIOIN=false" npm install --prefix client && npm run build --prefix client`" to package.json on the server side. 
+  - `NPM_CONFIG_PRODUCTIOIN=false`: tell heroku to install all npm modules (both dev and prod dependencies). We want it only apply to our client projects.
+  - `npm install --prefix client`: go into client directory and install all dependencies.
+  - `npm run build --prefix client`: build project.
+
