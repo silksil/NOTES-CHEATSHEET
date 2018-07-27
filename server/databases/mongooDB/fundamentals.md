@@ -77,3 +77,24 @@ const surveySchema = new Schema({
 mongoose.model('survey', surveySchema);
 ```
 
+#### Relationship setting
+In the example below  we indicate that a document(a survey) is owned by another document(a user). 
+- __ :  underscore is not required, but it is convention to indicate it is a reference/relationship field
+- Type:  we indicate that is has an type that is the id of the user that owns a record
+- Ref: the reference we are making belongs to the user collection
+```js
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
+const RecipientSchema = require('./Recipient');
+
+const surveySchema = new Schema({
+  title: String,
+  body: String,
+  __user: { type: Schema.Types.ObjectId, ref: 'user'},
+});
+
+mongoose.model('survey', surveySchema);
+```
+
+
