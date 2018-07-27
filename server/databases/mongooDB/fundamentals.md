@@ -91,7 +91,7 @@ const RecipientSchema = require('./Recipient');
 const surveySchema = new Schema({
   title: String,
   body: String,
-  __user: { type: Schema.Types.ObjectId, ref: 'user'},
+  __user: { type: Schema.Types.ObjectId, ref: 'user'}
 });
 
 mongoose.model('survey', surveySchema);
