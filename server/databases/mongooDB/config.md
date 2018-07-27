@@ -21,12 +21,12 @@ if (process.env.NODE_ENV === 'production') {
 ```
 
 ### Config Variables
-```
-'use strict';
+```js
+// DEV
+mongoURI: 'mongodb://YOUR_USERNAME:YOURPASSWORD.....',
 
-module.exports = {
-  mongoURI: 'mongodb://YOUR_USERNAME:YOURPASSWORD.....',
-};
+// PRO
+mongoURI: process.env.MONGO_URI,
 ```
 ### Set-Up Your Model
 ```js
