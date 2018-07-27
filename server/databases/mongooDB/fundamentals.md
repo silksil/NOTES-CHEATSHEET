@@ -43,8 +43,40 @@ mongoose.model('users', userSchema);
 Subdocuments are documents embedded in other documents. In Mongoose, this means you can nest schemas in other schemas. Mongoose has two distinct notions of subdocuments: arrays of subdocuments and single nested subdocuments.</br>
 <img src="images/mongoDB-subdocument.png?" width="300">
 
-
 Subdocuments are similar to normal documents. Nested schemas can have middleware, custom validation logic, virtuals, and any other feature top-level schemas can use. The major difference is that subdocuments are not saved individually, they are saved whenever their top-level parent document is saved.
+
+#### Example
+###### Setting-up Sub-Document
+```js
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
+const recipientSchema = new Schema({
+  email: String,
+  responded: { type: Boolean, default: false }
+});
+
+module.exports = recipientSchema;
+```
+###### Import in Top-Level Document
+```js
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
+const RecipientSchema = require('./Recipient');
+
+const surveySchema = new Schema({
+  title: String,
+  body: String,
+  subject: String,
+  recipients: [RecipientSchema],
+  yes: { type: Number, default: 0 },
+  no: { type: Number, default: 0 }
+});
+
+mongoose.model('survey', surveySchema);
+```js
+
 
 
 
