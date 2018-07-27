@@ -10,7 +10,7 @@ Mongo stores record in different collections. Every collection can have many dif
 ### Mongoose
 Mongoose is an Object Document Mapper (ODM). This means that Mongoose allows you to define objects with a strongly-typed schema that is mapped to a MongoDB document. Mongoose provides functionality around creating and working with schemas. 
 
-<img src="images/images/mongoose.png?" width="300">
+<img src="images/mongoose.png?" width="300">
 
 ### Define types
 SchemaTypes handle definition of path defaults, validation, getters, setters, field selection defaults for queries, and other general characteristics for Strings and Numbers. The following are all the valid SchemaTypes in mongoose.
