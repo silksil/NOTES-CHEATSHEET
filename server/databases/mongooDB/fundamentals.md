@@ -1,6 +1,6 @@
 ### MongoDB-Mongoose-Express-Node.js
 
-![mongoDB-diagram](images/mongoDB.png?raw=true "MongoDB Express/Node.js Diagram") </br>
+![mongoDB-diagram](images/mongoDB.png =250x "MongoDB Express/Node.js Diagram") </br>
 The diagram above shows the interaction between the different stacks. 
 
 ### Storing info
