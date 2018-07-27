@@ -1,7 +1,6 @@
 ### MongoDB-Mongoose-Express-Node.js
 
-<img src="images/mongoDB.png" width="48">
-![mongoDB-diagram](images/mongoDB.png =250x "MongoDB Express/Node.js Diagram") </br>
+<img src="images/mongoDB.png" width="150">
 The diagram above shows the interaction between the different stacks. 
 
 ### Storing info
