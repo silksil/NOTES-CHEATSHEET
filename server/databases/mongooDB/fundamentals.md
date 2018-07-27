@@ -75,8 +75,5 @@ const surveySchema = new Schema({
 });
 
 mongoose.model('survey', surveySchema);
-```js
-
-
-
+```
 
