@@ -77,6 +77,9 @@ const surveySchema = new Schema({
 mongoose.model('survey', surveySchema);
 ```
 
+#####
+When you now pass in a array of object, it will automatically create subdocuments for you. 
+
 #### Relationship setting
 In the example below  we indicate that a document(a survey) is owned by another document(a user). 
 - __ :  underscore is not required, but it is convention to indicate it is a reference/relationship field
