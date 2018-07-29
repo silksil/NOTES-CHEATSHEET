@@ -79,16 +79,19 @@ render() {
  return (
   <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
    <Field
+    type-"text"
     label="Title"
     name="title"
     component={this.renderField}
    />
    <Field
+    type="text"
     label="Categories"
     name="categories"
     component={this.renderField}
    />
    <Field
+    type="text"
     label="Post Content"
     name="content"
     component={this.renderField}
@@ -216,16 +219,19 @@ render() {
  return (
   <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
    <Field
+    type="text"
     label="Title"
     name="title"
     component={this.renderField}
    />
    <Field
+    type="text"
     label="Categories"
     name="categories"
     component={this.renderField}
    />
    <Field
+    type="text"
     label="Post Content"
     name="content"
     component={this.renderField}
