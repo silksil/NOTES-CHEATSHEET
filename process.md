@@ -1,4 +1,4 @@
-Use the following process as a guide for the coding process. 
+Use the following process as a guide for coding.
 
 ## Per story
 1. Define story (As a .. I want .. so that)
@@ -15,11 +15,3 @@ Use the following process as a guide for the coding process.
 13. Showcase PM
 14. Test in Prod
 16. Update documentation
-
-## Daily 
-1. Review what you have done yesterday.
-2. Set a goal for today (in relation to a story, be clear about the subtasks you want to finish).
-3. If possible and needed, split up the subtask in even more subtasks.
-4. If need assignments or tasks pop-up, write them down and consider repriortizing.
-4. Take notes of learnings. 
-
