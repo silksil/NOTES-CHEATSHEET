@@ -62,6 +62,7 @@ componentDidMount() {
 
 
 ## Navigation
+### Within the render method
 Within the render method, you don't use anchor tags because you do discrete navigation. Instead you want to show a new set of components. In order to do this you use the Link library.
 ```jsx
 import { Link } from 'react-router-dom';
@@ -72,8 +73,8 @@ import { Link } from 'react-router-dom';
  Add a post
 </Link>
 ```
-
-The route functionality passes `history` to handle with navigation ( `<Link>` is only for within the DOM, instead this is programmetric navigation). By default, when you click on a `<Link>` from React Router, it will use history.push to navigate. More specifically, the push method allows you to go to a new location. For example:
+### Outside the render method
+The router-dom functionality passes `history` to handle with navigation ( `<Link>` is only for within the DOM, instead this is programmetric navigation). By default, when you click on a `<Link>` from React Router, it will use history.push to navigate. More specifically, the push method allows you to go to a new location. For example:
  
 ```jsx
 onDeleteClick(id) {
@@ -82,6 +83,15 @@ onDeleteClick(id) {
   });
 }
 ```
+### Outside the render method - Child Component 
+A parent component that is set-up through react-router directly has access to `history`. Nonetheless, child components of the partent component don't have directly access to it. In order to access it anyway, you can user the instance `withRouter` of `react-router-dom`. First, import withRouter:
+```jsx import { withRouter } from 'react-router-dom';```
+
+Secondly, wrap the component with the withRouter helper:
+```jsx export default connect(mapStateToProps, actions)(withRouter(SurveyFormReview));```
+
+### Outside the render method - 
+
 ### Take path name and pass a query string
 `match.url` takes current url > results is added > and then the query string is being added. 
 ```jsx
@@ -114,16 +124,6 @@ export default function Nav () {
  );
 }
 ```
-
-### Navigation child components
-When react-router shows a component it is passing props which allows you to navigate. Nonetheless, this is not automatically passsed to child-component that you load in parent component(that is initialized through react-router). In order to have access to 
-
-First, import the library:
-```
-import { withRouter } from 'react-router-dom';
-```
-Then, pass the library's instance into the component. 
-
 Sources:
 - https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf
 - https://medium.com/@pshrmn/a-little-bit-of-history-f245306f48dd
