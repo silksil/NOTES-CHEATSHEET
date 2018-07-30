@@ -115,6 +115,15 @@ export default function Nav () {
 }
 ```
 
+### Navigation child components
+When react-router shows a component it is passing props which allows you to navigate. Nonetheless, this is not automatically passsed to child-component that you load in parent component(that is initialized through react-router). In order to have access to 
+
+First, import the library:
+```
+import { withRouter } from 'react-router-dom';
+```
+Then, pass the library's instance into the component. 
+
 Sources:
 - https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf
 - https://medium.com/@pshrmn/a-little-bit-of-history-f245306f48dd
