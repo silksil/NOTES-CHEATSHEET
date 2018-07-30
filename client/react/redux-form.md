@@ -102,13 +102,13 @@ render() {
 }
 ```
 ```jsx
-renderField({ input, label }) {
+renderField({ field }) {
  return (
   <div>
-   <label>{label}</label>
+   <label>{field.label}</label>
    <input
     type="text"
-    {...input}
+    {...field.input}
    />
   </div>
  );
