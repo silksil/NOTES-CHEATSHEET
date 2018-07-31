@@ -2,7 +2,7 @@ A webhook is when a server communicates to another server after a certain event 
 
 ### Production & Development
 - Production: When setting up a webhook in production, the data can simply be send to production URL.
-- Development:In development sending it to a localhost is meaningless for the sending serving. Thus, we need to create a new domain.
+- Development: Communicating it to a localhost is meaningless for a sending serving. 
 
 ### Creating domain
 In order to make sure that a other server can communicate to a local production server, we can create a domain ourselves and tell that domain to communicate the incoming request to our local server (e.g. localhost: 5000).
