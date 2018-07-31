@@ -27,3 +27,15 @@ renderPosts() {
 _.omit(object, key) // it looks to the object > if it is has the inserted key > delete it
 ```
 
+### Remove records that are undefined
+```js
+const compactEvents = _.compact(events);
+```
+
+
+### Remove duplicate records
+Look through the objects and delete the one that have the same email and surveyId
+```js
+const uniqueEvents = _.uniqBy(compactEvents, 'email', surveyId) // 
+```
+
