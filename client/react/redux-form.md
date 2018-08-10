@@ -297,13 +297,12 @@ First, import the FieldArray functionality:
 ```jsx
 import { reduxForm, Field, FieldArray } from 'redux-form';
 ```
-
-For example, in the example below we render a members component:
+Next we render the renderSkills component in the FieldArray:
 ```jsx
 <div>
   <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
     {this.renderFields()}
-    <FieldArray name="members" component={renderMembers} />
+    <FieldArray name="members" component={renderSkills} />
     <Link to="surveys">
       Cancel
     </Link>
@@ -311,6 +310,9 @@ For example, in the example below we render a members component:
     </button>
   </form>
 </div>
+```
+
+
 
 #### Sources:
 - https://redux-form.com/7.4.2/
