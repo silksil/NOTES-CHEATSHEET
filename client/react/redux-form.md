@@ -287,5 +287,30 @@ onSubmit(values) {
  });
 }
 ```
+
+### FieldArray
+The FieldArray component is how you render an array of fields. It works a lot like Field. With Field, you give a name, referring to the location of the field in the Redux state, and a component to render the field, which is given the props to connect the field to the Redux state.
+
+With FieldArray, you provide a name just like with Field, but the component you give to FieldArray will be given a set of props to query, update, and iterate through the field array.
+
+First, import the FieldArray functionality:
+```jsx
+import { reduxForm, Field, FieldArray } from 'redux-form';
+```
+
+For example, in the example below we render a members component:
+```jsx
+<div>
+  <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
+    {this.renderFields()}
+    <FieldArray name="members" component={renderMembers} />
+    <Link to="surveys">
+      Cancel
+    </Link>
+    <button type="submit">Next
+    </button>
+  </form>
+</div>
+
 #### Sources:
 - https://redux-form.com/7.4.2/
