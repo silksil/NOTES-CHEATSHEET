@@ -297,7 +297,7 @@ First, import the FieldArray functionality:
 ```jsx
 import { reduxForm, Field, FieldArray } from 'redux-form';
 ```
-Next we render the renderSkills component in the FieldArray:
+Next we create a FieldArray and include the renderSkills component:
 ```jsx
 <div>
   <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
@@ -311,6 +311,9 @@ Next we render the renderSkills component in the FieldArray:
   </form>
 </div>
 ```
+
+Then, write out the renderSkills component of the FieldArray. As said before, the component you give to FieldArray will be given a set of props to query, update, and iterate through the field array. 
+
 
 
 
