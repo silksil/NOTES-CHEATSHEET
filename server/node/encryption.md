@@ -38,7 +38,8 @@ let decryptedKey = decrypt(decValues);
 npm install --save bcrypt-nodejs
 ```
 ```js
-const bcrypt = require('bcrypt-nodejs'
+const bcrypt = require('bcrypt-nodejs';
+
 // generate a salt then run callback
 bcrypt.genSalt(10, (err, salt)=> {
     if (err) { return next(err); }
