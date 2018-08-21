@@ -13,5 +13,5 @@ sudo mkdir -p /data/db
 whoami // get $USER
 sudo chown $USER /data/db
 ```
-### Start mongod
+### Start mongod (has to be done everytime you restart your laptop)
 `mongod`
