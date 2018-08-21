@@ -38,8 +38,10 @@ res.json({ token: tokenForUser(user) }
 
 ## Authentication
 #### Install & Config
-```npm install --save passport passport-jwt
 ```
+npm install --save passport passport-jwt
+```
+
 ```
 const passport = require('passport');
 const User = require('../models/user');
@@ -67,10 +69,12 @@ const jwtLogin = new JwtStrategy(jwtOptions, (payload, done)=> {
 });
 ```
 #### Setup options for JWT Strategy > define where to find the token on the request
+```js
 const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromHeader('authorization'),
   secretOrKey: config.tokenKey // the secret to decode the token
 };
+```
 
 #### Tell passport to use this strategy
 ```js
@@ -90,6 +94,49 @@ module.exports = (app) => {
     res.send({hi: "there"})
   })
 
+}
+```
+
+#### Login > create local strategy
+First check whether the user provided a correct username and password, then send to the controller that sends along a token.
+```js
+const requireAuth = passport.authenticate('jwt', { session: false})
+const requireSignin = passport.authenticate('local', { session: false })
+
+module.exports = (app) => {
+  app.post('/signup', authentication.signup)
+
+  app.post('/signin', requireSignin, authentication.signin) 
+}
+```
+Passport is used to verify an emaill and password
+```js
+const localOptions = { usernameField: 'email' };
+const localLogin = new LocalStrategy(localOptions, (email, password, done)=> {
+  // Verify this email and password, call done with the user
+  // if it is the correct email and password
+  // otherwise, call done with false
+  User.findOne({ email: email }, (err, user)=> {
+    if (err) { return done(err); }
+    if (!user) { return done(null, false); }
+
+    // compare passwords - is `password` equal to user.password?
+    user.comparePassword(password, (err, isMatch)=> {
+      if (err) { return done(err); }
+      if (!isMatch) { return done(null, false); }
+      else { return done(null, user); }
+    });
+  });
+});
+```
+Becrypt is added in the user model file
+```js
+userSchema.methods.comparePassword = function(candidatePassword, callback) {
+  bcrypt.compare(candidatePassword, this.password, (err, isMatch)=> {
+    if (err) { return callback(err); }
+
+    callback(null, isMatch);
+  });
 }
 ```
 
