@@ -97,7 +97,7 @@ module.exports = (app) => {
 }
 ```
 
-#### Login > create local strategy
+## Login
 First check whether the user provided a correct username and password, then send to the controller that sends along a token.
 ```js
 const requireAuth = passport.authenticate('jwt', { session: false})
@@ -137,6 +137,14 @@ userSchema.methods.comparePassword = function(candidatePassword, callback) {
 
     callback(null, isMatch);
   });
+}
+```
+Then it is passed on to the controller to creates the token
+```
+exports.signin = (req, res, next)=> {
+
+  //passport passes on the user
+  res.send({ token: tokenForUser(req.user) });
 }
 ```
 
