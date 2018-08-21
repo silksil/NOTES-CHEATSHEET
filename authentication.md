@@ -1,4 +1,4 @@
-## Cookies vs Token
+# Cookies vs Token
 
 #### Cookie
 - It brings state in a stateles protocoll (namely the http protocol)
@@ -12,9 +12,10 @@
 - Token is more trending, mainly because it is more scalable. 
 - If you have a mobile app and a web app, it is  likely to be more usefull to use a single API server. This is therefore on a seperate server than the client side of a the web app, thus a token is likely to be more interesting.
 
-## Token
+# Token
 https://jwt.io/
 
+## Generate Token
 #### Install
 ```npm install--save jwt-simple```
 
@@ -33,6 +34,63 @@ function tokenForUser(user) {
 #### Send Token
 ```js
 res.json({ token: tokenForUser(user) }
+```
+
+## Authentication
+#### Install & Config
+```npm install --save passport passport-jwt
+```
+```
+const passport = require('passport');
+const User = require('../models/user');
+const config = require('../config');
+const JwtStrategy = require('passport-jwt').Strategy;
+const ExtractJwt = require('passport-jwt').ExtractJwt;
+```
+
+#### Create JWT strategy
+```js
+const jwtLogin = new JwtStrategy(jwtOptions, (payload, done)=> {
+  // payload is encoded jwt.token that we set-up in authentication controller
+  // See if the user ID in the payload exists in our database
+  // If it does, call 'done' with that other
+  // otherwise, call done without a user object
+  User.findById(payload.sub, (err, user)=> {
+    if (err) { return done(err, false); }
+
+    if (user) {
+      done(null, user);
+    } else {
+      done(null, false);
+    }
+  });
+});
+```
+#### Setup options for JWT Strategy > define where to find the token on the request
+const jwtOptions = {
+  jwtFromRequest: ExtractJwt.fromHeader('authorization'),
+  secretOrKey: config.tokenKey // the secret to decode the token
+};
+
+#### Tell passport to use this strategy
+```js
+passport.use(jwtLogin);
+```
+
+#### Hook it up in certain routes and test it with a token
+```js
+const passportService = require('../services/passport');
+const passport = require('passport')
+
+const requireAuth = passport.authenticate('jwt', { session: false}) // have to specifically state that we don't use sessions
+
+module.exports = (app) => {
+
+  app.get('/', requireAuth, (req,res)=> {
+    res.send({hi: "there"})
+  })
+
+}
 ```
 
 
