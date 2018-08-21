@@ -13,6 +13,8 @@
 - If you have a mobile app and a web app, it is  likely to be more usefull to use a single API server. This is therefore on a seperate server than the client side of a the web app, thus a token is likely to be more interesting.
 
 ## Token
+https://jwt.io/
+
 #### Install
 ```npm install--save jwt-simple```
 
