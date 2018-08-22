@@ -140,7 +140,7 @@ userSchema.methods.comparePassword = function(candidatePassword, callback) {
 }
 ```
 Then it is passed on to the controller to creates the token
-```
+```js
 exports.signin = (req, res, next)=> {
 
   //passport passes on the user
