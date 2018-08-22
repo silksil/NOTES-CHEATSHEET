@@ -37,6 +37,7 @@ res.json({ token: tokenForUser(user) }
 ```
 
 ## Authentication
+### Back-End
 #### Install & Config
 ```
 npm install --save passport passport-jwt
@@ -147,6 +148,164 @@ exports.signin = (req, res, next)=> {
   res.send({ token: tokenForUser(req.user) });
 }
 ```
+
+### Front-end (REACT-REDUX)
+#### Sign-Up
+##### Create form
+```jsx
+import React, { Component } from 'react';
+import { reduxForm, Field } from 'redux-form';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import * as actions from '../../actions'
+
+class SignUp extends Component {
+  onSubmit = (formProps) => {
+    this.props.signUp(formProps, () => {
+      this.props.history.push('/feature');
+    });
+  }
+	render() {
+    const { handleSubmit } = this.props;
+		return (
+			<form onSubmit={handleSubmit(this.onSubmit)}>
+				<fieldset>
+					<label>Email</label>
+					<Field
+						name="email"
+						type="text"
+						component="input"
+            autoComplete="none"
+					/>
+				</fieldset>
+				<fieldset>
+					<label>Password</label>
+					<Field
+						name="password"
+						type="password"
+						component="input"
+            autoComplete="none"
+					/>
+				</fieldset>
+        <div> {this.props.errorMessage}</div>
+        <button>Sign Up!</button>
+			</form>
+		);
+	}
+}
+
+function mapStateToProps(state) {
+  return { errorMessage: state.auth.errorMessage };
+}
+
+export default compose (
+  connect(mapStateToProps, actions),
+  reduxForm({ form: 'signup' })
+)(SignUp);
+// compose allows you to include as many higher order components with an easier to read syntax
+```
+
+##### Create action creator to fetch to see if user exist
+If user exists, return error. If it not, return token. 
+```js
+export const signUp = (formProps, callback ) => async dispatch => {
+  try {
+  const response = await axios.post('/api/signup', formProps);
+
+  dispatch({ type: AUTH_USER, payload: response.data.token })
+  localStorage.setItem('token', response.data.token);
+  callback();
+  } catch (error) {
+  dispatch({ type: AUTH_ERROR, payload: 'Email in use' })
+  }
+};
+````
+
+##### Send data to reducer
+- If a jsonWebtoken is assigned to `authenticated`, it is assumed someone is signed in.
+- If jsonWebtoken is not assigned, not signed in.
+- Error displays that the user failed to login
+```js
+import { AUTH_USER, AUTH_ERROR } from '../actions/types';
+
+const INITIAL_STATE = {
+  authenticated: '',
+  errorMessage: '',
+};
+
+export default function (state = INITIAL_STATE, action) {
+  switch(action.type) {
+    case AUTH_USER:
+      return { ...state, authenticated: action.payload }
+    case AUTH_ERROR:
+     return { ...state, errorMessage: action.payload }
+    default:
+      return state;
+  }
+}
+```
+
+#### Persist our login state
+We store our token in localStorage to persist our login state. We can fetch it from there everytime the app starts back-up. We do this after we succesfully fetched a token trough `localStorage.setItem('token', response.data.token)` in our action creator:
+```js
+export const signUp = (formProps, callback ) => async dispatch => {
+  try {
+  const response = await axios.post('/api/signup', formProps);
+
+  dispatch({ type: AUTH_USER, payload: response.data.token })
+  localStorage.setItem('token', response.data.token);
+  callback();
+  } catch (error) {
+  dispatch({ type: AUTH_ERROR, payload: 'Email in use' })
+  }
+};
+```
+
+
+#### Show pages only if a user is logged-in
+In order to do this we first create a higher-order component that checks the state. If somebody is not authorized, the person will be redirected to a different webpage:
+```jsx
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+export default ChildComponent => {
+  class ComposedComponent extends Component {
+    // Our component just got rendered
+    componentDidMount() {
+      this.shouldNavigateAway();
+    }
+    // Our component just got updated
+    componentDidUpdate() {
+      this.shouldNavigateAway();
+    }
+    shouldNavigateAway() {
+      if (!this.props.auth) {
+        this.props.history.push('/');
+      }
+    }
+    render() {
+      return <ChildComponent {...this.props} />;
+    }
+  }
+  function mapStateToProps(state) {
+    return { auth: state.auth.authenticated};
+  }
+  return connect(mapStateToProps)(ComposedComponent);
+};
+```
+This can be imported into the pages that you only want to show to peole that are authorized to it. 
+```
+import requireAuth from '../requireAuth';
+```
+```jsx
+export default requireAuth(Test);
+```
+
+
+
+
+
+
 
 
 
