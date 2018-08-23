@@ -260,6 +260,28 @@ export const signUp = (formProps, callback ) => async dispatch => {
   }
 };
 ```
+Then, we put an initial state in our redux store. The key of the aut piece of state is `auth` and the value is `authenticated` that we want to initialize when we create the redux-store. We assign what we get from `localStorage.getItem('token')`. 
+```jsx
+import React from 'react';
+import ReactDom from 'react-dom';
+import { Provider } from 'react-redux';
+import {createStore, applyMiddleware} from 'redux';
+import ReduxThunk from 'redux-thunk'
+
+import App from './components/App';
+import reducers from './reducers';
+
+const store = createStore(reducers, {
+  auth: { authenticated: localStorage.getItem('token') }
+}, applyMiddleware(ReduxThunk));
+
+ReactDom.render(
+
+  <Provider store={store}><App /></Provider>,
+    document.querySelector('#root')
+);
+```
+
 
 
 #### Show pages only if a user is logged-in
@@ -301,6 +323,40 @@ import requireAuth from '../requireAuth';
 export default requireAuth(Test);
 ```
 
+
+#### Logout
+Is a two phase process. 1. Move the token out of the localstorage. 2.) Flip the `authenticated` piece of state to false/empty string. 
+
+First, create a component that triggers an `signOut` action creator.
+```jsx
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+
+class Signout extends Component {
+  componentDidMount() {
+    this.props.signOut();
+  }
+
+  render() {
+    return <div>Sorry to see you go</div>;
+  }
+}
+
+export default connect(null, actions)(Signout);
+```
+Then in the signOut action creator we remove the token out of localStorage and return an empty string to the `authenticated` piece of state. 
+
+```jsx
+export const signOut = () => {
+  localStorage.removeItem('token');
+
+  return {
+    type: AUTH_USER,
+    payload: '' // sign out be returning a empty user
+  }
+};
+```
 
 
 
