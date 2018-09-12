@@ -57,6 +57,41 @@ for (let key in person) {
 
 console.log(personKeys); //expected output: [ 'name', 'age', 'favouriteBook' ]
 ```
+### Property spread operators
+{...this.props} spreads out the properties in props as discrete properties (attributes) on the Modal element you're creating. For instance, if this.props contained a: 1 and b: 2, then
+```javascript
+<Modal {...this.props}>
+```
+Would be the same as:
+```javascript
+<Modal a={this.props.a} b={this.props.b}>
+```
+But it's dynamic, so whatever properties are in props are included.
+
+Spread notation is handy not only for that use case, but for creating a new object with most (or all) of the properties of an existing object — which comes up a lot when you're updating state, since you can't modify state directly:
+
+```js
+const obj = {
+  foo: {
+    a: 1,
+    b: 2,
+    c: 3
+  }
+};
+console.log("original", obj.foo);
+// Creates a NEW object and assigns it to `obj.foo`
+obj.foo = {...obj.foo, a: "updated"};
+console.log("updated", obj.foo);
+*/ updated {
+  "a": "updated",
+  "b": 2,
+  "c": 3
+}
+*/
+```
+
+
+
 
 
 
