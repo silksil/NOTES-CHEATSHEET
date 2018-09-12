@@ -82,7 +82,7 @@ console.log("original", obj.foo);
 // Creates a NEW object and assigns it to `obj.foo`
 obj.foo = {...obj.foo, a: "updated"};
 console.log("updated", obj.foo);
-*/ updated {
+/* updated {
   "a": "updated",
   "b": 2,
   "c": 3
