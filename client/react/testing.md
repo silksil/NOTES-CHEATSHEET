@@ -26,7 +26,7 @@ it('shows a comment box', () => {
 ### Enzyme
 Enzyme is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components' output.
 ```js
-npm install --save enzyme enzyme-adapter-react-${versionReact}
+npm install --save-dev enzyme enzyme-adapter-react-${versionReact}
 ```
 Create file with the name setupTests.js and wire it up to the project
 ```js
@@ -54,7 +54,22 @@ it('shows a comment box', () => {
   expect(wrapped.find(CommentBox).length).toEqual(1);
 });
 ```
+### beforeEach
+`beforeEach` can be used to state that before each `it` function it will execute a certain function.
+```js
+let wrapped;
+beforeEach(() => {
+  wrapped = shallow(<App />);
 
+})
+it('shows a comment box', () => {
+  expect(wrapped.find(CommentBox).length).toEqual(1);
+});
+
+it('shows a comment list', () => {
+  expect(wrapped.find(CommentList).length).toEqual(1);
+});
+```
 
 
 
