@@ -5,7 +5,40 @@ The test below replicates how to test whether you:
 4. Force the component to update => setState is asynchronous. Thus, you have to force it to re-render.
 5. Assert that the textareas value has changed
 */
+### Component
+```jsx
+import React, { Component } from 'react';
 
+class CommentBox extends Component {
+  state = { comment: '' };
+
+  handleChange = (event) => {
+    this.setState({ comment: event.target.value});
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    this.setState({ comment: '' });
+  };
+
+  render() {
+    return(
+      <form onSubmit={this.handleSubmit}>
+        <h4> Add a comment </h4>
+        <textarea onChange={this.handleChange} value={this.state.comment} />
+        <div>
+          <button> Submit Comment </button>
+        </div>
+      </form>
+    )
+  }
+}
+
+export default CommentBox;
+```
+
+### Test
 ```js
 import React from 'react';
 import { mount } from 'enzyme';
