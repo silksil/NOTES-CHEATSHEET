@@ -70,6 +70,57 @@ it('shows a comment list', () => {
   expect(wrapped.find(CommentList).length).toEqual(1);
 });
 ```
+### Set-up with Redux
+When testing components that include Redux functionality, it should be considered that the components that include Redux will be connected through `connect()` with the `Provider` to directly communicate with this component. This is a high-order component, and as a result tests that are connected to Redux will fail if we do not take this in consideration. To solve this, you can split up your index.js or app.js file by seperating the Provider tags from the rest. Alternatively, you could include all Provider tags manually in the tests, but the risks is then that if you will add or remove middleware from the real app, you will conduct tests that will not replicate the real app. 
+
+Thus, we create a new file, called Root.js:
+```js
+import React from 'react';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducers from './reducers';
+
+export default (props) => {
+  return (
+    <Provider store={createStore(reducers, {})}>
+      {props.children}
+    </Provider>
+  )
+}
+// props.children allows us to include the children that are included within the Root tag,
+// in this case <App />
+```
+Then we import the Root tag in the index.js file. 
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Root from 'Root';
+import App from './components/App';
+
+ReactDOM.render(
+  <Root>
+    <App />
+  </Root>,
+  document.querySelector('#root')
+);
+```
+Lastly, we can include this in the test by wrapping it around the component that includes Redux:
+```js
+import React from 'react';
+import { mount } from 'enzyme';
+import CommentBox from '../CommentBox';
+import Root from '../../Root';
+
+let wrapped;
+
+beforeEach(() => {
+  wrapped = mount(
+    <Root>
+      <CommentBox />
+    </Root>
+  );
+});
+```
 
 ### afterEach 
 `afterEach` can be used to clean things up after each `it` function -- it will unmount the components from the fake dom. 
