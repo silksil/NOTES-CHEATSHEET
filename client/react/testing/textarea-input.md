@@ -1,10 +1,10 @@
-The test below replicates how to test whether you: 
-1. find the textarea element
-2. simulate the 'change' event
+The test below tests a textarea/input field.  It:
+1. Find the textarea element
+2. Simulate the 'change' event
 3. Provide a fake event object => a mock event object that will be merged with the event object passed to the handlers
 4. Force the component to update => setState is asynchronous. Thus, you have to force it to re-render.
 5. Assert that the textareas value has changed
-*/
+
 ### Component
 ```jsx
 import React, { Component } from 'react';
