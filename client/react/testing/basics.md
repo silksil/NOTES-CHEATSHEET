@@ -55,7 +55,7 @@ it('shows a comment box', () => {
 });
 ```
 ### beforeEach
-`beforeEach` can be used to state that before each `it` function it will execute a certain function.
+`beforeEach` can be used to state that before each `it` function it will execute a certain function. In the case below, we mount a  component to the fake DOM everytime we we conduct a test.
 ```js
 let wrapped;
 beforeEach(() => {
@@ -72,7 +72,7 @@ it('shows a comment list', () => {
 ```
 
 ### afterEach 
-`afterEach` can be used to clean things up after each `it` function.
+`afterEach` can be used to clean things up after each `it` function -- it will unmount the components from the fake dom. 
 ```jsx
 import React from 'react';
 import { mount } from 'enzyme';
@@ -89,12 +89,18 @@ afterEach(()=> {
 })
 
 it('it has a text area and a button', () => {
-  const wrapped = mount(<CommentBox />);
-
-  expect(wrapped.find('textarea').length).toEqual(1)
-  expect(wrapped.find('button').length).toEqual(1)
+  expect(wrapped.find('textarea').length).toEqual(1);
+  expect(wrapped.find('button').length).toEqual(1);
 });
 ```
+
+### simulate 
+`Simulate` allows you to simulate an event. The example simulates a change event. The name of the event should be a html event name.  
+```js
+
+```
+
+
 
 
 
