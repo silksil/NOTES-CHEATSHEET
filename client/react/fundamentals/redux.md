@@ -4,6 +4,30 @@ Whereas React displays the views, Redux collects all the data of the application
 - The state can change through events, e.g. a user clicks on something, or new data coming in from a server. 
 - If the state changes the containers will instantly re-render.
 
+## Setup
+```
+npm i react react-redux
+```
+
+- The `provider` tag is a react component that communicates directly with every connect function that we create in the redux-store; allows us to get a piece of state or dispatch an action. 
+- `createstore` allows you to create a new store. 
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducers from './reducers/index.js';
+
+import App from './components/App';
+
+ReactDOM.render(
+  <Provider store={createStore(reducers, {})}>
+    <App />
+  </Provider>,
+  document.querySelector('#root')
+);
+```
+
 ## Containers
 A container is a component that has direct access to the Redux store, it:
 1. Receives state updates.
