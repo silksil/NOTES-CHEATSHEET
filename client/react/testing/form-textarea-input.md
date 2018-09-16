@@ -78,6 +78,7 @@ it('it has a text area that users can type in', () => {
 
 ### Test 3: To check whether an element is emptied after a text area is submitted.
 ```js
+// to trick that it is submitted we have to simulate a submit event, rather than a click on the button
 it('it has a text area that empties after it is submitted', () => {
   wrapped.find('textarea').simulate('change', {
     target: { value: 'new comment' }
