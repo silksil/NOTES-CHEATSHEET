@@ -97,7 +97,13 @@ it('it has a text area and a button', () => {
 ### simulate 
 `Simulate` allows you to simulate an event. The example simulates a change event. The name of the event should be a html event name.  
 ```js
-
+it('it has a text area that users can type in', () => {
+  wrapped.find('textarea').simulate('change', {
+    target: { value: 'new comment' }
+  });
+  // simulate the 'change' event
+  // Provide a fake event object => a mock event object that will be merged with the event object passed to the handlers
+});
 ```
 
 
