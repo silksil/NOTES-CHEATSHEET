@@ -104,7 +104,7 @@ ReactDOM.render(
   document.querySelector('#root')
 );
 ```
-Lastly, we can include this in the test by wrapping it around the component that includes Redux:
+Lastly, we can include the Root file in the test by wrapping it around the component that includes Redux:
 ```js
 import React from 'react';
 import { mount } from 'enzyme';
