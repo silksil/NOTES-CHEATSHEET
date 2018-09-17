@@ -71,9 +71,9 @@ it('shows a comment list', () => {
 });
 ```
 ### Set-up with Redux
-When testing components that include Redux functionality, it should be considered that the components that include Redux will be connected through `connect()` with the `Provider` to directly communicate with this component. This is a high-order component, and as a result tests that are connected to Redux will fail if we do not take this in consideration. To solve this, you can split up your index.js or app.js file by seperating the Provider tags from the rest. Alternatively, you could include all Provider tags manually in the tests, but the risks is then that if you will add or remove middleware from the real app, you will conduct tests that will not replicate the real app. 
+When testing components that include Redux functionality, it should be considered that the components that include Redux will be connected through `connect()` with the `Provider` to directly communicate with this component. This is a high-order component, and as a result tests that are connected to Redux will fail if we do not take this in consideration. To solve this, you can split up your index.js file by seperating the Provider tags from the rest. Alternatively, you could include all Provider tags manually in the tests, but the risks is then that if you will add or remove middleware from the real app, you will conduct tests that will not replicate the real app. 
 
-Thus, we split up your our main app file by creating a new fil(called Root.js)e in which we seperate the Provider tags from the rest.
+Thus, we split up your our main app file by creating a new file(called Root.js) in which we seperate the Provider tags from the rest.
 ```js
 import React from 'react';
 import { Provider } from 'react-redux';
