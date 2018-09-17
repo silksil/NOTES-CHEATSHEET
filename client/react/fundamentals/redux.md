@@ -10,7 +10,7 @@ npm i react react-redux
 ```
 
 - The `provider` tag is a react component that communicates directly with every connect function that we create in the redux-store; allows us to get a piece of state or dispatch an action. 
-- `createstore` allows you to create a new store. 
+- `createstore` allows you to create a new store. The first argument includes the reducers and the second argument includes some initial state.
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
