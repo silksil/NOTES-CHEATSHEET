@@ -17,5 +17,6 @@ const User = mongoose.model('user', UserSchema)
 
 // Now you can require the User model and make a reference to a user (CRUD)
 module.exports = User;
-```js
+
+```
 
