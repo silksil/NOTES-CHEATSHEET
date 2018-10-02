@@ -14,13 +14,13 @@ Mongoose/Mongo has 4 main core operations:
 - Update
 - Destroy
 
-### Collections, Instances, Schemas
+### Collections/Models, Instances, Schemas
 <img src="images/mongoDB-storeinfo.png" width="200">
-Mongo stores record in different collections; these are representations of resources (a collection books or a collection of states). 
+Mongo stores record in different collections/models; these are representations of resources (a collection books or a collection of states). 
 
 Every collection can have many different instances/records; it represent a single resources (e.g. the book 'Siddharta'). Every records is a JSON object. 
 
-A schema defines which properties you expect each record of the collection to have and what type of data it is (see header 'Data Types' below). 
+A schema defines which properties you expect each record of the collection to have and what type of data it is (see header 'Data Types' below). It's a component of a model/collection. 
 
 ### Data Types
 SchemaTypes handle definition of path defaults, validation, getters, setters, field selection defaults for queries, and other general characteristics for Strings and Numbers. The following are all the valid SchemaTypes in mongoose.
