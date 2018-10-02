@@ -17,12 +17,12 @@
 
 ## Productivity Principles
 ### Vidualization
-Use visualization through the form of diagrams or maps to understand the problem you are solving, and to define how you gonna solve the problem. It allows you to:
-- See the big picture
-- See the individual steps/resources. 
+Use visualization through the form of diagrams or maps to understand the problem you are solving, and to define how you gonna solve the problem. It can help to:
+- Understand the big picture.
+- Understand the individual steps/parts.
 
 ### Timebox
-Timebox if you are stuck. State to yourself 'if I am stuck longer than x minutes and x hours, I will ask for help'.
+Timebox if you are stuck. State to yourself 'if I am stuck longer than x minutes and x hours, I will ask for help from x'.
 
 ### Define and Solve Roadblocks
 Reflect daily and weekly on whether there are any roadblocks that hinder your productivity. If the exists and it takes less than 15 minutes to solve it, sovle it, if it takes more than 15 mintues create a task for this roadblock and schedule time to solve it. Examples of roadblocks can be:
