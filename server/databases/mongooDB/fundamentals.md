@@ -1,16 +1,23 @@
 ### MongoDB-Mongoose-Express-Node.js
 
-<img src="images/mongoDB.png" width="300">
+<img src="images/mongoDB.png" width="200">
 The diagram above shows the interaction between the different stacks. 
 
 ### Storing info
-<img src="images/mongoDB-storeinfo.png" width="300">
+<img src="images/mongoDB-storeinfo.png" width="200">
 Mongo stores record in different collections. Every collection can have many different records. Every records is a JSON object.  Collections are schemaless; inside of every collection records with different properties can be included. 
 
 ### Mongoose
-Mongoose is an Object Document Mapper (ODM). This means that Mongoose allows you to define objects with a strongly-typed schema that is mapped to a MongoDB document. Mongoose provides functionality around creating and working with schemas. 
+Mongoose allows youMongoose is an Object Document Mapper (ODM). This means that Mongoose allows you to define objects with a strongly-typed schema that is mapped to a MongoDB document. Mongoose provides functionality around creating and working with schemas. 
 
-<img src="images/mongoose.png?" width="300">
+<img src="images/mongoose.png?" width="200">
+
+### CRUD
+Mongoose/Mongo has 4 main core operations:
+- Create
+- Read
+- Update
+- Destroy
 
 ### Define types
 SchemaTypes handle definition of path defaults, validation, getters, setters, field selection defaults for queries, and other general characteristics for Strings and Numbers. The following are all the valid SchemaTypes in mongoose.
