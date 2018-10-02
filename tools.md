@@ -1,2 +1,4 @@
 ## Tools
-- Live code logging: https://stephengrider.github.io/JSPlaygrounds/
+
+Live code logging
+https://stephengrider.github.io/JSPlaygrounds/
