@@ -1,5 +1,4 @@
-Use the following process as a guide for coding.
-
+# Productivity Procedures
 ## Per story
 1. Define story (As a .. I want .. so that)
 2. Define the definition of done
@@ -25,8 +24,8 @@ Use visualization through the form of diagrams or maps to understand the problem
 ### Timebox
 Timebox if you are stuck. State to yourself 'if I am stuck longer than x minutes and x hours, I will ask for help'.
 
-### Define Roadblocks
-Reflect daily and weekly on whether there are any roadblocks that hinder your productivity. If the exists, create a task for this roadblock. Examples can be:
+### Define and Solve Roadblocks
+Reflect daily and weekly on whether there are any roadblocks that hinder your productivity. If the exists and it takes less than 15 minutes to solve it, sovle it, if it takes more than 15 mintues create a task for this roadblock and schedule time to solve it. Examples of roadblocks can be:
 - Not having access to certain files.
 - Unclear documentation.
 - Unorganized folder structure. 
