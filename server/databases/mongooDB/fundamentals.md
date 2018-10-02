@@ -1,14 +1,16 @@
-### MongoDB-Mongoose-Express-Node.js
+### Overview
 
 <img src="images/mongoDB.png" width="200">
-The diagram above shows the interaction between the different stacks. 
+The diagram above shows the interaction between the different stacks; MongoDB-Mongoose-Express-Node.js. 
 
 ### Storing info
 <img src="images/mongoDB-storeinfo.png" width="200">
-Mongo stores record in different collections. Every collection can have many different records. Every records is a JSON object.  Collections are schemaless; inside of every collection records with different properties can be included. 
+Mongo stores record in different collections; these are representations of resources (a collection books or a collection of states). 
+
+Every collection can have many different records. Every records is a JSON object.  Collections are schemaless; inside of every collection records with different properties can be included. 
 
 ### Mongoose
-Mongoose allows youMongoose is an Object Document Mapper (ODM). This means that Mongoose allows you to define objects with a strongly-typed schema that is mapped to a MongoDB document. Mongoose provides functionality around creating and working with schemas. 
+Mongoose allows you to communicate with Mongo. It is an Object Document Mapper (ODM), which means that Mongoose allows you to define objects with a strongly-typed schema that is mapped to a MongoDB document. Mongoose provides functionality around creating and working with schemas. 
 
 <img src="images/mongoose.png?" width="200">
 
