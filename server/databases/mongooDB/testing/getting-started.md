@@ -26,16 +26,25 @@ describe('Creating records', () => {
   });
 });
 ```
-
+Include nodemon:
+```json
+{
+  "name": "users",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon --exec 'mocha -R min'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^5.2.0",
+    "mongoose": "^5.3.0",
+    "nodemon": "^1.18.4"
+  }
+}
 ```
-const assert = require('assert');
-const User = require('../src/user');
 
-describe('Creating records', ()=> {
-  it('saves a user', () => {
-    assert(1 + 1 === 2)
-  });
-});
-```
 
   
