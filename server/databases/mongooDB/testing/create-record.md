@@ -1,3 +1,4 @@
+The following examples shows how to add a record through `save` and test it through the method `isNew`.
 ```js
 const assert = require('assert');
 const User = require('../src/user');
