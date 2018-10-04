@@ -1,5 +1,5 @@
 The tests below test two cases:
-- `.find` = Whether we can find someone or multiple records based on certain properties. Returns an array
+- `.find` = Whether we can find someone or multiple records based on certain properties. Returns an array.
 - `.findOne` = Whether we can find a particular record, e.g. find someone based on a _id. 
 
 ```js
