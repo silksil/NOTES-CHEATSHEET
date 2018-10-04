@@ -6,6 +6,7 @@ The following document provides examples of how to test different ways to delete
 
 <img src="../images/testing-delete-record.png" width="500">
 ```js
+
 const assert = require('assert');
 const User = require('../src/user');
 
