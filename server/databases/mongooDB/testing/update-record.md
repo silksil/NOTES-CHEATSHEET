@@ -1,4 +1,4 @@
-<img src="../images/testing-update-record.png" width="200"
+<img src="../images/testing-update-record.png" width="200">
 ```js
 const assert = require('assert');
 const User = require('../src/user');
