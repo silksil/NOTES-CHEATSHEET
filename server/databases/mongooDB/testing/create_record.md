@@ -8,10 +8,11 @@ describe('Creating records', () => {
       We create a new instance
       User represents all models
       If you state 'new' it becomes a new instance
+      The object you pass, will be attached to the instance
     */
     const joe = new User({ name: 'Joe' });
 
-    // Here we save the instance to the DB
+    // Then we save the instance to the DB
     joe.save()
       .then(() => {
         /* We test whether it is saved
