@@ -1,6 +1,6 @@
 The tests below test two cases:
-- Whether we can find someone or multiple records based on certain properties
-- Whether we can find a record based on a id.
+- `.find` = Whether we can find someone or multiple records based on certain properties. Returns an array
+- `.findOne` = Whether we can find a particular record, e.g. find someone based on a _id. 
 
 ```js
 const assert = require('assert');
