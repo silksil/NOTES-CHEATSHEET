@@ -1,4 +1,4 @@
-#### Update (mainly for increment & decrement)
+#### Update (cases: mainly for increment & decrement)
 Case: If you want to update multiple record , you could fetch the records, than make a change and the send the data back to Mongo. Nonetheless, this is not the most efficient way in terms of performance. 
 
 Instead, MongoDB provides you with modifiers/operators.See Link with update modifiers: https://docs.mongodb.com/manual/reference/operator/update/
