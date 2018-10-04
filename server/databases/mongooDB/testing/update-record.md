@@ -44,9 +44,7 @@ describe('Updating records', () => {
     assertName(joe.update({ name: 'Alex' }), done);
   });
 
-  /*
-    first we select, than we update the selected
-  */
+  // first we select, than we update the selected
   it('A model class can update', (done) => {
     assertName(
       User.update({ name: 'Joe' }, { name: 'Alex' }),
