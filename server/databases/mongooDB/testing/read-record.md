@@ -25,17 +25,17 @@ describe('Reading users out of the database', () => {
       .find returns an array with all users
 
       First you define the user model / class
-      You pass that defines the criterea you search for
+      You then define the criterea you search for
     */
     User.find({ name: 'Joe' })
       // the callback passes all the users found
       .then((users) => {
 
         /*
-          monogoose already assigns an id, even though it has not been saved
+          Monogoose already assigns an id, even though it has not been saved
           Thus we take the created user (joe) and can check it's _id
           The _id isn't a raw string, but an object that wraps that string
-          Thus we do .toString
+          Thus we have to do .toString
         */
         assert(users[0]._id.toString() === joe.id.toString())
         done();
