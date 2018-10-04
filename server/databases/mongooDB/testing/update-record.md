@@ -1,4 +1,4 @@
-There are difference ways to update a record:
+The following document provides examples of how to test different ways to update a record:
 - Instance => through `.set` and `.save`
 - Instance => through `.update`
 - Class => through `.update` 
@@ -6,7 +6,7 @@ There are difference ways to update a record:
 - Class => through `findByIdAndUpdate`
 <img src="../images/testing-update-record.png" width="500">
 
-NOTE: `update` provides depreciation warning: have to use updateOne, updateMany, or bulkWrite. 
+NOTE: `update` provides depreciation warning: have to use `updateOne`, `updateMany`, or `bulkWrite`. 
 
 ```js
 const assert = require('assert');
