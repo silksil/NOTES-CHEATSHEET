@@ -1,4 +1,12 @@
+There are difference ways to update a record:
+- Instance => through `.set` and `.save`
+- Instance => through `.update`
+- Class => through `.update` 
+- Class => through `.findOneAndUpdate`
+- Class => through `findByIdAndUpdate`
 <img src="../images/testing-update-record.png" width="500">
+
+NOTE: `update` provides depreciation warning: have to use updateOne, updateMany, or bulkWrite. 
 
 ```js
 const assert = require('assert');
