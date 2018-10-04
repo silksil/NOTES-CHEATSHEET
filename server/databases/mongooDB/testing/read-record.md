@@ -1,3 +1,7 @@
+The tests below test two cases:
+- Whether we can find someone or multiple records based on certain properties
+- Whether we can find a record based on a id.
+
 ```js
 const assert = require('assert');
 const User = require('../src/user');
@@ -7,7 +11,7 @@ describe('Reading users out of the database', () => {
   // make it global, so we can access it everywhere
   let joe;
 
-  // First we create a user, so we can test whether we can fidn it
+  // First we create a user, so we can test whether we can find it
   beforeEach((done) => {
     joe = new User({ name: 'Joe' });
     joe.save()
