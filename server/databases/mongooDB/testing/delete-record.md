@@ -5,6 +5,8 @@ The following document provides examples of how to test different ways to delete
 - Class => through `findByIdAndDelete`
 
 <img src="../images/testing-delete-record.png" width="500">
+NOTE: images still shows `remove` instead of `delete`. Terminal shows deprecation warning if I use `remove`.
+
 ```js
 
 const assert = require('assert');
