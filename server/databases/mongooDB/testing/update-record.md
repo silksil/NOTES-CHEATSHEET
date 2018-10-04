@@ -62,5 +62,18 @@ describe('Updating records', () => {
       done
     );
   });
+    it('A user can have their postcount incremented by 1', (done) => {
+    /*
+      Here we increment the postcount by 10
+      If we would just include { postCount: 10 }` the postcount will be set to 10
+      So, not be incremented
+    */ 
+    User.update({ name: 'Joe' }, { $inc: { postCount: 10 } })
+      .then(() => User.findOne({ name: 'Joe' }))
+      .then((user) => {
+        assert(user.postCount === 10);
+        done();
+      });
+  });
 });
 ```
