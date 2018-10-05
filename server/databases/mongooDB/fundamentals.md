@@ -2,7 +2,6 @@
 <img src="images/mongoDB.png" width="200">
 The diagram above shows the interaction between the different stacks; MongoDB-Mongoose-Express-Node.js. 
 
-
 ### Mongoose
 Mongoose allows you to communicate with Mongo. It is an Object Document Mapper (ODM), which means that Mongoose allows you to define objects with a strongly-typed schema that is mapped to a MongoDB document. Mongoose provides functionality around creating and working with schemas. 
 
@@ -15,13 +14,14 @@ Mongoose/Mongo has 4 main core operations:
 - Update
 - Destroy
 
-### Collections/Models, Instances, Schemas
+### Collections/Models/Classes, Instances, Schemas
 <img src="images/mongoDB-storeinfo.png" width="200">
-Mongo stores record in different collections/models; these are representations of resources (a collection books or a collection of states). 
 
-Every collection can have many different instances/records; it represent a single resources (e.g. the book 'Siddharta'). Every records is a JSON object. 
+**Collections/models/classes:** Mongo stores record in different collections/models/classes; these are representations of resources (a collection books or a collection of states). 
 
-A schema defines which properties you expect each record of the collection to have and what type of data it is (see header 'Data Types' below). It's a component of a model/collection. 
+**Instances:** Every collection can have many different instances/records; it represent a single resources (e.g. the book 'Siddharta'). Every records is a JSON object. 
+
+**Schema:** A schema defines which properties you expect each record of the collection to have and what type of data it is (see header 'Data Types' below). It's a component of a model/collection. 
 
 ### Data Types
 SchemaTypes handle definition of path defaults, validation, getters, setters, field selection defaults for queries, and other general characteristics for Strings and Numbers. The following are all the valid SchemaTypes in mongoose.
@@ -36,6 +36,7 @@ SchemaTypes handle definition of path defaults, validation, getters, setters, fi
 - Decimal128
 - Map
 
+Example: 
 ```js
 const mongoose = require('mongoose');
 
@@ -48,67 +49,3 @@ const userSchema = new Schema({
 
 mongoose.model('users', userSchema);
 ```
-
-
-### Subdocuments
-Subdocuments are documents embedded in other documents. In Mongoose, this means you can nest schemas in other schemas. Mongoose has two distinct notions of subdocuments: arrays of subdocuments and single nested subdocuments.</br>
-<img src="images/mongoDB-subdocument.png?" width="300">
-
-Subdocuments are similar to normal documents. Nested schemas can have middleware, custom validation logic, virtuals, and any other feature top-level schemas can use. The major difference is that subdocuments are not saved individually, they are saved whenever their top-level parent document is saved.
-
-#### Example
-###### Setting-up Sub-Document
-```js
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
-
-const recipientSchema = new Schema({
-  email: String,
-  responded: { type: Boolean, default: false }
-});
-
-module.exports = recipientSchema;
-```
-###### Import in Top-Level Document
-```js
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
-
-const RecipientSchema = require('./Recipient');
-
-const surveySchema = new Schema({
-  title: String,
-  body: String,
-  subject: String,
-  recipients: [RecipientSchema],
-  yes: { type: Number, default: 0 },
-  no: { type: Number, default: 0 }
-});
-
-mongoose.model('survey', surveySchema);
-```
-
-#####
-When you now pass in a array of object, it will automatically create subdocuments for you. 
-
-#### Relationship setting
-In the example below  we indicate that a document(a survey) is owned by another document(a user). 
-- __ :  underscore is not required, but it is convention to indicate it is a reference/relationship field
-- Type:  we indicate that is has an type that is the id of the user that owns a record
-- Ref: the reference we are making belongs to the user collection
-```js
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
-
-const RecipientSchema = require('./Recipient');
-
-const surveySchema = new Schema({
-  title: String,
-  body: String,
-  __user: { type: Schema.Types.ObjectId, ref: 'user'}
-});
-
-mongoose.model('survey', surveySchema);
-```
-
-
