@@ -333,7 +333,7 @@ const User = mongoose.model('user', UserSchema);
 module.exports = User;
 ```
 
-The main disadvantage is that queries becomes more difficult; have to create multiple queries. 
+The main disadvantage is that queries becomes more difficult; we have to create multiple queries. 
 
 
 
