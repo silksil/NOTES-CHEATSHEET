@@ -255,7 +255,7 @@ describe('Virtual types', () => {
 ## Seperate Collections
 As an aternative to embedded/nested documents we can create seperate collections and assign a relationship. We would then link the different collections by passing properties an array with certain id's that represent records of a different collection. For example
 
-<img src="images/relational-seperate-document.png?" width="300">
+<img src="images/relational-seperate-document.png?" width="500">
 
 To do this, we would first create a seperate model for blog posts and assign a seperate collection of comments to it:
 ```js
