@@ -252,11 +252,86 @@ describe('Virtual types', () => {
 - **Good:**  Let's say we want to show blog posts of various user, approx. 10 posts a page. If we then want to fetch 10 blog posts of all the users, it becomes challenging: we don't want to first fetch all user and then select 10 posts (not efficient), and if we would fetch 10 users and then select their blog posts we might end up with users that don't have any posts.
 - **Bad:** To get nested records of a specific model, e.g. blog posts of a specific users. 
 
-### Alternative Embedded/Nested Documents: Make Seperate Collections
-To solve the problem above, we can create seperate collections. We would then link the different collections by passing properties an array with certain id's that represent records of a different collection. Something like this:
+## Seperate Collections
+As an aternative to embedded/nested documents we can create seperate collections and assign a relationship. We would then link the different collections by passing properties an array with certain id's that represent records of a different collection. For example
 
 <img src="images/relational-seperate-document.png?" width="300">
 
+To do this, we would first create a seperate model for blog posts and assign a seperate collection of comments to it:
+```js
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const BlogPostSchema = new Schema({
+  title: String,
+  content: String,
+  /*
+    Refering to collections is different than referencing subdocuments
+    We pass a array to comments to state we expect many different comments
+    'type' points off to a different collections by including ObjectId
+    'ref' to understand what type/collection the id's relate to we assign a ref
+    through 'ref' we state that we create a `Comment` model
+    This is similar as: `const User = mongoose.model('user', UserSchema)``
+  */
+  comments: [{
+    type: Schema.Types.ObjectId,
+    ref: 'comment'
+  }]
+});
+
+const BlogPost = mongoose.model('blogPost', BlogPostSchema);
+
+module.exports = BlogPost;
+```
+We then create a model for comments and assign the comments to a certain user:
+```js
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const CommentSchema = new Schema({
+  content: String,
+  /*
+    We only have a singel user associated with a comment, so we assign a object
+  */
+  user: { type: Schema.Types.ObjectId, ref: 'user' }
+});
+
+// model has have to have the same name as in blogPost
+const Comment = mongoose.model('comment', CommentSchema);
+
+module.exports = Comment;
+```
+Next, assign a collection of blog posts to a user model:
+```js
+const mongoose = require('mongoose');
+const PostSchema = require('./post');
+const Schema = mongoose.Schema;
+
+const UserSchema = new Schema({
+  name: {
+    type: String,
+    validate: {
+      validator: (name) => name.length > 2,
+      message: 'Name must be longer than 2 characters.'
+    },
+    required: [true, 'Name is required.']
+  },
+  posts: [PostSchema],
+  likes: Number,
+  blogPosts: [{
+    type: Schema.Types.ObjectId,
+    ref: 'blogPost'
+  }]
+});
+
+UserSchema.virtual('postCount').get(function() {
+  return this.posts.length;
+});
+
+const User = mongoose.model('user', UserSchema);
+
+module.exports = User;
+```
 
 The main disadvantage is that queries becomes more difficult; have to create multiple queries. 
 
