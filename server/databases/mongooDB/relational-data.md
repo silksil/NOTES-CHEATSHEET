@@ -105,6 +105,32 @@ const User = mongoose.model('user', UserSchema);
 
 module.exports = User;
 ```
+Next, we create a test to see whether it is succesfully added:
+```js
+const assert = require('assert');
+const User = require('../src/user');
+
+describe('Subdocuments', () => {
+  it('can create a subdocument', (done) => {
+    const joe = new User({
+      name: 'Joe',
+      /*
+        We create a subdocument by nesting properties
+        Mongoose will then check the properties (e.g. is it a string?)
+      */
+      posts: [{ title: 'PostTitle' }]
+    });
+
+    joe.save()
+      .then(() => User.findOne({ name: 'Joe' }))
+      .then((user) => {
+        // We check whether the subdocument succesfully added
+        assert(user.posts[0].title === 'PostTitle');
+        done();
+      });
+  });
+});
+```
 
 
 
