@@ -62,7 +62,9 @@ const surveySchema = new Schema({
 mongoose.model('survey', surveySchema);
 ```
 
-## EMBEDDING RESOURCES IN A MODEL
+## COURSE
+
+### Sub-documents
 You have to create a collection, that includes resource with a certain set of properties. So, let's say we have a user model that has a user schema, including first name,  post count and a array of posts. In this case, the array of posts is the resource we want to embed and for the resource we expect certain properties.  We don't create a seperate model for the posts to represent the nested resource. Mongoo's models exist to represent distinct collections. If a resource can't be represented by a stand-alone collection, we only make a post schema, not a model. 
 
 
