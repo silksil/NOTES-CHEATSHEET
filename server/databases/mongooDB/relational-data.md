@@ -190,14 +190,49 @@ it('Can add subdocuments to an existing record', (done) => {
         done();
       });
   });
-    ```
-  
-  
+ ```
+ 
+### Virtual types
+Virtual type/field/property refers to any type of property that is not actually saved to the db. Whenever you think of a property that is the product of two or more properties, you should think of virtual types. For example, you have an array of posts, and you want to have the number of posts as an property. Instead of creating a property `postCount` in MongoDB, you only create it on the server:
+```js
+const mongoose = require('mongoose');
+//import schema
+const PostSchema = require('./post_schema');
+const Schema = mongoose.Schema;
 
+const UserSchema = new Schema({
+  name: {
+    type: String,
+    required: [true, 'Name is required.']
+  },
+  postCount: Number,
+  // include the schema and assign it to the property `posts`
+  posts: [PostSchema]
+});
 
+const User = mongoose.model('user', UserSchema);
 
+module.exports = User;
+```
 
+To test it, we create the following test:
+```js
+const assert = require('assert');
+const User = require('../src/user');
 
+describe('Virtual types', () => {
+  it('postCount returns number of posts', (done) => {
+    const joe = new User({
+      name: 'Joe',
+      posts: [{ title: 'PostTitle' }]
+    });
 
-
-
+    joe.save()
+      .then(() => User.findOne({ name: 'Joe' }))
+      .then((user) => {
+        assert(joe.postCount === 1);
+        done();
+      });
+  });
+});
+```
