@@ -213,11 +213,10 @@ const UserSchema = new Schema({
   Virtual properties work through `get` and `set` features of ES6
   Through .get we can run a funciton assigned to property and return a value
   What is returned is the value assigned to the property
-
 */
 UserSchema.virtual('postCount').get(function() {
   /* 
-    this refers to the instance of the model we are working on
+    `this` refers to the instance of the model we are working on
     If we would use a fat arrow function, the `this` would refer to the whole file
     So, use a normal function
   */
