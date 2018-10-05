@@ -65,9 +65,7 @@ mongoose.model('survey', surveySchema);
 ## COURSE
 
 ### Sub-documents
-Subdocuments are documents embedded in other documents. In Mongoose, this means you can nest schemas in other schemas. 
-
-Subdocuments are similar to normal documents. Nested schemas can have middleware, custom validation logic, virtuals, and any other feature top-level schemas can use. The major difference is that subdocuments are not saved individually, they are saved whenever their top-level parent document is saved.
+Subdocuments are documents embedded in other documents. In Mongoose, this means you can nest schemas in other schemas. Subdocuments are similar to normal documents. Nested schemas can have middleware, custom validation logic, virtuals, and any other feature top-level schemas can use. The major difference is that subdocuments cannot be saved individually, they are saved whenever their top-level parent document is saved.
 
 ****EXAMPLE**** <br/>
 Let's say we have a user model that has a user schema, including first name,  post count and a array of posts. In this case, the array of posts is the resource/sub-document we want to embed.  We don't create a seperate model for the posts to represent the nested resource. Mongoo's models exist to represent distinct collections. Which is not the case with subdocument as they are not saved individually, they are saved whenever their top-level parent document is saved. Thus, if a resource can't be represented by a stand-alone collection, we only make a post schema, not a model. 
@@ -131,6 +129,38 @@ describe('Subdocuments', () => {
   });
 });
 ```
+The advantage of a subdocument is that you can add sub-document to an existing user. So, let's create a test to check this:
+```js
+it('Can add subdocuments to an existing record', (done) => {
+  // create Joe
+  const joe = new User({
+    name: 'Joe',
+    posts: []
+  });
+
+  // save Joe
+  joe.save()
+    // fetch Joe
+    .then(() => User.findOne({ name: 'Joe' }))
+    .then((user) => {
+      /* 
+        Add a post to Joe
+        Posts is a array, we can push an element to the array
+      */ 
+      user.posts.push({ title: 'New Post' });
+      // save Joe
+      return user.save();
+    })
+    // fetch Joe
+    .then(() => User.findOne({ name: 'Joe' }))
+    .then((user) => {
+      // make assertion
+      assert(user.posts[0].title === 'New Post');
+      done();
+    });
+  });
+  ```
+
 
 
 
