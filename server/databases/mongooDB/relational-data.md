@@ -205,9 +205,23 @@ const UserSchema = new Schema({
     type: String,
     required: [true, 'Name is required.']
   },
-  postCount: Number,
-  // include the schema and assign it to the property `posts`
   posts: [PostSchema]
+});
+
+/*
+  Create a virtual property, has to be done outside the Schema
+  Virtual properties work through `get` and `set` features of ES6
+  Through .get we can run a funciton assigned to property and return a value
+  What is returned is the value assigned to the property
+
+*/
+UserSchema.virtual('postCount').get(function() {
+  /* 
+    this refers to the instance of the model we are working on
+    If we would use a fat arrow function, the `this` would refer to the whole file
+    So, use a normal function
+  */
+  return this.posts.length;
 });
 
 const User = mongoose.model('user', UserSchema);
