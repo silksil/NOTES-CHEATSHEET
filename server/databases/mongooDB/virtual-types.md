@@ -1,1 +1,0 @@
-Virtual type/field/property refers to any type of property that is not actually saved to the db. Whenever you think of a property that is the product of two or more properties, you should think of virtual types. For example, you have an array of posts, and you want to have the number of posts. If you would add a property 
