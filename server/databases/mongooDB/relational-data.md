@@ -249,12 +249,15 @@ describe('Virtual types', () => {
   });
 });
 ```
-***Good & Bad Cases Embedded/Nested documents***
+#### Good & Bad Cases Embedded/Nested documents
 - **Disadvantage:**  Let's say we want to show blog posts of various user, approx. 10 posts a page. If we then want to fetch 10 blog posts of all the users, it becomes challenging: we don't want to first fetch all user and then select 10 posts (not efficient), and if we would fetch 10 users and then select their blog posts we might end up with users that don't have any posts.
 - **Advantage:** To get nested records of a specific model, e.g. blog posts of a specific users. 
 
-***Alternative Embedded/Nested Documents: Make Seperate Collections***
-To solve the problem above, we can create seperate collections. We would then link the different collections by passing properties certain id's that seperate a record in a different collection. 
+#### Alternative Embedded/Nested Documents: Make Seperate Collections
+To solve the problem above, we can create seperate collections. We would then link the different collections by passing properties an array with certain id's that represent records of a different collection. Something like this:
+
+<img src="images/relational-seperate-document.png?" width="300">
+
 
 Disadvantage: query becomes more difficult; have to create multiple queries. 
 
