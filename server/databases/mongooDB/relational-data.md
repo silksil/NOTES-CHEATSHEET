@@ -160,6 +160,39 @@ it('Can add subdocuments to an existing record', (done) => {
     });
   });
   ```
+  Besides adding, we would also like to test whether we can delete a sub-document
+  ```js
+  it('can remove an existing subdocument', (done) => {
+    const joe = new User({
+      name: 'Joe',
+      posts: [{ title: 'New Title' }]
+    });
+
+    joe.save()
+      .then(() => User.findOne({ name: 'Joe' }))
+      .then((user) => {
+        /*
+          This is not just plain javascript but functionality by mongoose
+          We get the post we want to remove
+          Then .remove() can be called
+        */
+        const post = user.posts[0];
+        post.remove();
+        /*
+          When we remove a document we can just call .remove
+          If we remove subdocuments we have to call the parent record with .save
+        */
+        return user.save();
+      })
+      .then(() => User.findOne({ name: 'Joe' }))
+      .then((user) => {
+        assert(user.posts.length === 0);
+        done();
+      });
+  });
+    ```
+  
+  
 
 
 
