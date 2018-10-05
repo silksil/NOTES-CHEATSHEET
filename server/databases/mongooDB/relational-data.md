@@ -65,7 +65,11 @@ mongoose.model('survey', surveySchema);
 ## COURSE
 
 ### Sub-documents
-You have to create a collection, that includes resource with a certain set of properties. So, let's say we have a user model that has a user schema, including first name,  post count and a array of posts. In this case, the array of posts is the resource we want to embed and for the resource we expect certain properties.  We don't create a seperate model for the posts to represent the nested resource. Mongoo's models exist to represent distinct collections. If a resource can't be represented by a stand-alone collection, we only make a post schema, not a model. 
+Subdocuments are documents embedded in other documents. In Mongoose, this means you can nest schemas in other schemas. 
+
+Subdocuments are similar to normal documents. Nested schemas can have middleware, custom validation logic, virtuals, and any other feature top-level schemas can use. The major difference is that subdocuments are not saved individually, they are saved whenever their top-level parent document is saved.
+
+EXAMPLE: Let's say we have a user model that has a user schema, including first name,  post count and a array of posts. In this case, the array of posts is the resource/sub-document we want to embed.  We don't create a seperate model for the posts to represent the nested resource. Mongoo's models exist to represent distinct collections. Which is not the case with subdocument as they are not saved individually, they are saved whenever their top-level parent document is saved. Thus, if a resource can't be represented by a stand-alone collection, we only make a post schema, not a model. 
 
 
 
