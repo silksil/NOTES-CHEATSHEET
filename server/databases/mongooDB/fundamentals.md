@@ -5,6 +5,7 @@ The diagram above shows the interaction between the different stacks; MongoDB-Mo
 
 ### Mongoose
 Mongoose allows you to communicate with Mongo. It is an Object Document Mapper (ODM), which means that Mongoose allows you to define objects with a strongly-typed schema that is mapped to a MongoDB document. Mongoose provides functionality around creating and working with schemas. 
+
 <img src="images/mongoose.png?" width="300">
 
 ### CRUD
