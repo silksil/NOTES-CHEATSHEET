@@ -1,0 +1,15 @@
+Based on a collection of artists that has albums as their sub-documents. 
+```js
+const Artist = require('../models/artist');
+
+/**
+ * Finds a single artist in the artist collection.
+ * @param {object} artistProps - Object containing a name, age, yearsActive, and genre
+ * @return {promise} A promise that resolves with the Artist that was created
+ */
+module.exports = (artistProps) => {
+  const artist = new Artist(artistProps);
+
+  return artist.save();
+};
+```
