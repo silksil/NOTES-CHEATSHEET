@@ -1,15 +1,34 @@
-## Installation
-### Mongoose 
+## Installation MongoDB locally
+```
+brew update
+brew install mongodb
+```
+## Set-up
+#### Create data directory where data can be saved
+```
+sudo mkdir -p /data/db
+```
+#### Take ownership of the directory
+```
+whoami // get $USER
+sudo chown $USER /data/db
+```
+#### Start mongod (has to be done everytime you restart your laptop)
+`mongod`
+
+## Setup Project
+#### Install Mongoose 
 `npm install --save mongoose`
 
-## Config
-### Set-Up you App File
+#### Include 'dev.js' and 'prod.js' config files
+```js
+// DEV
+mongoURI: 'mongodb://YOUR_USERNAME:YOURPASSWORD.....',
+
+// PRO
+mongoURI: process.env.MONGO_URI,
 ```
-const mongoose = require('mongoose')
-const keys = require('./config/keys')
-mongoose.connect(keys.mongoURI);
-````
-### Link to PROD or Dev
+#### Link to prod or dev through key.js file
 ```js
 `use strict`;
 
@@ -19,27 +38,11 @@ if (process.env.NODE_ENV === 'production') {
   module.exports = require('./dev');
 }
 ```
-
-### Config Variables
-```js
-// DEV
-mongoURI: 'mongodb://YOUR_USERNAME:YOURPASSWORD.....',
-
-// PRO
-mongoURI: process.env.MONGO_URI,
+#### Import key.js and set-up connection in app.js
 ```
-### Set-Up Your Model
-```js
-const mongoose = require('mongoose');
-
-const { Schema } = mongoose; // mongoose wants us to define the schema beforehand.
-
-const userSchema = new Schema({
-  googleId: String,
-  credit: { type: Number, default: 0 } //
-});
-
-mongoose.model('users', userSchema); // state it should create a collection - if it not already exists
-```
-### Require Your Model in App file
+const mongoose = require('mongoose')
+const keys = require('./config/keys')
+mongoose.connect(keys.mongoURI);
+````
+### Require Your Models in App file
 `require('./models/user');`
