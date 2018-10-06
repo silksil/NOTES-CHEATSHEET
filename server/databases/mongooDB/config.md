@@ -43,5 +43,5 @@ const mongoose = require('mongoose')
 const keys = require('./config/keys')
 mongoose.connect(keys.mongoURI);
 ````
-### Require Your Models in App file
+####  Require Your models in app.js
 `require('./models/user');`
