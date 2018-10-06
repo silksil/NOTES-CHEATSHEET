@@ -1,9 +1,8 @@
-## Installation MongoDB locally
+## Installation and set-up  MongoDB locally
 ```
 brew update
 brew install mongodb
 ```
-## Set-up
 #### Create data directory where data can be saved
 ```
 sudo mkdir -p /data/db
