@@ -335,7 +335,7 @@ module.exports = User;
 ```
 We would then start testing the assocations. First, we have to adapt the test_helper file to assure that every collection is dropped after every test to make sure every test is being run with a clean sheet:
 
-```
+```js
 const mongoose = require('mongoose');
 
 /*
