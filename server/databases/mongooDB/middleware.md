@@ -2,6 +2,8 @@ Middleware are functions that execute before or after certain distinct events th
 - **Pre:** before an event takes place
 - **Post:** after an event takes place.
 
+<img src="images/middleware.png" width="400">
+
 ### After removing a instance of collection, remove also it's association
 For example, after we remove a user, we also want to remove it's associated blog posts. In order to do this we would include the middleware in the user model through the following code:
 ```js
