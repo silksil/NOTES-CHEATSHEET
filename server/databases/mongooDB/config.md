@@ -38,7 +38,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 #### Import key.js and set-up connection in app.js
-```
+```js
 const mongoose = require('mongoose')
 const keys = require('./config/keys')
 mongoose.connect(keys.mongoURI);
