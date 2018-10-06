@@ -29,14 +29,18 @@ const minQuery = Artist
 If we would have many users in our db, this would significantly reduce our performance. So, instead we do the following:
 ```js
 .find({})
-    /* 
-      sort by age
-      by including 1, you go from low to high
-    */
-    .sort({ age: 1 })
-    // only give me the first one
-    .limit(1)
-    .then(artists => artists[0].age);
+const minQuery = Artist
+  // find all artists
+  .find({})
+  /* 
+    sort by age
+    by including 1, you go from low to high
+  */
+  .sort({ age: 1 })
+  // only give me the first one
+  .limit(1)
+  // we use find, so it's still an array
+  .then(artists => artists[0].age)
 ```
 
 
