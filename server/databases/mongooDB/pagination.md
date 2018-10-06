@@ -7,7 +7,7 @@ To work with pagination we have two query modifiers:
 To exemplify this, we create a test. 
 
 First, let's add data to the db:
-```
+```js
 const assert = require('assert');
 const User = require('../src/user');
 
@@ -29,7 +29,7 @@ describe('Reading users out of the database', () => {
   });
   ```
   Next, test whether we get back the correct users if we include .skip and .limit:
-  ```
+  ```js
     it('can skip and limit the result set', (done) => {
     User.find({})
       /*
