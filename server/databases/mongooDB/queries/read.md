@@ -1,3 +1,4 @@
+Context: Based on a collection of artists that has albums as their sub-documents.
 ### Read min or max of property assigned to a collection of records
 ```js
 const Artist = require('../models/artist');
