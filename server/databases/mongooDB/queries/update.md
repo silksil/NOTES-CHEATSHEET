@@ -16,7 +16,7 @@ module.exports = (_id, artistProps) => {
 ```
 
 ### Bulk Update
-```
+```js
 const Artist = require('../models/artist');
 
 /**
