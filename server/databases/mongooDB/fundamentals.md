@@ -40,16 +40,8 @@ SchemaTypes handle definition of path defaults, validation, getters, setters, fi
 - Decimal128
 - Map
 
-Example: 
-```js
-const mongoose = require('mongoose');
+### Index
 
-const { Schema } = mongoose;
-
-const userSchema = new Schema({
-  googleId: String,
-  credit: Number
-});
 
 mongoose.model('users', userSchema);
 ```
