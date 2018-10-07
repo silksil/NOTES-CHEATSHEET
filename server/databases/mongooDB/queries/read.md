@@ -35,7 +35,7 @@ module.exports = () => {
 ```
 
 ### Get instances of collection, sort it by a property, limit amount per page, count amount of results
-```
+```js
 /**
  * Searches through the Artist collection
  * @param {string} sortProperty The property to sort the results by
