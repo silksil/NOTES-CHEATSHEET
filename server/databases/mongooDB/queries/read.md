@@ -34,7 +34,7 @@ module.exports = () => {
 };
 ```
 
-### Get instances of collection, sort it by a property, limit amount per page, count amount of results
+### Get instances of collection + sort it by a property + limit amount per page + count amount of results
 ```js
 /**
  * Searches through the Artist collection
@@ -72,3 +72,60 @@ return Promise.all([query, Artist.count()])
   });
 };
 ```
+
+### Get instances of collection + filter by single property + sort it by a property + limit amount per page + count amount of results, 
+```js
+const Artist = require('../models/artist');
+
+/**
+ * Searches through the Artist collection
+ * @param {object} criteria An object with a name, age, and yearsActive
+ * @param {string} sortProperty The property to sort the results by
+ * @param {integer} offset How many records to SKIP in the result set
+ * @param {integer} limit How many records to return in the result set
+ * @return {promise} A promise that resolves with the artists, count, offset, and limit
+ * like this: { all: [artists], count: count, offset: offset, limit: limit }
+ */
+
+ // the values of offset and limit are default values
+module.exports = (criteria, sortProperty, offset = 0, limit = 20) => {
+
+  const query = Artist.find(buildQuery(criteria))
+  /*
+  We add a property to an object, not an array. This is es6, same as:
+  - const sortOrderandProperty = {};
+  - sortOrderandProperty[sortProperty] = 1;
+  .- sort(sortOrder)
+  */
+  .sort({ [sortProperty]: 1 })
+  // offset default value is 0 but can change
+  .skip(offset)
+  .limit(limit);
+
+// count refers to the amount of artists
+return Promise.all([query, Artist.count()])
+  .then((results) => {
+    return {
+      all: results[0],
+      count: results[1],
+      offset: offset,
+      limit: limit
+    };
+  });
+};
+
+
+const buildQuery = (criteria) => {
+  const query = {};
+
+  if (criteria.age) {
+    query.age = {
+      $gte: criteria.age.min,
+      $lte: criteria.age.max
+    };
+  }
+
+  return query;
+};
+```
+
