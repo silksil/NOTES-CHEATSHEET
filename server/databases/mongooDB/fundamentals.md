@@ -41,7 +41,8 @@ SchemaTypes handle definition of path defaults, validation, getters, setters, fi
 - Map
 
 ### Index
+An index is a very efficient way Mongo fetches data. If you create a record, Mongo automatically puts a record's id in a collection of indexes. If you then search for a record, it goes through the indexes bucket, and through this it can fetch your document faster than if it would have to go through a whole colleciton. 
+
+If we want to include fast lookups through other properties, you can add your own index. A good case is if you use a property very often to find a record, for example through an email. 
 
 
-mongoose.model('users', userSchema);
-```
