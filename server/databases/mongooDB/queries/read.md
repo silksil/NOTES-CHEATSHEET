@@ -1,3 +1,12 @@
+## Operators
+https://docs.mongodb.com/manual/reference/operator/query/
+
+- Higher or equal to a certian value - $gte
+- Lower or equal to a certian value - $lte
+- Search based on text - $text
+- Sort based on a property number or alphabet - .sort
+
+## Example Queries
 Context: Based on a collection of artists that has albums as their sub-documents.
 ### Read min or max of property assigned to a collection of records
 ```js
