@@ -48,7 +48,7 @@ If we want to include fast lookups through other properties, you can add your ow
 <img src="images/indexes.png" width="300">
 
 #### Search Index
-If you want to search based on a property, you also have to add an index
+If you want to search based on a property's text value, you also have to add an index:
 - Go to shell and type `mongo`
 - Check all db's: `show dbs`
 - Then go to your db: `db ${nameDb}`
