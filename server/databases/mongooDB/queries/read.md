@@ -70,7 +70,7 @@ module.exports = (criteria, sortProperty, offset = 0, limit = 20) => {
   .limit(limit);
 
 // count refers to the amount of artists
-return Promise.all([query, Artist.count()])
+  return Promise.all([query, Artist.find(buildQuery(criteria)).count()])
   .then((results) => {
     return {
       all: results[0],
@@ -111,8 +111,8 @@ module.exports = (criteria, sortProperty, offset = 0, limit = 20) => {
   .skip(offset)
   .limit(limit);
 
-// count refers to the amount of artists
-return Promise.all([query, Artist.count()])
+  // count refers to the amount of artists
+  return Promise.all([query, Artist.find(buildQuery(criteria)).count()])
   .then((results) => {
     return {
       all: results[0],
@@ -167,7 +167,7 @@ module.exports = (criteria, sortProperty, offset = 0, limit = 20) => {
   .limit(limit);
 
 // count refers to the amount of artists
-return Promise.all([query, Artist.count()])
+  return Promise.all([query, Artist.find(buildQuery(criteria)).count()])
   .then((results) => {
     return {
       all: results[0],
@@ -230,7 +230,7 @@ module.exports = (criteria, sortProperty, offset = 0, limit = 20) => {
   .limit(limit);
 
 // count refers to the amount of artists
-return Promise.all([query, Artist.count()])
+  return Promise.all([query, Artist.find(buildQuery(criteria)).count()])
   .then((results) => {
     return {
       all: results[0],
