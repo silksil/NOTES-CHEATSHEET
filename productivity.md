@@ -25,7 +25,9 @@ Use visualization through the form of diagrams or maps to understand the problem
 Timebox if you are stuck. State to yourself 'if I am stuck longer than x minutes and x hours, I will ask for help from x'.
 
 ### Define and solve roadblocks
-Ask yourself daily `Were there any roadblocks or was there anything that could be automated? ` If the answer is yes and it takes less than 15 minutes to solve it, solve it, if it takes more than 15 mintues, create a task for. Examples of roadblocks can be:
+Ask yourself daily:
+> Were there any roadblocks or was there anything that could be automated?
+If the answer is yes and it takes less than 15 minutes to solve it, solve it, if it takes more than 15 mintues, create a task for. Examples of roadblocks can be:
 - Not having access to certain files.
 - Unclear documentation.
 - Unorganized folder structure. 
