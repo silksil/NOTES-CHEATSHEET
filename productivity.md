@@ -26,7 +26,8 @@ Timebox if you are stuck. State to yourself 'if I am stuck longer than x minutes
 
 ### Define and solve roadblocks
 Ask yourself daily:
-> Were there any roadblocks or was there anything that could be automated? >
+> Were there any roadblocks or was there anything that could be automated?
+
 If the answer is yes and it takes less than 15 minutes to solve it, solve it, if it takes more than 15 mintues, create a task for. Examples of roadblocks can be:
 - Not having access to certain files.
 - Unclear documentation.
