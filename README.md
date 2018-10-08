@@ -9,6 +9,6 @@ This repository keeps track of what I have encountered and learnerd accross the 
 - Show to the outside world what I can. 
 
 
-#### What does it includes?
+#### What does it include?
 My current preffered stack is React-Redux, NodeJs, Express and MongoDB and my notes are also mainly focusing on these technologies. Additionality it will include topics that are more generic, such as [how to be productive](https://github.com/silksil/NOTES-CHEATSHEET/blob/master/productivity.md).
 
