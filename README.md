@@ -1,6 +1,6 @@
-#### What is this? 
 > I trust the weakest pen more than the strongest memory - Tim Ferris
 
+#### What is this? 
 This repository keeps track of what I have encountered and learnerd accross the different technologies that I have been exploring and using. Simple but effective note taking enables me to:
 - Keep track of best practices. 
 - Use it as a 'cheatsheet' to create functionality in a shorter period of time than If I had to do from stretch.  
