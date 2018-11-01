@@ -96,6 +96,7 @@ const RootQuery = new GraphQLObjectType({
        * args: stands for arguments, basically include the argument defined above in it
       */
       resolve(parentValue, args) {
+      
         // Go through all users and find the first user with a certain id
         return _.find(users, { id: args.id });
       }
