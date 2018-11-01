@@ -1,7 +1,7 @@
 > I trust the weakest pen more than the strongest memory - Tim Ferris
 
 #### What is this? 
-This repository keeps track of what I have encountered and learnerd accross the different technologies that I have been exploring and using. Simple but effective note taking enables me to:
+This repository keeps track of what I have encountered and learned across the different technologies that I have been exploring and using. Simple but effective note taking enables me to:
 - Keep track of best practices. 
 - Use it as a 'cheatsheet' to create functionality in a shorter period of time than If I had to do from stretch.  
 - To continuously pivot on the best way to create certain functionality. 
@@ -10,5 +10,5 @@ This repository keeps track of what I have encountered and learnerd accross the 
 
 
 #### What does it include?
-My current preffered stack is React-Redux, NodeJs, Express and MongoDB and my notes are also mainly focusing on these technologies. Additionality it will include topics that are more generic, such as [how to be productive](https://github.com/silksil/NOTES-CHEATSHEET/blob/master/productivity.md).
+My current preffered stack is React-Redux, NodeJs, Express and MongoDB and my notes are also mainly focusing on these technologies. Additionality, it includes topics that are more generic, such as [how to be productive](https://github.com/silksil/NOTES-CHEATSHEET/blob/master/productivity.md).
 
