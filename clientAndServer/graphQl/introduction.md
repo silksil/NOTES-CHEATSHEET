@@ -6,7 +6,7 @@ GraphQl provides a way to define complete description of data in schema and allo
 - Ask for what you need: Client has a provision to ask only those fields which they needs. There would be no handling on server side specific to the platform.
 - Get many API’s response in single request: Client has to call one query to get data from multiple rest API’s.
 
-## Graph: notes & Edges
+### Graph: notes & Edges
 <img src="images/graphql-1.png?" width="600">
 A graph is a data structure that includes notes (which are the rectangles)  and the edges (which are the relations). The way data is stored is not different; SQL or NoSQL can still be used. Once have put the data into graph, we query it through GraphQL. For example, let's imagine we want to start with user 23, find all their friends and all the companies those friend work at. This is how we would write the query:
 
@@ -24,7 +24,7 @@ query {
 }
 ```
 
-## Express
+### Express
 #### Install, require schema and initialize:
 ```js
 const express = require('express');
@@ -77,14 +77,14 @@ const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
 
-    // 1.) if you are looking for a user
+    // 1.) If you are looking for a user
     user: {
       // 3. I give back to you a user
       type: UserType,
 
       /*
        * args stands for arguments that you have to provide to give something back,
-       * 2. if you give me a id
+       * 2. If you give me a id
       */
       args: { id: { type: GraphQLString } },
 
@@ -94,14 +94,14 @@ const RootQuery = new GraphQLObjectType({
        * args: stands for arguments, basically include the argument defined above in it
       */
       resolve(parentValue, args) {
-        // go through all users and find the first user with a certain id
+        // Go through all users and find the first user with a certain id
         return _.find(users, { id: args.id });
       }
     }
   }
 });
 
-// takes in a root query and returns a GraphQl instance
+// Takes in a root query and returns a GraphQl instance
 module.exports = new GraphQLSchema({
   query: RootQuery
 });
