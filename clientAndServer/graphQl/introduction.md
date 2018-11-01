@@ -7,6 +7,7 @@ GraphQl provides a way to define complete description of data in schema and allo
 - Get many API’s response in single request: Client has to call one query to get data from multiple rest API’s.
 
 ## Graph: notes & Edges
+<img src="images/graphql-1.png?" width="300">
 A graph is a data structure that includes notes (which are the rectangles)  and the edges (which are the relations). The way data is stored is not different; SQL or NoSQL can still be used. Once have put the data into graph, we query it through GraphQL. For example, let's imagine we want to start with user 23, find all their friends and all the companies those friend work at. This is how we would write the query:
 ```
 query {
@@ -23,5 +24,4 @@ query {
 ```
 
 ## The GraphQL tool
-It's a tool provided in the browser by the GraphQL Express library. We can add a query in the tool and see the result on the right. On the top-right there is a documentation explorer to understand the data structure and data fetching possibilities. 
-
+It's a tool provided in the browser by the GraphQL Express library. We can add a query in the tool and see the result on the right. On the top-right there is a documentation explorer to understand the data structure and data fetching possibilities.
