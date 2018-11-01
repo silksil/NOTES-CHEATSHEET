@@ -24,7 +24,16 @@ query {
 }
 ```
 
-### Express
+### Express / Server
+GraphQl works as a mediator between Express and a database to return the correct data.
+<img src="images/graphql-2.png?" width="600">
+
+In a small app the architecture is likely look a bit like this:
+<img src="images/small-app.png?" width="600">
+
+Nonetheless, in a large app you are likely to have multiple servers that store data. GraphQl can serve as a proxy, making multiple http requests to other servers in the database, and sending data it in one .json file back.
+<img src="images/large-app.png?" width="600">
+
 #### Install, require schema and initialize:
 ```js
 const express = require('express');
@@ -80,7 +89,7 @@ const RootQuery = new GraphQLObjectType({
 
     // 1.) If you are looking for a user
     user: {
-    
+
       // 3. I give back to you a user
       type: UserType,
 
@@ -96,7 +105,7 @@ const RootQuery = new GraphQLObjectType({
        * args: stands for arguments, basically include the argument defined above in it
       */
       resolve(parentValue, args) {
-      
+
         // Go through all users and find the first user with a certain id
         return _.find(users, { id: args.id });
       }
