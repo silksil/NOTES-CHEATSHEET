@@ -56,6 +56,7 @@ const users = [
 ];
 
 const UserType = new GraphQLObjectType({
+
   /*
    * GraphQLObjectType always has two required properties
    * Name is a capital string that describes the type we are defining, mostly equal to const
@@ -79,6 +80,7 @@ const RootQuery = new GraphQLObjectType({
 
     // 1.) If you are looking for a user
     user: {
+    
       // 3. I give back to you a user
       type: UserType,
 
