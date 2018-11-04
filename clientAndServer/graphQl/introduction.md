@@ -8,21 +8,11 @@ GraphQl provides a way to define complete description of data in schema and allo
 
 ### Graph: notes & Edges
 <img src="images/graphql-1.png?" width="600">
-A graph is a data structure that includes notes (which are the rectangles)  and the edges (which are the relations). The way data is stored is not different; SQL or NoSQL can still be used. Once have put the data into graph, we query it through GraphQL. For example, let's imagine we want to start with user 23, find all their friends and all the companies those friend work at. This is how we would write the query:
+A graph is a data structure that includes notes (which are the rectangles)  and the edges (which are the relations). The way data is stored is not different; SQL or NoSQL can still be used. Once have put the data into graph, we query it through GraphQL.
 
-```
-query {
-  // first find user with id 23.
-  user(id: "23")
-    users {
-    // find all friends associated with id 23 {
-      company {
-      // find the company associated with all of those friends.
-      }
-    }
-  }
-}
-```
+You can think of the schema or data, as a bunch of functions that return references to other objects/pieces of data in our graph. Every edge can then be perceived as function that resolves data.
+<img src="images/resolve.png?" width="600">
+
 
 ### Express / Server
 GraphQl works as a mediator between Express and a database to return the correct data.
