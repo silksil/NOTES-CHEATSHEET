@@ -1,6 +1,8 @@
+
+## Nested Query
 We gonna relate a company to a user by adding a company id property to a particular user.
 
-Let's start with creating dummy data:
+Let's start defining the dummy data we get back from the db:
 ```json
 {
   "users": [
@@ -70,6 +72,54 @@ We can than test in the GraphQl tool whether we can retrieve the correct data :
       id,
       name,
       description
+    }
+  }
+}
+```
+## Nested Query List
+To get a list of of a data type associated with a certain type, we need specify this in the schema. For example, we need all users associated with a company. In order to do this, we have to define the type as `GraphQLList`.
+```js
+const CompanyType = new GraphQLObjectType({
+  name: "Company",
+  fields: {
+    id: { type: GraphQLString },
+    name: { type: GraphQLString },
+    description: { type: GraphQLString }
+    users: {
+     type: new GraphQLList(UserType),
+     resolve(parentValue, args) {
+       // parentValue refers to the current company you are currently using
+       return axios.get(`http://localhost:3000/companies/${parentValue.id}/users`)
+         .then(res => res.data)
+    }
+  }
+});
+```
+This potentially could lead to an error if you haven't defined the `UserType` yet, aka circular references. As a workaround, you can add an arrow function to the `field` property. This assures that the entire file will be executed, and only after that it will execute the arrow function and resolve:
+```
+const CompanyType = new GraphQLObjectType({
+  name: "Company",
+  fields: () => ({
+    id: { type: GraphQLString },
+    name: { type: GraphQLString },
+    description: { type: GraphQLString }
+    users: {
+     type: new GraphQLList(UserType),
+     resolve(parentValue, args) {
+       return axios.get(`http://localhost:3000/companies/${parentValue.id}/users`)
+         .then(res => res.data)
+    }
+  })
+});
+```
+We can now test it in the GraphQl tool:
+```
+{
+  company(id: "2") {
+    id,
+		name,
+    users {
+      firstName
     }
   }
 }
