@@ -13,10 +13,12 @@ A graph is a data structure that includes notes (which are the rectangles)  and 
 
 
 ### Express / Server
-GraphQl works as a mediator between Express and a database to return the correct data.
+GraphQl works as a mediator between Express and a database to return the correct data.</br>
+
 <img src="images/graphql-2.png?" width="600">
 
-In a small app the architecture is likely look a bit like this:
+In a small app the architecture is likely look a bit like this: </br>
+
 <img src="images/small-app.png?" width="400">
 
 Nonetheless, in a large app you are likely to have multiple servers that store data. GraphQl can serve as a proxy, making multiple http requests to other servers in the database, and sending data it in one .json file back.
