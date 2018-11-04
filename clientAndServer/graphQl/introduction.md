@@ -37,30 +37,26 @@ app.use('/graphql', expressGraphQL({
 }));
 ```
 #### Schema
-You have to specifically inform graphQl how data is arranged. This is done in the schema file:
+You have to specifically inform GraphQl how data is arranged. This is done in the schema file. First, let's require GraphQl:
 ```js
 const graphql = require('graphql');
-const _ = require('lodash');
+```
 
+Then, include the types we need for this schema:
+```js
 const {
   GraphQLObjectType,
   GraphQLString,
   GraphQLInt,
   GraphQLSchema
 } = graphql;
+```
 
-const users = [
-  { id: '23', firstName: 'Bill', age: 20 },
-  { id: '47', firstName: 'Samantha', age: 21 }
-];
-
+We continue with defining a model, or what is referred to as a type in GraphQl. The GraphQLObjectType always has two required properties:
+ - `name` is a capital string that describes the type we are defining, mostly equal to the const.
+ - `Field` describes the different properties. Every property should include the type.
+```js
 const UserType = new GraphQLObjectType({
-
-  /*
-   * GraphQLObjectType always has two required properties
-   * Name is a capital string that describes the type we are defining, mostly equal to const
-   * Field describes the different properties. Every property should include the type
-  */
   name: 'User',
   fields: {
     id: { type: GraphQLString },
@@ -68,11 +64,10 @@ const UserType = new GraphQLObjectType({
     age: { type: GraphQLInt }
   }
 });
+```
 
-/*
- * A root query allows us to jump is in a certain part of the Graph
- * You can see it as an entry point into our data
-*/
+Next, we have to state to GraphQL where to jump in a certain part of graph. This is defined as the `RootQuery`. You can see it as an entry point into our data:
+```js
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
@@ -84,7 +79,7 @@ const RootQuery = new GraphQLObjectType({
       type: UserType,
 
       /*
-       * args stands for arguments that you have to provide to give something back,
+       * `args` stands for arguments that you have to provide to give something back,
        * 2. If you give me a id
       */
       args: { id: { type: GraphQLString } },
@@ -95,14 +90,15 @@ const RootQuery = new GraphQLObjectType({
        * args: stands for arguments, basically include the argument defined above in it
       */
       resolve(parentValue, args) {
-
-        // Go through all users and find the first user with a certain id
-        return _.find(users, { id: args.id });
+        return axios.get(`http://localhost:3000/users/${args.id}`)
+          .then(resp => resp.data);
       }
     }
   }
 });
-
+```
+Lastly, we have to return a GraphQl instance:
+```js
 // Takes in a root query and returns a GraphQl instance
 module.exports = new GraphQLSchema({
   query: RootQuery
