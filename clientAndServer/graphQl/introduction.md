@@ -8,9 +8,7 @@ GraphQl provides a way to define complete description of data in schema and allo
 
 ### Graph: notes & Edges
 <img src="images/graphql-1.png?" width="600">
-A graph is a data structure that includes notes (which are the rectangles)  and the edges (which are the relations). The way data is stored is not different; SQL or NoSQL can still be used. Once have put the data into graph, we query it through GraphQL.
-
-You can think of the schema or data, as a bunch of functions that return references to other objects/pieces of data in our graph. Every edge can then be perceived as function that resolves data.
+A graph is a data structure that includes notes (which are the rectangles)  and the edges (which are the relations). The way data is stored is not different; SQL or NoSQL can still be used. Once have put the data into graph, we query it through GraphQL. You can think of the schema or data, as a bunch of functions that return references to other objects/pieces of data in our graph. Every edge can then be perceived as function that resolves data.
 <img src="images/resolve.png?" width="600">
 
 
@@ -19,7 +17,7 @@ GraphQl works as a mediator between Express and a database to return the correct
 <img src="images/graphql-2.png?" width="600">
 
 In a small app the architecture is likely look a bit like this:
-<img src="images/small-app.png?" width="600">
+<img src="images/small-app.png?" width="400">
 
 Nonetheless, in a large app you are likely to have multiple servers that store data. GraphQl can serve as a proxy, making multiple http requests to other servers in the database, and sending data it in one .json file back.
 <img src="images/large-app.png?" width="600">
