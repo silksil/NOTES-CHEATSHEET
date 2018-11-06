@@ -5,6 +5,21 @@ The purpose of GraphQl client is a bonding layer between React and the GraphQl g
 <img src="../images/apollo-store-provider.png?" width="600">
 Apollo consists out of the Apollo store and provider. The store is a client-side piece of tech that directly communicate with the server and saves the data in the store. It can be used across different technologies, not just React. Nonetheless, the Apollo provider glues React with the Apollo store by taking data from the store in injecting it in the client-side. Most set-up is related to the Apollo provider.
 
+### Storing Data: Apollo Store
+The Apollo store, or client, has internal buckets of data. So in this case, it has an internal bucket with songs and lyrics. It will fetch data from the GraphQl server and store data in one of these buckets. It will know in which bucket the data has to be stored because every response of the server will add a field that defines the type (`__typename`) of data.
+
+<img src="../images/apollo-data-storing.png?"
+
+The shortcoming is that Apollo has no idea what data or which properties exist in the bucket. As a result, if new data is rendered, Apollo cannot detect this, even though it is actually changed and included in the bucket.
+
+As a solution, we can add a piece of configuration that will take all records that are being fetched and provide it with an id. By giving an id, Apollo is being able to communicate to React when any piece of data is updated, and when as result a component should be re-rendered. In order to do this we do the following in the root React file:
+
+```jsx
+const client = new ApolloClient({
+  // go fetch every piece of data and use the id to identify every record
+  dataIdFromObject: o => o.id
+});
+```
 ### Set-up
 To set-up Apollo we have to install dependencies::
  ```
@@ -135,6 +150,9 @@ onSongDelete(id) {
 }
 ```
 `this.props.data.refetch()` only works for the data that is associated with that component! If you call refetch(), but you go to a different component, it's not assured that the data shows up in that component.
+
+An another alternative is by assigning an id to every piece of data. This is discussed above in the section `Storing Data Apollo Store`.
+
 
 ### Queries in a seperate folder
 To prevent duplicating code and keep organised it is convention to put the queries in a seperate folder (queries) and file. For example, we create a file `fetchSongs` in queries:
