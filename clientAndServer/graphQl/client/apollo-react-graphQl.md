@@ -38,7 +38,7 @@ ReactDOM.render(
 ```
 
 ### How to write GraphQl queries in React
-<img src="../images/graphql-apollo-react.png?"
+<img src="../images/graphql-apollo-react.png?">
 
 GraphQl queries are not valid javascript. In order to write GraphQl queries we need to import 'graphql-tag'. We can refer to it, but have to make sure we include backticks. Next, we have to bond the queries with a component (`export default graphql(query)(SongList)`). The data is eventually stored in the `props` object under the same key as defined in the query. This leads to the following code:
 ```jsx
