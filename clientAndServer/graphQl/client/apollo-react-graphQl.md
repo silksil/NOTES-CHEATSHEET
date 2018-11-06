@@ -74,7 +74,7 @@ export default graphql(query)(SongList)
 When we first render the component, the query we write will automatically send to our back-end server. This as async; when the data is being rendered the component will re-render with the data.
 <img src="../images/flow-component-graphql.png?" width="600">
 
-### Mutations
+## Mutations
 To include a mutation we can create a const that includes the query:
 ```jsx
 const mutation = gql`
@@ -126,6 +126,7 @@ onSubmit(event) {
 }
 ```
 
+
 Alternatively, we can use a function that is assigned to `this.props.database` by the `react-apollo` library. It will automatically re-execute the queries that are associated with the component:
 ```jsx
 onSongDelete(id) {
@@ -134,6 +135,14 @@ onSongDelete(id) {
 }
 ```
 `this.props.data.refetch()` only works for the data that is associated with that component! If you call refetch(), but you go to a different component, it's not assured that the data shows up in that component.
+
+### Multiple mutations in one Component
+If you have multiple mutations , you have to create multiple instances by calling GraphQl multiple times:
+```jsx
+export default graphql(mutation)(
+  graphql(query)(SongList)
+);
+```
 
 ### Queries in a seperate folder
 To prevent duplicating code and keep organised it is convention to put the queries in a seperate folder (queries) and file. For example, we create a file `fetchSongs` in queries:
@@ -151,13 +160,6 @@ export default gql`
 ```
 Then, we import it: `import query from '../queries/fetchSongs';`
 
-### Multiple mutations in one Component
-If you have multiple mutations , you have to create multiple instances by calling GraphQl multiple times:
-```jsx
-export default graphql(mutation)(
-  graphql(query)(SongList)
-);
-```
 
 ### Extract param, query with param
 When you pass info through a paramater, you can find it automatically as `props.paramater`.
