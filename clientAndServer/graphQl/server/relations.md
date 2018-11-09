@@ -96,7 +96,7 @@ const CompanyType = new GraphQLObjectType({
 });
 ```
 This potentially could lead to an error if you haven't defined the `UserType` yet, aka circular references. As a workaround, you can add an arrow function to the `field` property. This assures that the entire file will be executed, and only after that it will execute the arrow function and resolve:
-```
+```jsx
 const CompanyType = new GraphQLObjectType({
   name: "Company",
   fields: () => ({
