@@ -17,6 +17,7 @@ const mutation = new GraphQLObjectType({
         companyId: { type: GraphQLString }
       },
       resolve(parentValue, { firstName, age, companyId }) {
+      	// it's asynchronous, therefore include `return`
         return axios.post('http://localhost:3000/users', { firstName, age, companyId })
           .then(res => res.data);
       }

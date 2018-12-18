@@ -1,9 +1,9 @@
 ### Introduction
-The purpose of GraphQl client is a bonding layer between React and the GraphQl graph. Some major GraphQl clients are Lokka, Apollo Client and Relay.
+The purpose of GraphQl client is a bonding layer between React and the GraphQl graph. Some major GraphQl clients are Lokka, Apollo Client and Relay. </br>
 <img src="../images/graphql-client.png?" width="600">
 
-<img src="../images/apollo-store-provider.png?" width="600">
-Apollo consists out of the Apollo store and provider. The store is a client-side piece of tech that directly communicate with the server and saves the data in the store. It can be used across different technologies, not just React. Nonetheless, the Apollo provider glues React with the Apollo store by taking data from the store in injecting it in the client-side. Most set-up is related to the Apollo provider.
+Apollo consists out of the Apollo store and provider. The store is a client-side piece of tech that directly communicate with the server and saves the data in the store. It can be used across different technologies, not just React. Nonetheless, the Apollo provider glues React with the Apollo store by taking data from the store in injecting it in the client-side. Most set-up is related to the Apollo provider. </br>
+<img src="../images/apollo-store-provider.png?" width="400">
 
 ### Set-up
 To set-up Apollo we have to install dependencies::
@@ -11,7 +11,6 @@ To set-up Apollo we have to install dependencies::
  - apollo-client
  - react-apollo
  ```
-```jsx
 
 Next, we set-up the config of Apollo:
 ```jsx
@@ -39,7 +38,7 @@ ReactDOM.render(
 ```
 
 ### How to write GraphQl queries in React
-<img src="../images/graphql-apollo-react.png?"
+<img src="../images/graphql-apollo-react.png?">
 
 GraphQl queries are not valid javascript. In order to write GraphQl queries we need to import 'graphql-tag'. We can refer to it, but have to make sure we include backticks. Next, we have to bond the queries with a component (`export default graphql(query)(SongList)`). The data is eventually stored in the `props` object under the same key as defined in the query. This leads to the following code:
 ```jsx
@@ -75,7 +74,7 @@ export default graphql(query)(SongList)
 When we first render the component, the query we write will automatically send to our back-end server. This as async; when the data is being rendered the component will re-render with the data.
 <img src="../images/flow-component-graphql.png?" width="600">
 
-### Mutations
+## Mutations
 To include a mutation we can create a const that includes the query:
 ```jsx
 const mutation = gql`
@@ -174,13 +173,6 @@ export default gql`
 ```
 Then, we import it: `import query from '../queries/fetchSongs';`
 
-### Multiple mutations in one Component
-If you have multiple mutations , you have to create multiple instances by calling GraphQl multiple times:
-```jsx
-export default graphql(mutation)(
-  graphql(query)(SongList)
-);
-```
 
 ### Extract param, query with param
 When you pass info through a paramater, you can find it automatically as `props.paramater`.
