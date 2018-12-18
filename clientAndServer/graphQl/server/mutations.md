@@ -1,5 +1,5 @@
 Mutations are used to change our data; remove, change, create etc. All the mutations are related to the `Mutations` object, not the `RootQuery` or the types related to it.
-<img src="images/mutations.png?" width="600">
+<img src="../images/mutations.png?" width="600">
 
 In order to do this, we add a `mutation` const in our schema:
 ```js

@@ -5,21 +5,6 @@ The purpose of GraphQl client is a bonding layer between React and the GraphQl g
 <img src="../images/apollo-store-provider.png?" width="600">
 Apollo consists out of the Apollo store and provider. The store is a client-side piece of tech that directly communicate with the server and saves the data in the store. It can be used across different technologies, not just React. Nonetheless, the Apollo provider glues React with the Apollo store by taking data from the store in injecting it in the client-side. Most set-up is related to the Apollo provider.
 
-### Storing Data: Apollo Store
-The Apollo store, or client, has internal buckets of data. So in this case, it has an internal bucket with songs and lyrics. It will fetch data from the GraphQl server and store data in one of these buckets. It will know in which bucket the data has to be stored because every response of the server will add a field that defines the type (`__typename`) of data.
-
-<img src="../images/apollo-data-storing.png?"
-
-The shortcoming is that Apollo has no idea what data or which properties exist in the bucket. As a result, if new data is rendered, Apollo cannot detect this, even though it is actually changed and included in the bucket.
-
-As a solution, we can add a piece of configuration that will take all records that are being fetched and provide it with an id. By giving an id, Apollo is being able to communicate to React when any piece of data is updated, and when as result a component should be re-rendered. In order to do this we do the following in the root React file:
-
-```jsx
-const client = new ApolloClient({
-  // go fetch every piece of data and use the id to identify every record
-  dataIdFromObject: o => o.id
-});
-```
 ### Set-up
 To set-up Apollo we have to install dependencies::
  ```
@@ -125,7 +110,26 @@ this.props.mutate({
 });
 ```
 
-### Refetch after mutations
+### Apollo store: storing data:
+The Apollo store, or client, has internal buckets of data. So in this case, it has an internal bucket with songs and lyrics. It will fetch data from the GraphQl server and store data in one of these buckets. It will know in which bucket the data has to be stored because every response of the server will add a field that defines the type (`__typename`) of data.
+
+<img src="../images/apollo-data-storing.png?"
+
+### Apollo store: refetch after mutation
+The shortcoming is that Apollo has no idea what data or which properties exist in the bucket. As a result, if new data is rendered, Apollo cannot detect this, even though it is actually changed and included in the bucket.
+
+##### Solution 1
+As a solution, we can add a piece of configuration that will take all records that are being fetched and provide it with an id. By giving an id, Apollo is being able to communicate to React when any piece of data is updated, and when as result a component should be re-rendered. Note: this is based on the assumption that the DB returns and id. In order to do this we do the following in the root React file:
+
+```jsx
+const client = new ApolloClient({
+  // go fetch every piece of data and use the id to identify every record
+  dataIdFromObject: o => o.id
+});
+```
+Below are two alternative solutions, non the less these solutions require you to conduct a second network request. In some cases this may be preferred, but in general the solution above is more desirable.
+
+##### Solution 2
 Let's say you added an item and directly afterwards go to a page that shows the items. It's possible that the store doesn't include the item yet, because it's not included in the Apollo store yet. In order to solve this, you can use `refetchQueries` and include the query you want to refetch:
 ```jsx
 onSubmit(event) {
@@ -141,7 +145,7 @@ onSubmit(event) {
   }).then(() => hashHistory.push('/'));
 }
 ```
-
+##### Solution 3
 Alternatively, we can use a function that is assigned to `this.props.database` by the `react-apollo` library. It will automatically re-execute the queries that are associated with the component:
 ```jsx
 onSongDelete(id) {
