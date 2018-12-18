@@ -16,15 +16,15 @@ export default Sell;
 
 ### Why server-side rendering?
 With React client-side rendering it often takes several steps before the users sees al l the content on the screen. First the browser requests a page, then it will render all the javascript and only after that it will conduct additional requests to get data from the back-end. This takes time, and more time to load isn't good for the UX. 
-<img src="../images/client-side?" width="600">
+<img src="./images/client-side" width="600">
 
 Server-side rendering radically reduces the time to load the page that is shown to the user. Through server-side rendering you will see an html document that has already preloaded all html, including data that had to be fetched from the back-end.
-<img src="../images/server-side-1?" width="600">
+<img src="./images/server-side-1" width="600">
 
 Html content is not reactive, so after we ship down the html we still want to load up our react part of the application that includes all the javascript. So, after we load the html, we load up the javascript bundle. This will eventually lead to the following flow: 
-<img src="../images/server-side-2?" width="600">
-<img src="../images/server-side-3?" width="600">
-<img src="../images/server-side-4?" width="600">
+<img src="./images/server-side-2" width="600">
+<img src="./images/server-side-3" width="600">
+<img src="./images/server-side-4" width="600">
 
 ### Linking
 If you want to allow a user to go to a different page, Next.js provides you with functionality that allows you to push the state: you don't use anchor tags because you do discrete navigation.
