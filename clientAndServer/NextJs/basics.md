@@ -16,7 +16,7 @@ export default Sell;
 
 ### Why server-side rendering?
 With React client-side rendering it often takes several steps before the users sees al l the content on the screen. First the browser requests a page, then it will render all the javascript and only after that it will conduct additional requests to get data from the back-end. This takes time, and more time to load isn't good for the UX. 
-<img src="./images/client-side" width="600">
+<img src="./images/client-side?" width="600">
 
 Server-side rendering radically reduces the time to load the page that is shown to the user. Through server-side rendering you will see an html document that has already preloaded all html, including data that had to be fetched from the back-end.
 <img src="./images/server-side-1" width="600">
