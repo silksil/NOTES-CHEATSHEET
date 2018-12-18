@@ -39,6 +39,45 @@ Next.js uses the App component to initialize pages. You can override it and cont
 - Custom error handling using componentDidCatch
 - Inject additional data into pages (for example by processing GraphQL queries)
 
-To do this you import the app and container component from Next.
+To do this you import the app and container component from Next. In this container we will include a `page` component, which will we wrap around the `props component`, which causes to show the `page` component on all props components.
+
+```js
+import App, { Container } from 'next/app';
+import Page from '../components/Page';
+
+class MyApp extends App {
+  render() {
+    // refers to your selected component
+    const { Component } = this.props;
+
+    return (
+      <Container>
+        <Page>
+          <Component />
+        </Page>
+      </Container>
+    );
+  }
+}
+
+export default MyApp;
+```
+The page component which includes the passed props component. 
+```js
+import React, { Component } from 'react';
+
+class Page extends Component {
+  render() {
+    return (
+      <div>
+        <p> Hey i'm the page component</p>
+        {this.props.children}
+      </div>
+    );
+  }
+}
+
+export default Page;
+```
 
 
