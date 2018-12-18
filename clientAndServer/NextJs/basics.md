@@ -14,6 +14,12 @@ const Sell = props => (
 export default Sell;
 ````
 
+### Why server-side rendering?
+With React client-side rendering it often takes several steps before the users sees all the content on the screen. First the browser requests a page, then it will render all the javascript and only after that it will conduct additional requests to get data from the back-end. This takes time, and time isn't good for the UX. 
+
+Server-side rendering radically reduces the time to load the page that is shown to the user. Through server-side rendering you will see an html document that has way more data than if you would use server-side rendering, as the 3 steps that were described in client-side rendering that were described before, is now reduced to 1 step. 
+
+
 
 ### Linking
 If you want to allow a user to go to a different page, Next.js provides you with functionality that allows you to push the state: you don't use anchor tags because you do discrete navigation.
