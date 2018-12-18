@@ -102,7 +102,7 @@ const StyledPage = styled.div`
 ```
 
 ### Inject Global CSS
-We inject global css through the js through `injectGlobal`.
+We can inject global css through the js through `injectGlobal`.
 
 ```js
 import styled, { ThemeProvider, injectGlobal } from 'styled-components';
