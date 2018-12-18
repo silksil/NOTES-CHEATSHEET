@@ -15,15 +15,20 @@ export default Sell;
 ````
 
 ### Why server-side rendering?
-With React client-side rendering it often takes several steps before the users sees al l the content on the screen. First the browser requests a page, then it will render all the javascript and only after that it will conduct additional requests to get data from the back-end. This takes time, and more time to load isn't good for the UX. 
+With React client-side rendering it often takes several steps before the users sees al l the content on the screen. First the browser requests a page, then it will render all the javascript and only after that it will conduct additional requests to get data from the back-end. This takes time, and more time to load isn't good for the UX. <br/>
 <img src="./images/client-side.png?" width="300">
 
-Server-side rendering radically reduces the time to load the page that is shown to the user. Through server-side rendering you will see an html document that has already preloaded all html, including data that had to be fetched from the back-end.
+Server-side rendering radically reduces the time to load the page that is shown to the user. Through server-side rendering you will see an html document that has already preloaded all html that used needed to load the basic application:<br/>
 <img src="./images/server-side-1.png?" width="300">
 
-Html content is not reactive, so after we ship down the html we still want to load up our react part of the application that includes all the javascript. So, after we load the html, we load up the javascript bundle. This will eventually lead to the following flow: <br/>
+Html content is not reactive, so after we ship down the html we still want to load up our react part of the application that includes all the javascript. So, after we load the html, we load up the javascript bundle. This will eventually lead to the following flow: 
+
+1. Get initial html<br/>
 <img src="./images/server-side-2.png?" width="300">
+<br/>
+2. If browser needs bundle.js, load it:
 <img src="./images/server-side-3.png?" width="300">
+<br/>
 <img src="./images/server-side-4.png?" width="300">
 
 ### Linking
