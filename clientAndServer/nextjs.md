@@ -14,6 +14,8 @@ const Sell = props => (
 export default Sell;
 ````
 
+
+### Linking
 If you want to allow a user to go to a different page, Next.js provides you with functionality that allows you to push the state: you don't use anchor tags because you do discrete navigation.
 ```js
 import Link from 'next/link';
@@ -29,5 +31,12 @@ const Home = props => (
 
 export default Home;
 ```
+
+### _App.js
+Next.js uses the App component to initialize pages. You can override it and control the page initialization. Which allows you to:
+- Persisting layout between page changes
+- Keeping state when navigating pages
+- Custom error handling using componentDidCatch
+- Inject additional data into pages (for example by processing GraphQL queries)
 
 
