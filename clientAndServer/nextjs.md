@@ -39,4 +39,6 @@ Next.js uses the App component to initialize pages. You can override it and cont
 - Custom error handling using componentDidCatch
 - Inject additional data into pages (for example by processing GraphQL queries)
 
+To do this you import the app and container component from Next.
+
 
