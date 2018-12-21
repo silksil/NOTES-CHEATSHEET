@@ -47,6 +47,23 @@ const Home = props => (
 
 export default Home;
 ```
+You can also specify that you want to pass a query to a url: 
+```js
+const Home = props => (
+  <div>
+    <p>Hey!</p>
+      <Link
+        href={{
+          pathname: '/sell',
+          query: { id: item.id },
+        }}
+      >
+        <a>{item.title}</a>
+      </Link>
+  </div>
+)
+```
+
 
 ### _App.js
 Next.js uses the App component to initialize pages. You can override it and control the page initialization. Which allows you to:
