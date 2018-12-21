@@ -30,7 +30,7 @@ function createClient({ headers }) {
 
 export default withApollo(createClient);
 ```
-Then we include the Apollo Client in Apollo Provider, linking the Apollo state handler (Apollo Client) with React. 
+Then we include the Apollo Client in Apollo Provider, linking the Apollo state handler (Apollo Client) with React through Apollo Provider. 
 ```js
 import App, { Container } from 'next/app';
 import Page from '../components/Page';
