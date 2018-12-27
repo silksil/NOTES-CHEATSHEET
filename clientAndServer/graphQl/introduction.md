@@ -1,10 +1,17 @@
 ### What is it?
-GraphQl provides a way to define complete description of data in schema and allows client to ask for what they need. It simply returns the response in JSON.
+GraphQl provides a way to define complete description of data in schema and allows client to ask for what they need and returns the response in JSON. It used to replace REST API or to sit in front of a REST API. 
+
+GraphQL has 2 main functionalities:
+- *Queries:* pulling data
+- *Mutations:* updating data. 
+
+GraphQL itself doesn't fetch, filter, sort etc. It allows you to focalize what you want, which will be send to the servers, and then the server will implement *resolvers* which answers the question: how and where will I get the data from? The answer on this questions, is where you will end up using a db and change data (filter, sort etc.). 
 
 ### Advantages compared to REST API
 - Versioning: To avoid multiple versioning of your rest API.
 - Ask for what you need: Client has a provision to ask only those fields which they needs. There would be no handling on server side specific to the platform.
 - Get many API’s response in single request: Client has to call one query to get data from multiple rest API’s.
+- Includes type-checking when receiving data, making the code more robust. 
 
 ### Graph: notes & Edges
 <img src="images/graphql-1.png?" width="600">

@@ -1,0 +1,1 @@
+Prisma is a GraphQL Database Interface. You can think of it as a auto-generated API for your database. They provide a GraphQL endpoint through which to access your data, as well as handy filtering capabilities so your client can slice & dice data without having to write a ton of boilerplate queries.
