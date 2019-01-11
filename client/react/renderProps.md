@@ -1,0 +1,1 @@
+I was suggesting that the higher-order component pattern that is a popular method of code reuse in many React codebases could be replaced 100% of the time with a regular component with a “render prop”. 
