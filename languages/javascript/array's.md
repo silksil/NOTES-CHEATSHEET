@@ -52,19 +52,15 @@ const printItems = (arr) =>
 console.log(printItems(list)) //expected output: [ '0. h', '1. i' ]
 ```
 
-### Splice
-`splice()` changes the contents of an array by removing existing elements and/or adding new elements.
+### Slice
+`splice()` (not `splice()`) you cut of items of an array based on location. `Splice()` does the same, but instead not copies but mutates the array. 
 ```javascript
-let months = ['Jan', 'March', 'April', 'June'];
-months.splice(1, 1);
-// deletes index 1
-console.log(months);
-// output: Array ["March", "April", "June"]
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
 
-months.splice(4, 1, 'May');
-// replaces 1 element at 4th index
-console.log(months);
-// output: Array ['Jan', 'Feb', 'March', 'April', 'May']
+console.log(animals.slice(2));
+// expected output: Array ["camel", "duck", "elephant"]
+console.log(animals.slice(2, 4));
+// expected output: Array ["camel", "duck"]
 ```
 
 ### Reduce
