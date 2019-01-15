@@ -18,7 +18,8 @@ Pure object oriented is usually stated to have four ingredients:
 
 ##  FP tries to minimize state by using pure functions as much as possible.
 A mathematical function, or ‘pure function’ operates on the supplied arguments and returns a result and does nothing else. It:
-- Has no ‘side effects’. Doesn't change something outside function
+- Returns 
+- Has no ‘side effects’: doesn't change something outside function.
 - Deterministic: return the same thing. 
 - 
 
