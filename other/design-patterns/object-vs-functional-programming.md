@@ -3,7 +3,6 @@ Object-oriented languages are good when you have a fixed set of operations on th
 
 Functional languages are good when you have a fixed set of things, and as your code evolves, you primarily add new operations on existing things. This can be accomplished by adding new functions which compute with existing data types, and the existing functions are left alone. 
 
-
 ## OOO is about grouping data with functions that govern that data
 The central tenet of OOP is that data and the operations upon it are tightly coupled: An object owns its data and it owns the implementation of the operations on the data. It hides those from other objects via its interface, a collection of methods or messages it responds to. Thus, the central model for abstraction is the data itself, hidden as it is behind a small API in the form of its interface.
 
@@ -18,7 +17,10 @@ Pure object oriented is usually stated to have four ingredients:
 
 
 ##  FP tries to minimize state by using pure functions as much as possible.
-A mathematical function, or ‘pure function’ operates on the supplied arguments and returns a result and does nothing else. No ‘side effects’. Nothing changed by the function, no internal variables altered that will result a future call of the same function dealing with different values.
+A mathematical function, or ‘pure function’ operates on the supplied arguments and returns a result and does nothing else. It:
+- Has no ‘side effects’. Doesn't change something outside function
+- Deterministic: return the same thing. 
+- 
 
 Sources:
 https://medium.com/@darrickmckirnan/object-oriented-programming-oop-functional-programming-what-are-they-the-pros-and-cons-11f98a971e38
