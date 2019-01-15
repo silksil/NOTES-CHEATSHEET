@@ -9,9 +9,9 @@ let books = [
   {name: 'The Art of Learning',author: 'Joshua Waitzkin', language: 'English'}
 ]
 
-let englishBooks = books.filter((book) => {
-  return (book.language === 'English');
-});
+const longStretches = (books) => {
+  return books.filter(book => book.language === 'English')
+}
 
 /** englishBooks returns:
 [ { name: 'The Art of Learning',
