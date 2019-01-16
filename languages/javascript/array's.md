@@ -73,6 +73,20 @@ const total = arr => {
 }
 ```
 
+#### Even odds
+```
+const array = [1, 2, 3, 5, 6, 9];
+
+function splitEvens(acc, item){
+  if( item % 2 === 0 ){
+    return { even: acc.even.concat([item]), odd: acc.odd}
+  }
+  else return { even: acc.even, odd: acc.odd.concat([item]) }
+}
+
+array.reduce(splitEvens, { even: [], odd: [] })) 
+```
+
 ### Join
 `join()` the elements of an array into a string:
 ```javascript
