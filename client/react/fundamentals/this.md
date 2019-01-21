@@ -4,11 +4,10 @@ At any point during the execution of a JavaScript program there is a context-dep
 
 
 ## Function invocation through the `call` method
-
 When you call a regular function by specifying its name followed by zero or more arguments enclosed within parentheses, the JavaScript engine in fact invokes the `call` method that exists on every function (yes, a function is actually a special type of JavaScript object). The code snippet below shows how a regular function is invoked behind the scenes by the JavaScript engine, setting the `this` value (the first argument of the `call` method) to `undefined`.
 
 ```js
-'use strict';
+'use strict'
 
 function whatIsThis(arg) {
   console.log(arg, this);
@@ -28,8 +27,6 @@ However, in practice there are not many occasions where we would need to use the
 ## JavaScript objects and 'this'
 
 When used in conjunction with JavaScript methods (including those from ES6 classes) the `this` keyword gets overriding importance.
-
-> **What is a method?** A method is a regular JavaScript function that is 'called on' an object, using dot notation. In almost all cases this function will be defined as a property of the object (or it's prototype) it is called upon. In ES6 classes, methods are directly defined as member functions on the class.
 
 The example below shows a simple object with a data property `myData` and a method property `myMethod`. When `myMethod` is called using dot notation such as shown in the example below, the `this` value inside the method is set to the object itself. Hence, `myMethod` has access to the `myData` property through the `this` keyword.
 
@@ -72,7 +69,6 @@ You will come across the `bind` method extensively in the HYF React module.
 MDN: [Function.prototype.bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
 
 ## Fat arrow functions and 'this'
-
 In fat arrow functions the value of `this` is unchanged from its enclosing scope. This makes fat arrow functions specifically useful as event handlers and callbacks when used in objects and ES classes where `this` is used.
 
 In the example below we have defined a simple ES6 class which uses a `setTimeout` to console.log the `myData` value after one second. The callback passed as the first parameter of `setTimeout` is written as a fat arrow function. Hence, the `this` value inside the fat arrow function refers to the `this` value of the `sayDelayed` method. Because `sayDelayed` is called using object notation, the `this` value is set to the object itself. Thus, the expected result is printed.
