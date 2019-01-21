@@ -134,5 +134,28 @@ const myClass = new MyClass();
 myClass.sayDelayed();
 ```
 
+## Event Handler React
+In an event handler (onClick) this refers to the element that triggered the event. This means when you pass an object method to the click event the method will be called on the DOM element. So in the toggle function this would refer to the DOM element rather than the Component class. This is why we use the Lambda syntax (fat arrow, =>), to capture the scope of the class with this. Alternatively, we could use bind here.
+```js
+import React, { Component } from 'react'
+
+export default class LightSwitch extends Component {
+  state = { active: true }
+
+  toggle = () => {
+    this.setState({
+      active: !this.state.active
+    })
+  }
+
+  render() {
+    return (<div>
+      <p>The light switch is <b>{ this.state.active ? 'on' : 'off' }</b></p>
+      <button onClick={this.toggle}>Toggle</button>
+    </div>)
+  }
+}
+```
+
 #### Source:
 - source: https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/this.md
