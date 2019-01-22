@@ -103,6 +103,61 @@ expected output:
 /*
 ```
 
+### Sort
+Array.sort takes an optional compare function as an argument. If you pass in this function, you will have to write it yourself. The function receives 2 arguments, a and b, that can be 2 random elements on the array. Your compare function will need to figure out whether the 2 elements are equal, or one should be ranked higher than the other. It has the following form:
+```js
+function compare(a, b) {
+  if (a is less than b by some ordering criterion) {
+    return -1; // or any negative number
+  }
+  if (a is greater than b by the ordering criterion) {
+    return 1; // or any positive number
+  }
+  // a must be equal to b
+  return 0;
+}
+```
+The result of sort is a new, sorted array.
+```js
+const movies = [
+  {
+    title: 'The Godfather',
+    rating: 9.2,
+    released: 1972,
+    votes: 100
+  },
+  {
+    title: 'The Shawshank Redemption',
+    rating: 9.2,
+    released: 1994,
+    votes: 101
+  },
+  {
+    title: 'The Dark Knight',
+    rating: 8.9,
+    released: 2008,
+    votes: 200
+  },
+  {
+    title: 'Star Wars: Episode IV - A New Hope',
+    rating: 8.6,
+    released: 1977,
+    votes: 999
+  }
+]
+
+const moviesByYear = movies.sort((a, b) => {
+  return b.released - a.released
+})
+
+console.log(moviesByYear)
+
+const moviesByRating = moviesByYear.sort((a, b) => {
+  return b.rating - a.rating
+})
+
+console.log(moviesByRating)
+```
 ## Cases
 ### Use Set() to get unique values out of array
 ```javascript
