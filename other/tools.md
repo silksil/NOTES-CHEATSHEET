@@ -1,4 +1,3 @@
 ## Tools
-
-- Live code logging: https://stephengrider.github.io/JSPlaygrounds/
-- Json server / fake apis: https://github.com/typicode/json-server
+- **Json server** => create fake apis =>  https://github.com/typicode/json-server
+- **HTTPie**  => show json response http request => https://httpie.org/
