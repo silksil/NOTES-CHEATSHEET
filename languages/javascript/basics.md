@@ -1,5 +1,17 @@
+# Learning Goals
+After reading this article you should be able to answer the following questions:
+- What are primitive data and reference types?
+- How do the primitive reference types behave differently?
+- What is the advantage and disadvantage of object by reference?
+- What is types coercion and what's JS's basic rule? 
+- What are expressions?
+- What are literals?
+- What are and when to use anonymous functions?
+- What are methods?
+- How use if-else and the switch statement different?
+
 ### Data Types
-#### What are primitive data vs reference types?
+#### What are primitive data and reference types?
 These six types are considered to be primitives. A primitive is not an object and has no methods of its own
 - Boolean
 - Null
@@ -93,7 +105,7 @@ Types of oeprators:
 - Boolean operators
 
 ### Functions
-#### Anonymous functions
+#### What are and when to use anonymous functions?
 Functions are behavior. In order to call/invoke that behavior, we need to refer to that behavior. Usually we use names for that. So, what is an anonymous function? A function without a name. But then how do you refer to it?
 ```js
 const someFunction = function(name) {
@@ -105,7 +117,7 @@ That's how. We declared a function the same way we did before, but we left out t
 
 Anonymous functions are useful when we want to pass them around like values. Passing them around can mean, assigning them to variables, passing them as arguments in function calls, and returning them as values inside function bodies.
 
-#### Methods
+#### What are methods?
 Methods are functions that are properties on objects. An object has properties, as we know, and the property values can be any JavaScript value
 
 ### If-else vs. Switch
