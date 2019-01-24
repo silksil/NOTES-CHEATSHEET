@@ -4,7 +4,8 @@ After reading this article you should be able to answer the following questions:
 - How do the primitive reference types behave differently?
 - What is the advantage and disadvantage of object by reference?
 - What is types coercion and what's JS's basic rule? 
-- What are expressions?
+- What are expressions and statements?
+- 
 - What are literals?
 - What are and when to use anonymous functions?
 - What are methods?
@@ -72,26 +73,98 @@ One artifact of the "everything is always coerced when necessary" rule, is that 
 
 For example, the literal "joy" is just a string. But, if you use the string in a Boolean expression such as "joy" || 5 < 4, it will be coerced to a Boolean value, because the operator || only works on Boolean values. JavaScript will coerce "joy" to true, and subsequently "joy" || 5 < 4 will evaluate to true. So, we say that the value "joy" is truthy.
 
-## What are expressions?
-Expressions produce value. Expressions are Javascript code snippets that result in a single value. Expressions can be as long as you want them to be, but they would always result in a single value. When you combine elements like numbers, variables and strings, you will use expressions. The simplest example is the addition of two numbers:
+## What are expressions and statements?
+### Expressions
+Any unit of code that can be evaluated to a value is an expression. Expressions can be as long as you want them to be, but they would always result in a single value. When you combine elements like numbers, variables and strings, you will use expressions. The simplest example is the addition of two numbers:
 ```js
 4 + 5
 ```
-
 This is an "expression". In this case, it consists of:
 - the addition operator (+)
 - two literals, namely 4 and 5.
 
-Another example: 
+When expressions use the = operator to assign a value to a variable, it is called an *assignment expression*. 
 ```js
-let nested2 = [
-    "The Netherlands",
-    ["Lasagna", 42, false === false]
-  ];
-  
-nested2[0]
+average = 55;
 ```
-This array access notation is an expression. Technically, this means that the brackets [ ] are an operator. Similarly to how the operator + takes two numbers and returns a new number, the operator [ ] takes an array and a number (the index), and returns the element in the array at that given index.
+
+##### Arithmetic Expressions
+Arithmetic expressions evaluate to a numeric value. Examples include the following:
+```js
+10;     // Here 10 is an expression that is evaluated to the numeric value 10 by the JS interpreter
+10+13; // This is another expression that is evaluated to produce the numeric value 23
+```
+
+##### String Expressions
+String expressions are expressions that evaluate to a string. Examples include the following:
+```js
+'hello';
+'hello' + 'world'; // evaluates to the string 'hello world'
+```
+##### Primary Expressions:
+Primary expressions refer to stand alone expressions such as literal values, certain keywords and variable values. Examples include the following
+```js
+'hello world'; // A string literal
+23;            // A numeric literal
+true;          // Boolean value true
+sum;           // Value of variable sum
+this;          // A keyword that evaluates to the current object
+```
+
+##### Left-hand-side Expressions:
+Also known as lvalues, left-hand-side expressions are those that can appear on the left side of an assignment expression
+```js
+// variables such as i and total
+i = 10;
+total = 0;
+// properties of objects
+var obj = {}; // an empty object with no properties
+obj.x = 10; // an assignment expression
+// elements of arrays
+array[0] = 20;
+array[1] = 'hello';
+// Invalid left-hand-side errors
+++(a+1); // SyntaxError. Attempting to increment or decrement an expression that is not an lvalue will lead to errors.
+```
+
+##### Logical Expressions:
+Expressions that evaluate to the boolean value true or false are considered to be logical expression.
+```js
+10 > 9;   // evaluates to boolean value true
+10 < 20;  // evaluates to boolean value false
+true;     //evaluates to boolean value true
+a===20 && b===30; // evaluates to true or false based on the values of a and b
+```
+
+### Statements
+A statement is an instruction to perform a specific action. Such actions include creating a variable or a function, looping through an array of elements, evaluating code based on a specific condition etc. JavaScript programs are actually a sequence of statements.
+
+##### Declaration Statements:
+Such type of statements create variables and functions by using the var and function statements respectively. Examples include
+```js
+var sum;
+var average;
+// In the following example, var total is the statement and total = 0 is an assignment expression
+var total = 0;
+// A function declaration statement 
+function greet(message) {
+  console.log(message);
+}
+```
+
+##### Expression Statements:
+Wherever JavaScript expects a statement, you can also write an expression. Such statements are referred to as expression statements.
+```js
+// In the following example, sum is an expression as it evaluates to the value held by sum but it can also pass off as a valid statement.
+sum;
+// An expression statement that evaluates an expression with side effects
+b = 4+38;
+```
+##### Conditional Statements
+Conditional statements execute statements based on the value of an expression. Examples of conditional statements includes the if..else and switch statements.
+
+##### Loops and Jumps 
+Looping statements includes the following statements: while, do/while, for and for/in. Jump statements are used to make the JavaScript interpreter jump to a specific location within the program. Examples of jump statements includes break, continue, return and throw.
 
 ## What are literals?
 Literals, or literal expressions, are values that are writting down directly, without the use of variables or any other language feature (such as functions or more operators). Think of it this way: 9 is literally 9, but 4 + 5 not (you first have to compute it).
@@ -132,7 +205,7 @@ if (apples) {
 }
 ```
 In a switch statement there is only one expression, and its value is compared to the cases using strict (===) comparison. The data type of the expression and the cases is usually string or number, but can be anything.
-```
+```js
 switch (10) { // the expression of type number
     case 1: 
         // no match
