@@ -10,7 +10,7 @@ After reading this article you should be able to answer the following questions:
 - What are methods?
 - How use if-else and the switch statement different?
 
-### Data Types
+## Data Types
 #### What are primitive data and reference types?
 These six types are considered to be primitives. A primitive is not an object and has no methods of its own
 - Boolean
@@ -64,15 +64,15 @@ console.log(a) // prints 6 because it is a primitive type
 - Advantage. If you pass objects by reference (like JavaScript does), then you can think of objects are "real world things", that exists "outside of the place" you're currently computing. Objects get a kind of "permanence", and you can use them from different places in your code. This can be very useful, and it's the basis of a programming style known as Object Oriented Programming (OOP).
 - Disadvantage. The disadvantage of passing objects by reference is that it can become a bit unpredictable what your data looks like. Other pieces of code might be changing it in ways you might not expect (or they might simply be at fault), and as a result your code might not work correctly. This way, the previously mentioned advantage can turn into a disadvantage.
 
-### What is types coercion and what's JS's basic rule? 
+## What is types coercion and what's JS's basic rule? 
 Type coercion happens when a value doesn't have the right type in order to be a parameter for some operator in an expression. The JavaScript rules of the game are that basically everything is always coerced, whenever this is necessary for the operator. This means that when you write normal things like 4 + 5, everything goes as usual. But when you write "hello" + 5, then 5 is first coerced to "5".
 
-### Truthiness / falseyness
+## Truthiness / falseyness
 One artifact of the "everything is always coerced when necessary" rule, is that every non-Boolean expression will implicitly be able to coerce into a Boolean value. Put differently: every expression is "truthy" or "falsey".
 
 For example, the literal "joy" is just a string. But, if you use the string in a Boolean expression such as "joy" || 5 < 4, it will be coerced to a Boolean value, because the operator || only works on Boolean values. JavaScript will coerce "joy" to true, and subsequently "joy" || 5 < 4 will evaluate to true. So, we say that the value "joy" is truthy.
 
-### What are expressions?
+## What are expressions?
 Expressions produce value. Expressions are Javascript code snippets that result in a single value. Expressions can be as long as you want them to be, but they would always result in a single value. When you combine elements like numbers, variables and strings, you will use expressions. The simplest example is the addition of two numbers:
 ```js
 4 + 5
@@ -93,10 +93,10 @@ nested2[0]
 ```
 This array access notation is an expression. Technically, this means that the brackets [ ] are an operator. Similarly to how the operator + takes two numbers and returns a new number, the operator [ ] takes an array and a number (the index), and returns the element in the array at that given index.
 
-### What are literals?
+## What are literals?
 Literals, or literal expressions, are values that are writting down directly, without the use of variables or any other language feature (such as functions or more operators). Think of it this way: 9 is literally 9, but 4 + 5 not (you first have to compute it).
 
-### What are operators?
+## What are operators?
 Types of oeprators:
 - Numerical operators
 - Increment and decrement
@@ -104,7 +104,7 @@ Types of oeprators:
 - Comparisons
 - Boolean operators
 
-### Functions
+## Functions
 #### What are and when to use anonymous functions?
 Functions are behavior. In order to call/invoke that behavior, we need to refer to that behavior. Usually we use names for that. So, what is an anonymous function? A function without a name. But then how do you refer to it?
 ```js
@@ -120,7 +120,7 @@ Anonymous functions are useful when we want to pass them around like values. Pas
 #### What are methods?
 Methods are functions that are properties on objects. An object has properties, as we know, and the property values can be any JavaScript value
 
-### If-else vs. Switch
+## If-else vs. Switch
 In an if-statement we have multiple (possibly unrelated expressions) that are all coerced to booleans:
 ```js
 if (apples) {
