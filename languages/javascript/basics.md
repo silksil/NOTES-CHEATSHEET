@@ -5,7 +5,6 @@ After reading this article you should be able to answer the following questions:
 - What is the advantage and disadvantage of object by reference?
 - What is types coercion and what's JS's basic rule? 
 - What are expressions and statements?
-- 
 - What are literals?
 - What are and when to use anonymous functions?
 - What are methods?
