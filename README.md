@@ -9,8 +9,10 @@ This repository keeps track of what I have encountered and learned across the di
 #### What does it include?
 The technologies that I have been focusing on are:
 - React
-- Redux
+- Next.js
+- Apollo
 - GraphQl
+- Redux
 - Node.js / Express
 - MongoDb 
 
