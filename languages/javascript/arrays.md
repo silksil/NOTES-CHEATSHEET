@@ -1,5 +1,6 @@
 # Learning Goals
 - What does includes() do?
+- What does find() do?
 - What does filter() do?
 - What does map() do?
 - What does slice() do?
@@ -9,11 +10,29 @@
 
 # Methods
 ## Includes
+The includes() method determines whether an array includes a certain value among its entries, returning true or false as appropriate.
 ```javascript
 let status = ["status1", "status2", "status3"]
 
 if (status.includes(checkStatus)) {
   //doSomething
+}
+```
+
+## Find
+Returns the value of the first element in an array that passes a given test.
+```js
+const cars = [
+  {brand: 'Toyota', model: 'Aygo'},
+  {brand: 'Skoda', model: 'Octavia'},
+  {brand: 'Volkswagen', model: 'Passat'},
+  {brand: 'Mercedes', model: 'CLS'},
+  {brand: 'Seat', model: 'Ibiza'}
+]
+
+// Returns the first car object whose brand matches the brand parameter.
+function slowSearch(brand) {
+  return cars.find(car => car.brand === brand)
 }
 ```
 
