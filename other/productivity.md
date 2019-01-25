@@ -31,7 +31,9 @@ Ask yourself daily:
 If the answer is yes and it takes less than 15 minutes to solve it, solve it, if it takes more than 15 mintues, create a task for. Examples of roadblocks can be:
 - Not having access to certain files.
 - Unclear documentation.
-- Unorganized folder structure. 
+- Unorganized folder structure.
+
+
 
 
 

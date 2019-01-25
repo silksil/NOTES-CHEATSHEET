@@ -1,5 +1,0 @@
-GraphQl Yoga is an Express GraphQl server for
-- implementing query and mutation resolvers
-- Custom server side logic
-- Chargin credit cards, sending emails,
-- Authentication 
